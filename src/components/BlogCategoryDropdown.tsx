@@ -3,7 +3,7 @@
 const categories = [
   { name: 'Take-Home Pay', href: '/blog/how-to-calculate-florida-take-home-pay' },
   { name: 'FICA Taxes', href: '/blog/fica-taxes-explained' },
-  { name: 'Tax Brackets', href: '/blog/federal-tax-brackets-2026' },
+  { name: 'Tax Brackets', href: '/blog/federal-tax-brackets' },
 ];
 
 export default function BlogCategoryDropdown() {

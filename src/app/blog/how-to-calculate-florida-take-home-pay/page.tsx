@@ -83,7 +83,7 @@ export default function HowToCalculateTakeHomePage() {
         Annualize taxable wages, apply the standard deduction for your filing status, then use the
         progressive federal brackets. Divide the annual tax estimate by pay periods and add any extra
         withholding from your W-4. Our guide to{" "}
-        <Link href="/blog/federal-tax-brackets-2026" className="text-accent hover:underline">
+        <Link href="/blog/federal-tax-brackets" className="text-accent hover:underline">
           2026 federal tax brackets
         </Link>{" "}
         lists the current tiers.

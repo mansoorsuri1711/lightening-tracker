@@ -35,7 +35,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/blog/how-to-calculate-florida-take-home-pay" className="text-gray-300 hover:text-accent transition-colors">Calculate Take-Home Pay</Link></li>
               <li><Link href="/blog/fica-taxes-explained" className="text-gray-300 hover:text-accent transition-colors">FICA Taxes Explained</Link></li>
-              <li><Link href="/blog/federal-tax-brackets-2026" className="text-gray-300 hover:text-accent transition-colors">2026 Federal Tax Brackets</Link></li>
+              <li><Link href="/blog/federal-tax-brackets" className="text-gray-300 hover:text-accent transition-colors">2026 Federal Tax Brackets</Link></li>
               <li><Link href="/privacy" className="text-gray-300 hover:text-accent transition-colors">Privacy Policy</Link></li>
               <li><Link href="/disclaimer" className="text-gray-300 hover:text-accent transition-colors">Disclaimer</Link></li>
             </ul>

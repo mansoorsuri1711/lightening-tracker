@@ -9,7 +9,7 @@ import { BRAND_BRACKETS, OG_IMAGE, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConf
 const title = "2026 Federal Tax Brackets for Paycheck Planning";
 const description =
   "2026 federal income tax brackets and standard deductions for single, married, and head of household filers — geared to Florida paycheck estimates.";
-const slug = "federal-tax-brackets-2026";
+const slug = "federal-tax-brackets";
 const datePublished = "2026-10-04";
 
 export const metadata: Metadata = {

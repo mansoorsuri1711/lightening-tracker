@@ -35,7 +35,7 @@ const posts = [
     read: "8 min read",
   },
   {
-    href: "/blog/federal-tax-brackets-2026",
+    href: "/blog/federal-tax-brackets",
     title: "2026 Federal Tax Brackets for Paycheck Planning",
     excerpt:
       "Current federal rates, standard deductions, and how brackets feed into Florida paycheck estimates.",

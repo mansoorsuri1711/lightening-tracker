@@ -123,7 +123,7 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     ],
   },
   {
-    path: "/blog/federal-tax-brackets-2026",
+    path: "/blog/federal-tax-brackets",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.75,

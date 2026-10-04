@@ -16,7 +16,7 @@ Own Florida-specific take-home intent: $0 state income tax, federal + FICA clari
 | `/pay-frequency-guide` | Biweekly vs semi-monthly |
 | `/blog/how-to-calculate-florida-take-home-pay` | How-to SERP |
 | `/blog/fica-taxes-explained` | FICA SERP |
-| `/blog/federal-tax-brackets-2026` | Bracket SERP |
+| `/blog/federal-tax-brackets` | Bracket SERP (2026 in title) |
 
 ## Technical
 

@@ -55,7 +55,12 @@ const nextConfig = {
       },
       {
         source: '/blog/apy-vs-apr-for-cds',
-        destination: '/blog/federal-tax-brackets-2026',
+        destination: '/blog/federal-tax-brackets',
+        permanent: true,
+      },
+      {
+        source: '/blog/federal-tax-brackets-2026',
+        destination: '/blog/federal-tax-brackets',
         permanent: true,
       },
       {
