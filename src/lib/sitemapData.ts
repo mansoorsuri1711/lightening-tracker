@@ -23,57 +23,57 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     images: [
       {
         loc: imageLoc("/favicon-512x512.png"),
-        title: "CD Calculator logo",
-        caption: "Free CD Calculator brand mark for certificate of deposit projections",
+        title: "Florida Paycheck Calculator logo",
+        caption: "Brand mark for the free Florida take-home pay calculator",
       },
       {
-        loc: imageLoc("/hero-cd-calculator.webp"),
-        title: "CD Calculator hero illustration",
-        caption: "Homepage visual for estimating certificate of deposit earnings",
+        loc: imageLoc("/hero-florida-paycheck-calculator.webp"),
+        title: "Florida Paycheck Calculator hero",
+        caption: "Homepage visual for estimating Florida net pay",
       },
       {
-        loc: imageLoc("/cd-interest-growth.webp"),
-        title: "CD interest growth chart",
-        caption: "Visual of CD interest compounding to maturity",
+        loc: imageLoc("/florida-paycheck-breakdown.webp"),
+        title: "Florida paycheck breakdown",
+        caption: "Visual of taxes, FICA, and take-home on a Florida paycheck",
       },
     ],
   },
   {
-    path: "/how-cds-work",
+    path: "/how-florida-paychecks-work",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/how-a-cd-works.webp"),
-        title: "How a certificate of deposit works",
-        caption: "Step visual explaining CD deposits, fixed rates, interest, and maturity",
+        loc: imageLoc("/florida-paycheck-breakdown.webp"),
+        title: "How Florida paychecks work",
+        caption: "Guide visual for gross-to-net Florida paycheck steps",
       },
     ],
   },
   {
-    path: "/cd-ladder",
+    path: "/florida-no-state-income-tax",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/cd-ladder-strategy.webp"),
-        title: "CD ladder strategy illustration",
-        caption: "Illustration of staggered CD maturities in a ladder strategy",
+        loc: imageLoc("/florida-no-state-income-tax.webp"),
+        title: "Florida no state income tax",
+        caption: "Illustration that Florida personal state income tax is $0",
       },
     ],
   },
   {
-    path: "/cd-vs-savings-account",
+    path: "/pay-frequency-guide",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/cd-compounding-frequency.webp"),
-        title: "CD versus savings compounding",
-        caption: "Comparison visual for CD rates versus high-yield savings liquidity",
+        loc: imageLoc("/florida-pay-frequency-comparison.webp"),
+        title: "Florida pay frequency comparison",
+        caption: "Weekly, biweekly, semi-monthly, and monthly paycheck schedules",
       },
     ],
   },
@@ -85,8 +85,8 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     images: [
       {
         loc: imageLoc("/android-chrome-512x512.png"),
-        title: "About CD Calculator",
-        caption: "CD Calculator brand logo used on the About page",
+        title: "About Florida Paycheck Calculator",
+        caption: "Brand logo used on the About page",
       },
     ],
   },
@@ -97,42 +97,43 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.8,
   },
   {
-    path: "/blog/cd-early-withdrawal-penalty",
+    path: "/blog/how-to-calculate-florida-take-home-pay",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.75,
     images: [
       {
-        loc: imageLoc("/cd-early-withdrawal-penalty.webp"),
-        title: "CD early withdrawal penalty guide image",
-        caption: "Visual explaining certificate of deposit early withdrawal penalties",
+        loc: imageLoc("/how-to-calculate-florida-take-home-pay.webp"),
+        title: "How to calculate Florida take-home pay",
+        caption: "Step visual for estimating Florida net pay",
       },
     ],
   },
   {
-    path: "/blog/brokered-cds-explained",
-    lastMod: LASTMOD,
-    changeFreq: "monthly",
-    priority: 0.75,
-  },
-  {
-    path: "/blog/apy-vs-apr-for-cds",
+    path: "/blog/fica-taxes-explained",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.75,
     images: [
       {
-        loc: imageLoc("/cd-interest-formula.webp"),
-        title: "CD interest and APY formula visual",
-        caption: "Illustration supporting APY versus APR explanations for CDs",
+        loc: imageLoc("/fica-taxes-explained.webp"),
+        title: "FICA taxes explained",
+        caption: "Social Security and Medicare withholdings on a paycheck",
       },
     ],
   },
   {
-    path: "/blog/no-penalty-cds",
+    path: "/blog/federal-tax-brackets-2026",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.75,
+    images: [
+      {
+        loc: imageLoc("/federal-tax-brackets-2026.webp"),
+        title: "2026 federal tax brackets",
+        caption: "Federal income tax bracket reference for paycheck planning",
+      },
+    ],
   },
   {
     path: "/contact-us",

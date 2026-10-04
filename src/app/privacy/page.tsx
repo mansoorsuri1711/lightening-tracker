@@ -12,15 +12,15 @@ export default function PrivacyPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-3xl">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]} />
-      <h1 className="text-3xl font-bold text-white mb-6">Privacy Policy</h1>
+      <h1 className="font-display text-3xl font-bold text-white mb-6">Privacy Policy</h1>
       <div className="space-y-5 text-gray-300 leading-relaxed">
         <p>
           {SITE_NAME} ({SITE_DOMAIN}) respects your privacy. This policy explains what information we
-          collect and how we use it when you visit our website or use the CD calculator.
+          collect and how we use it when you visit our website or use the Florida paycheck calculator.
         </p>
         <h2 className="text-xl font-semibold text-accent">Information we collect</h2>
         <p>
-          Calculator inputs stay in your browser session for projections and are not stored on our
+          Calculator inputs stay in your browser session for estimates and are not stored on our
           servers as account data. If you email us or submit the contact form, we receive the details
           you choose to send (such as name, email, and message).
         </p>

@@ -4,14 +4,15 @@
 
 :root {
   --foreground-rgb: 244, 244, 245;
-  --background-start-rgb: 5, 7, 12;
-  --background-end-rgb: 5, 7, 12;
+  --background-start-rgb: 4, 24, 32;
+  --background-end-rgb: 4, 24, 32;
+  --accent: #2ec4b6;
+  --sunrise: #f08020;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
-  font-family: Helvetica, "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
 }
 
 img {
@@ -21,10 +22,6 @@ img {
 
 footer {
   contain: layout;
-}
-
-* {
-  font-family: inherit;
 }
 
 .download-btn {
@@ -48,4 +45,28 @@ footer {
   50% {
     transform: translateY(-2px);
   }
+}
+
+@keyframes float-glow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+    opacity: 0.75;
+  }
+}
+
+.site-atmosphere {
+  background-color: #041820;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(46, 196, 182, 0.16), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(240, 128, 32, 0.1), transparent 50%),
+    linear-gradient(180deg, #041820 0%, #062028 40%, #041820 100%);
+  background-attachment: fixed;
+}
+
+.hero-glow {
+  animation: float-glow 8s ease-in-out infinite;
 }

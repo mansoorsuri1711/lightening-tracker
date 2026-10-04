@@ -27,40 +27,40 @@ const nextConfig = {
         destination: '/about-us',
         permanent: true,
       },
-      // Legacy Roth IRA routes → CD Calculator equivalents
+      // Legacy CD Calculator routes → Florida Paycheck Calculator
       {
-        source: '/roth-ira-contribution-limits',
-        destination: '/how-cds-work',
+        source: '/how-cds-work',
+        destination: '/how-florida-paychecks-work',
         permanent: true,
       },
       {
-        source: '/roth-ira-eligibility',
-        destination: '/how-cds-work',
+        source: '/cd-ladder',
+        destination: '/florida-no-state-income-tax',
         permanent: true,
       },
       {
-        source: '/roth-vs-traditional-ira',
-        destination: '/cd-vs-savings-account',
+        source: '/cd-vs-savings-account',
+        destination: '/pay-frequency-guide',
         permanent: true,
       },
       {
-        source: '/blog/backdoor-roth-ira-explained',
-        destination: '/blog/brokered-cds-explained',
+        source: '/blog/cd-early-withdrawal-penalty',
+        destination: '/blog/how-to-calculate-florida-take-home-pay',
         permanent: true,
       },
       {
-        source: '/blog/roth-ira-5-year-rule',
-        destination: '/blog/cd-early-withdrawal-penalty',
+        source: '/blog/brokered-cds-explained',
+        destination: '/blog/fica-taxes-explained',
         permanent: true,
       },
       {
-        source: '/blog/how-to-open-a-roth-ira',
-        destination: '/how-cds-work',
+        source: '/blog/apy-vs-apr-for-cds',
+        destination: '/blog/federal-tax-brackets-2026',
         permanent: true,
       },
       {
-        source: '/blog/roth-ira-vs-401k',
-        destination: '/cd-vs-savings-account',
+        source: '/blog/no-penalty-cds',
+        destination: '/blog/how-to-calculate-florida-take-home-pay',
         permanent: true,
       },
       // Legacy asset paths
@@ -105,38 +105,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/roth-ira-tax-free-growth.webp',
-        destination: '/hero-cd-calculator.webp',
-        permanent: true,
-      },
-      {
-        source: '/roth-ira-compound-growth.webp',
-        destination: '/cd-interest-growth.webp',
-        permanent: true,
-      },
-      {
-        source: '/roth-ira-calculator-how-it-works.webp',
-        destination: '/how-a-cd-works.webp',
-        permanent: true,
-      },
-      {
-        source: '/roth-vs-traditional-ira.webp',
-        destination: '/cd-compounding-frequency.webp',
-        permanent: true,
-      },
-      {
-        source: '/cd-compound-growth.webp',
-        destination: '/cd-interest-growth.webp',
-        permanent: true,
-      },
-      {
-        source: '/how-cds-work.webp',
-        destination: '/how-a-cd-works.webp',
-        permanent: true,
-      },
-      {
-        source: '/cd-maturity-timeline.webp',
-        destination: '/cd-ladder-strategy.webp',
+        source: '/hero-cd-calculator.webp',
+        destination: '/hero-florida-paycheck-calculator.webp',
         permanent: true,
       },
       {

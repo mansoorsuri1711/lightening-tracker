@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Outfit, Sora } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
@@ -18,12 +19,25 @@ import {
   TWITTER_IMAGE,
 } from "@/lib/siteConfig";
 
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sora",
+  weight: ["500", "600", "700"],
+});
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#05070c",
+  themeColor: "#041820",
   viewportFit: "cover",
   interactiveWidget: "resizes-visual",
 };
@@ -31,19 +45,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Free CD Calculator — Estimate Certificate of Deposit Earnings",
+    default: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_TAGLINE,
   keywords: [
-    "CD calculator",
-    "certificate of deposit calculator",
-    "CD interest calculator",
-    "APY calculator",
-    "CD ladder",
-    "CD vs savings",
-    "certificate of deposit",
-    "maturity value calculator",
+    "Florida paycheck calculator",
+    "Florida take home pay calculator",
+    "FL paycheck calculator",
+    "Florida salary calculator",
+    "Florida hourly paycheck",
+    "no state income tax Florida",
+    "FICA calculator Florida",
+    "biweekly paycheck calculator Florida",
   ],
   authors: [{ name: `${SITE_NAME} Team` }],
   creator: SITE_NAME,
@@ -75,7 +89,7 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "Free CD Calculator — Estimate Certificate of Deposit Earnings",
+    title: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
     description: SITE_TAGLINE,
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
@@ -86,26 +100,26 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "CD Calculator — free certificate of deposit earnings tool",
+        alt: "Florida Paycheck Calculator — free take-home pay tool",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free CD Calculator — Estimate Certificate of Deposit Earnings",
+    title: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
     description: SITE_TAGLINE,
     images: [
       {
         url: TWITTER_IMAGE,
         width: 1200,
         height: 675,
-        alt: "CD Calculator — free certificate of deposit earnings tool",
+        alt: "Florida Paycheck Calculator — free take-home pay tool",
       },
     ],
   },
   applicationName: SITE_NAME,
   category: "Finance",
-  classification: "Banking Calculator",
+  classification: "Payroll Calculator",
 };
 
 export default function RootLayout({
@@ -114,7 +128,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${sora.variable}`}>
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -131,14 +145,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className="font-sans antialiased bg-primary text-zinc-100 min-h-screen flex flex-col"
-        style={{
-          backgroundColor: "#05070c",
-          backgroundImage:
-            "radial-gradient(circle at 15% 0%, rgba(45, 212, 191, 0.04) 0%, transparent 40%)",
-          backgroundAttachment: "fixed",
-          minHeight: "100vh",
-        }}
+        className="font-sans antialiased text-zinc-100 min-h-screen flex flex-col site-atmosphere"
         suppressHydrationWarning
       >
         <MobileMenuProvider>

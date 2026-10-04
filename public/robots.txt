@@ -63,4 +63,4 @@ User-agent: *
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://cdcalc.net/sitemap-index.xml
+Sitemap: https://floridapaycheckcalc.com/sitemap-index.xml

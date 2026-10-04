@@ -1,6 +1,6 @@
-# CD Calculator (cdcalc.net)
+# Florida Paycheck Calculator (floridapaycheckcalc.com)
 
-Free certificate of deposit calculator with APY/APR compounding options, after-tax interest estimates, accumulation charts, and maturity schedules.
+Free Florida take-home pay calculator with salary/hourly modes, federal tax estimates, FICA, pay frequency options, and Florida’s $0 state income tax.
 
 ## Stack
 
@@ -17,8 +17,8 @@ npm run dev
 
 ## Core pages
 
-- `/` — CD Calculator
-- `/how-cds-work` — CD basics
-- `/cd-ladder` — Ladder strategy
-- `/cd-vs-savings-account` — CD vs high-yield savings
-- `/blog/*` — SERP-driven CD guides
+- `/` — Florida Paycheck Calculator
+- `/how-florida-paychecks-work` — Gross to net walkthrough
+- `/florida-no-state-income-tax` — No personal state income tax
+- `/pay-frequency-guide` — Weekly through monthly schedules
+- `/blog/*` — SERP-driven take-home, FICA, and bracket guides

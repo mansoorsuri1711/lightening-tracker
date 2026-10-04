@@ -23,9 +23,9 @@ const navSections: NavSection[] = [
     title: 'MAIN',
     items: [
       { href: '/', label: 'Calculator' },
-      { href: '/how-cds-work', label: 'How CDs Work' },
-      { href: '/cd-ladder', label: 'CD Ladder' },
-      { href: '/cd-vs-savings-account', label: 'CD vs Savings' },
+      { href: '/how-florida-paychecks-work', label: 'How Paychecks Work' },
+      { href: '/florida-no-state-income-tax', label: 'No State Income Tax' },
+      { href: '/pay-frequency-guide', label: 'Pay Frequency' },
     ],
   },
   {
@@ -45,7 +45,7 @@ function MenuButton({ onClick, isOpen }: { onClick: () => void; isOpen?: boolean
     <button
       type="button"
       onClick={onClick}
-      className="relative z-[60] flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/5 lg:hidden"
+      className="relative z-[60] flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/5 xl:hidden"
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
       aria-expanded={!!isOpen}
       aria-controls="mobile-nav-panel"
@@ -102,7 +102,7 @@ export default function MobileNavigation() {
       ? createPortal(
           <div
             id="mobile-nav-panel"
-            className="fixed inset-0 z-[100] flex flex-col bg-[#05070c] lg:hidden"
+            className="fixed inset-0 z-[100] flex flex-col bg-[#041820] xl:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
@@ -181,14 +181,14 @@ export default function MobileNavigation() {
 
   if (!mounted) {
     return (
-      <div className="lg:hidden">
+      <div className="xl:hidden">
         <MenuButton onClick={() => {}} />
       </div>
     );
   }
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <MenuButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
       {panel}
     </div>

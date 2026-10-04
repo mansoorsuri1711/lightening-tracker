@@ -1,25 +1,22 @@
 'use client';
 
-import Link from 'next/link';
-
 const categories = [
-  { name: 'Early Withdrawal', href: '/blog/cd-early-withdrawal-penalty' },
-  { name: 'Brokered CDs', href: '/blog/brokered-cds-explained' },
-  { name: 'APY vs APR', href: '/blog/apy-vs-apr-for-cds' },
-  { name: 'No-Penalty CDs', href: '/blog/no-penalty-cds' },
+  { name: 'Take-Home Pay', href: '/blog/how-to-calculate-florida-take-home-pay' },
+  { name: 'FICA Taxes', href: '/blog/fica-taxes-explained' },
+  { name: 'Tax Brackets', href: '/blog/federal-tax-brackets-2026' },
 ];
 
 export default function BlogCategoryDropdown() {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-2">
       {categories.map((category) => (
-        <Link
+        <a
           key={category.href}
           href={category.href}
-          className="rounded-full border border-slate-600 px-3 py-1.5 text-sm text-gray-300 hover:border-accent hover:text-accent transition-colors"
+          className="rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-zinc-200 transition hover:border-accent hover:text-accent"
         >
           {category.name}
-        </Link>
+        </a>
       ))}
     </div>
   );

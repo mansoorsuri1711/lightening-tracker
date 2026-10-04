@@ -1,22 +1,25 @@
-# SEO Strategy — CD Calculator (cdcalc.net)
+# SEO Strategy — Florida Paycheck Calculator (floridapaycheckcalc.com)
 
-## Primary keyword
-CD calculator / certificate of deposit calculator
+Primary keyword: **Florida paycheck calculator**
 
-## Core IA
-| Route | Intent |
-|---|---|
-| `/` | Tool + commercial investigation |
-| `/how-cds-work` | Informational basics |
-| `/cd-ladder` | Strategy guide |
-| `/cd-vs-savings-account` | Comparison |
-| `/blog/cd-early-withdrawal-penalty` | Penalty research |
-| `/blog/brokered-cds-explained` | Product education |
-| `/blog/apy-vs-apr-for-cds` | Rate literacy |
-| `/blog/no-penalty-cds` | Flexible CD research |
+## Positioning
 
-## Differentiators
-- Working calculator first (APY/APR modes, tax estimate, schedules)
-- Multi-page IA instead of one skyscraper
-- FAQ + HowTo + WebApplication schema
-- Custom trust pages (About / Privacy / Disclaimer / Contact)
+Own Florida-specific take-home intent: $0 state income tax, federal + FICA clarity, salary/hourly modes, and pay-frequency education. Competitors (ADP, SmartAsset, PaycheckCity) rank with thin tools or payroll upsells — we differentiate with clear educational guides and an uncluttered calculator UX.
+
+## Core routes
+
+| Path | Intent |
+|------|--------|
+| `/` | Primary tool + homepage content |
+| `/how-florida-paychecks-work` | Educational hub |
+| `/florida-no-state-income-tax` | High-intent “does Florida have income tax” |
+| `/pay-frequency-guide` | Biweekly vs semi-monthly |
+| `/blog/how-to-calculate-florida-take-home-pay` | How-to SERP |
+| `/blog/fica-taxes-explained` | FICA SERP |
+| `/blog/federal-tax-brackets-2026` | Bracket SERP |
+
+## Technical
+
+- Canonical host: `https://floridapaycheckcalc.com`
+- Sitemap index + image sitemap + Content-Signal robots
+- WebApplication + AggregateRating, FAQ, HowTo, Article, Breadcrumb schema
