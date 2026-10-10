@@ -1,25 +1,26 @@
-# SEO Strategy — Florida Paycheck Calculator (floridapaycheckcalc.com)
+# SEO Strategy — bodyfatcalculator.io
 
-Primary keyword: **Florida paycheck calculator**
+Primary keyword: **body fat calculator** (also body fat percentage calculator).
 
-## Positioning
+## Core pages
 
-Own Florida-specific take-home intent: $0 state income tax, federal + FICA clarity, salary/hourly modes, and pay-frequency education. Competitors (ADP, SmartAsset, PaycheckCity) rank with thin tools or payroll upsells — we differentiate with clear educational guides and an uncluttered calculator UX.
+| URL | Intent |
+|-----|--------|
+| `/` | body fat calculator / percentage calculator |
+| `/us-navy-body-fat-calculator` | navy / us navy body fat calculator |
+| `/body-fat-percentage-men` | body fat percentage men |
+| `/body-fat-percentage-women` | body fat percentage women |
+| `/visceral-fat-calculator` | visceral fat calculator |
 
-## Core routes
+## Blogs (SERP-backed only)
 
-| Path | Intent |
-|------|--------|
-| `/` | Primary tool + homepage content |
-| `/how-florida-paychecks-work` | Educational hub |
-| `/florida-no-state-income-tax` | High-intent “does Florida have income tax” |
-| `/pay-frequency-guide` | Biweekly vs semi-monthly |
-| `/blog/how-to-calculate-florida-take-home-pay` | How-to SERP |
-| `/blog/fica-taxes-explained` | FICA SERP |
-| `/blog/federal-tax-brackets` | Bracket SERP (2026 in title) |
+1. `/blog/how-to-measure-body-fat` — how to measure body fat
+2. `/blog/how-to-calculate-body-fat-percentage` — how to calculate body fat percentage
+3. `/blog/ideal-body-fat-percentage` — ideal / healthy body fat percentage
 
-## Technical
+## Differentiators vs typical SERP winners
 
-- Canonical host: `https://floridapaycheckcalc.com`
-- Sitemap index + image sitemap + Content-Signal robots
-- WebApplication + AggregateRating, FAQ, HowTo, Article, Breadcrumb schema
+- Instant Navy + BMI dual estimate with imperial/metric toggle
+- Dedicated men/women + visceral tools (not one giant doorway page)
+- Custom legal/about pages, unique image alts, hand-maintained JSON-LD
+- Honest accuracy limits (not “lab-accurate” hype)

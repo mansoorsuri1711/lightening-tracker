@@ -1,10 +1,10 @@
-# Florida Paycheck Calculator (floridapaycheckcalc.com)
+# Body Fat Calculator
 
-Free Florida take-home pay calculator with salary/hourly modes, federal tax estimates, FICA, pay frequency options, and Florida’s $0 state income tax.
+Free body fat percentage calculator for [bodyfatcalculator.io](https://bodyfatcalculator.io) — U.S. Navy method, BMI estimate, men/women charts, and visceral fat risk screening.
 
 ## Stack
 
-- Next.js App Router + TypeScript
+- Next.js (App Router) + TypeScript
 - Tailwind CSS
 - Static SEO routes: `/sitemap-index.xml`, `/index.xml`, `/image-sitemap.xml`, `/robots.txt`
 
@@ -15,10 +15,9 @@ npm install
 npm run dev
 ```
 
-## Core pages
+## Build
 
-- `/` — Florida Paycheck Calculator
-- `/how-florida-paychecks-work` — Gross to net walkthrough
-- `/florida-no-state-income-tax` — No personal state income tax
-- `/pay-frequency-guide` — Weekly through monthly schedules
-- `/blog/*` — SERP-driven take-home, FICA, and bracket guides
+```bash
+npm run build
+npm start
+```

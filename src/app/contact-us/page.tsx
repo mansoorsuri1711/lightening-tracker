@@ -4,13 +4,13 @@ import ContactForm from "@/components/ContactForm";
 import { CONTACT_EMAIL, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Contact Florida Paycheck Calculator",
+  title: "Contact Body Fat Calculator",
   description:
-    "Contact the Florida Paycheck Calculator team with feedback, correction requests, or partnership questions.",
+    "Contact the Body Fat Calculator team with feedback, correction requests, or partnership questions.",
   alternates: { canonical: `${SITE_ORIGIN}/contact-us` },
   openGraph: {
-    title: "Contact Florida Paycheck Calculator",
-    description: "Reach the FL Paycheck Calc team by form or email.",
+    title: "Contact Body Fat Calculator",
+    description: "Reach the Body Fat Calc team by form or email.",
     url: `${SITE_ORIGIN}/contact-us`,
     siteName: SITE_NAME,
     type: "website",
@@ -19,17 +19,17 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-10 max-w-3xl">
+    <div className="container mx-auto max-w-3xl px-4 py-10">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact Us" }]} />
-      <h1 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">Contact us</h1>
-      <p className="text-gray-300 leading-relaxed mb-6">
+      <h1 className="mb-4 font-display text-3xl font-bold text-black md:text-4xl">Contact us</h1>
+      <p className="mb-6 leading-relaxed text-black">
         Send feedback about the calculator, request a content correction, or ask a general question.
-        We typically reply within 1–2 business days. For employer payroll or personal tax advice,
-        contact your payroll provider or a licensed professional — we provide educational tools only.
+        We typically reply within 1–2 business days. For medical or clinical body-composition advice,
+        consult a qualified professional — we provide educational tools only.
       </p>
-      <p className="text-gray-300 mb-8">
+      <p className="mb-8 text-black">
         Email:{" "}
-        <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">
+        <a href={`mailto:${CONTACT_EMAIL}`} className="text-black hover:underline">
           {CONTACT_EMAIL}
         </a>
       </p>

@@ -4,13 +4,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Florida Paycheck Blog — Take-Home Pay, FICA & Tax Brackets",
+  title: "Body Fat Blog — Measure, Calculate & Ideal Ranges",
   description:
-    "SERP-focused Florida paycheck articles on take-home pay math, FICA taxes, and 2026 federal tax brackets.",
+    "SERP-focused body fat articles on measuring body fat, calculating percentage, and ideal ranges for men and women.",
   alternates: { canonical: `${SITE_ORIGIN}/blog` },
   openGraph: {
-    title: "Florida Paycheck Blog — Take-Home Pay, FICA & Tax Brackets",
-    description: "Educational paycheck guides from Florida Paycheck Calculator.",
+    title: "Body Fat Blog — Measure, Calculate & Ideal Ranges",
+    description: "Educational body fat guides from Body Fat Calculator.",
     url: `${SITE_ORIGIN}/blog`,
     siteName: SITE_NAME,
     type: "website",
@@ -19,26 +19,26 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    href: "/blog/how-to-calculate-florida-take-home-pay",
-    title: "How to Calculate Florida Take-Home Pay",
+    href: "/blog/how-to-measure-body-fat",
+    title: "How to Measure Body Fat at Home",
     excerpt:
-      "A practical checklist from gross wages to net deposit, including Florida’s $0 state income tax step.",
+      "Tape, calipers, smart scales, and lab methods — what each measures and when to use them.",
+    date: "October 2026",
+    read: "10 min read",
+  },
+  {
+    href: "/blog/how-to-calculate-body-fat-percentage",
+    title: "How to Calculate Body Fat Percentage",
+    excerpt:
+      "Step-by-step Navy formulas, BMI estimate math, and how to turn percentage into fat mass.",
     date: "October 2026",
     read: "9 min read",
   },
   {
-    href: "/blog/fica-taxes-explained",
-    title: "FICA Taxes Explained for Florida Paychecks",
+    href: "/blog/ideal-body-fat-percentage",
+    title: "Ideal Body Fat Percentage by Sex and Age",
     excerpt:
-      "Social Security, Medicare, the 2026 wage base, and why FICA still appears when Florida has no state income tax.",
-    date: "October 2026",
-    read: "8 min read",
-  },
-  {
-    href: "/blog/federal-tax-brackets",
-    title: "2026 Federal Tax Brackets for Paycheck Planning",
-    excerpt:
-      "Current federal rates, standard deductions, and how brackets feed into Florida paycheck estimates.",
+      "Healthy and ideal ranges, why charts differ for men and women, and how to set realistic targets.",
     date: "October 2026",
     read: "8 min read",
   },
@@ -46,29 +46,29 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div className="container mx-auto px-4 py-10 max-w-5xl">
+    <div className="container mx-auto max-w-5xl px-4 py-10">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
-      <h1 className="font-display text-3xl md:text-4xl font-bold text-accent mb-3">
-        Florida Paycheck Blog
+      <h1 className="mb-3 font-display text-3xl font-bold text-black md:text-4xl">
+        Body Fat Blog
       </h1>
-      <p className="text-gray-300 text-lg mb-10">
-        Only high-intent topics people search alongside Florida paycheck calculators — take-home pay
-        math, FICA, and federal brackets.
+      <p className="mb-10 text-lg text-black">
+        Only high-intent topics people search alongside body fat calculators — measuring, calculating,
+        and ideal percentage ranges.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {posts.map((post) => (
           <article
             key={post.href}
-            className="rounded-2xl border border-white/10 bg-secondary p-6 hover:border-accent/50 transition-colors"
+            className="rounded-2xl border border-black/15 bg-white p-6 transition-colors hover:border-black/40"
           >
-            <h2 className="font-display text-xl font-bold text-white mb-3">{post.title}</h2>
-            <p className="text-gray-300 mb-4">{post.excerpt}</p>
-            <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+            <h2 className="mb-3 font-display text-xl font-bold text-black">{post.title}</h2>
+            <p className="mb-4 text-black">{post.excerpt}</p>
+            <div className="mb-4 flex items-center gap-2 text-sm text-black">
               <span>{post.date}</span>
               <span>•</span>
               <span>{post.read}</span>
             </div>
-            <Link href={post.href} className="text-accent hover:underline font-semibold">
+            <Link href={post.href} className="font-semibold text-black hover:underline">
               Read more →
             </Link>
           </article>

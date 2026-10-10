@@ -12,10 +12,10 @@ module.exports = {
         display: ['var(--font-sora)', 'var(--font-outfit)', 'sans-serif'],
       },
       colors: {
-        primary: '#041820',
-        secondary: '#0a1c24',
-        accent: '#2EC4B6',
-        sunrise: '#F08020',
+        primary: '#ffffff',
+        secondary: '#ffffff',
+        accent: '#000000',
+        sunrise: '#000000',
       },
       keyframes: {
         'fade-up': {

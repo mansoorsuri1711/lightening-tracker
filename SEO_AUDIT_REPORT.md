@@ -1,7 +1,7 @@
-# SEO Audit Notes — Florida Paycheck Calculator
+# SEO Audit — Body Fat Calculator
 
-- Canonical host: `https://floridapaycheckcalc.com`
-- Brand: Florida Paycheck Calculator
-- Robots: Content-Signal + AI bot blocks; sitemap points to floridapaycheckcalc.com
-- Blogs: only SERP-validated take-home, FICA, and 2026 bracket topics (CD blogs removed)
-- Images: Florida-specific WebP assets in `/public`
+- Domain: bodyfatcalculator.io
+- Brand: Body Fat Calculator
+- Last rebrand pass: 2026-10-11
+- Sitemap index: `/sitemap-index.xml`
+- Primary schema: WebApplication + AggregateRating, FAQ, HowTo, Article, BreadcrumbList

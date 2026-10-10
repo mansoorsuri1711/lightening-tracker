@@ -63,4 +63,4 @@ User-agent: *
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://floridapaycheckcalc.com/sitemap-index.xml
+Sitemap: https://bodyfatcalculator.io/sitemap-index.xml

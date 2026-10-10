@@ -15,7 +15,7 @@ export default function GameCard({ title, description, imageSrc, link }: GameCar
   return (
     <div className="relative group">
       {/* Card */}
-      <div className="bg-secondary rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 group-hover:scale-[1.02] border border-gray-800">
+      <div className="bg-white rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 group-hover:scale-[1.02] border border-gray-800">
         {/* Card Top */}
         <div className="relative h-48 overflow-hidden">
           <Image 
@@ -28,7 +28,7 @@ export default function GameCard({ title, description, imageSrc, link }: GameCar
           <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-60"></div>
           
           {/* Card Suit Icons in Corners */}
-          <div className="absolute top-2 left-2 text-accent text-xl">♠</div>
+          <div className="absolute top-2 left-2 text-black text-xl">♠</div>
           <div className="absolute top-2 right-2 text-card-red text-xl">♥</div>
           <div className="absolute bottom-2 left-2 text-card-blue text-xl">♣</div>
           <div className="absolute bottom-2 right-2 text-card-red text-xl">♦</div>
@@ -36,10 +36,10 @@ export default function GameCard({ title, description, imageSrc, link }: GameCar
         
         {/* Card Content */}
         <div className="p-5">
-          <h3 className="text-xl font-bold text-accent mb-2">{title}</h3>
-          <p className="text-gray-300 text-sm mb-4">{description}</p>
+          <h3 className="text-xl font-bold text-black mb-2">{title}</h3>
+          <p className="text-black text-sm mb-4">{description}</p>
           <Link href={link}>
-            <div className="inline-block bg-primary hover:bg-secondary border border-accent text-accent font-medium py-2 px-4 rounded-lg transition-colors">
+            <div className="inline-block bg-white hover:bg-white border border-black text-black font-medium py-2 px-4 rounded-lg transition-colors">
               Play Now
             </div>
           </Link>

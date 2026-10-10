@@ -27,96 +27,97 @@ const nextConfig = {
         destination: '/about-us',
         permanent: true,
       },
-      // Legacy CD Calculator routes → Florida Paycheck Calculator
+      // Legacy Florida paycheck routes → Body Fat Calculator
       {
-        source: '/how-cds-work',
-        destination: '/how-florida-paychecks-work',
+        source: '/how-florida-paychecks-work',
+        destination: '/us-navy-body-fat-calculator',
         permanent: true,
       },
       {
-        source: '/cd-ladder',
-        destination: '/florida-no-state-income-tax',
+        source: '/florida-no-state-income-tax',
+        destination: '/body-fat-percentage-men',
         permanent: true,
       },
       {
-        source: '/cd-vs-savings-account',
-        destination: '/pay-frequency-guide',
+        source: '/pay-frequency-guide',
+        destination: '/body-fat-percentage-women',
         permanent: true,
       },
       {
-        source: '/blog/cd-early-withdrawal-penalty',
-        destination: '/blog/how-to-calculate-florida-take-home-pay',
+        source: '/blog/how-to-calculate-florida-take-home-pay',
+        destination: '/blog/how-to-calculate-body-fat-percentage',
         permanent: true,
       },
       {
-        source: '/blog/brokered-cds-explained',
-        destination: '/blog/fica-taxes-explained',
+        source: '/blog/fica-taxes-explained',
+        destination: '/blog/how-to-measure-body-fat',
         permanent: true,
       },
       {
-        source: '/blog/apy-vs-apr-for-cds',
-        destination: '/blog/federal-tax-brackets',
+        source: '/blog/federal-tax-brackets',
+        destination: '/blog/ideal-body-fat-percentage',
         permanent: true,
       },
       {
         source: '/blog/federal-tax-brackets-2026',
-        destination: '/blog/federal-tax-brackets',
+        destination: '/blog/ideal-body-fat-percentage',
+        permanent: true,
+      },
+      // Older CD calculator leftovers
+      {
+        source: '/how-cds-work',
+        destination: '/us-navy-body-fat-calculator',
         permanent: true,
       },
       {
-        source: '/blog/no-penalty-cds',
-        destination: '/blog/how-to-calculate-florida-take-home-pay',
+        source: '/cd-ladder',
+        destination: '/body-fat-percentage-men',
+        permanent: true,
+      },
+      {
+        source: '/cd-vs-savings-account',
+        destination: '/body-fat-percentage-women',
         permanent: true,
       },
       // Legacy asset paths
       {
         source: '/og-image.webp',
-        destination: '/feature/og-image-1200x630.webp',
+        destination: '/feature/og-image-1200x630.png',
         permanent: true,
       },
       {
         source: '/og-image.png',
-        destination: '/feature/og-image-1200x630.webp',
-        permanent: true,
-      },
-      {
-        source: '/og-image-square.webp',
-        destination: '/feature/og-square-1200x1200.webp',
+        destination: '/feature/og-image-1200x630.png',
         permanent: true,
       },
       {
         source: '/twitter-card.webp',
-        destination: '/feature/twitter-card-1200x675.webp',
+        destination: '/feature/twitter-card-1200x675.png',
         permanent: true,
       },
       {
         source: '/twitter-card.png',
-        destination: '/feature/twitter-card-1200x675.webp',
+        destination: '/feature/twitter-card-1200x675.png',
         permanent: true,
       },
       {
-        source: '/feature/og-image.png',
-        destination: '/feature/og-image-1200x630.webp',
+        source: '/feature/og-image-1200x630.webp',
+        destination: '/feature/og-image-1200x630.png',
         permanent: true,
       },
       {
-        source: '/feature/og-image-square.png',
-        destination: '/feature/og-square-1200x1200.webp',
+        source: '/feature/twitter-card-1200x675.webp',
+        destination: '/feature/twitter-card-1200x675.png',
         permanent: true,
       },
       {
-        source: '/feature/twitter-card.png',
-        destination: '/feature/twitter-card-1200x675.webp',
-        permanent: true,
-      },
-      {
-        source: '/hero-cd-calculator.webp',
-        destination: '/hero-florida-paycheck-calculator.webp',
+        source: '/hero-florida-paycheck-calculator.webp',
+        destination: '/hero-desktop-1920x1080.png',
         permanent: true,
       },
       {
         source: '/logo-icon-512.png',
-        destination: '/favicon-512x512.png',
+        destination: '/android-chrome-512x512.png',
         permanent: true,
       },
       {
@@ -126,12 +127,17 @@ const nextConfig = {
       },
       {
         source: '/logo-512.png',
-        destination: '/favicon-512x512.png',
+        destination: '/android-chrome-512x512.png',
         permanent: true,
       },
       {
-        source: '/logo-horizontal-white.png',
-        destination: '/maskable-icon-512x512.png',
+        source: '/favicon-512x512.png',
+        destination: '/android-chrome-512x512.png',
+        permanent: true,
+      },
+      {
+        source: '/maskable-icon-512x512.png',
+        destination: '/android-chrome-512x512.png',
         permanent: true,
       },
     ];

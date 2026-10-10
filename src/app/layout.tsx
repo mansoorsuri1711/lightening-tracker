@@ -37,7 +37,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#041820",
+  themeColor: "#ffffff",
   viewportFit: "cover",
   interactiveWidget: "resizes-visual",
 };
@@ -45,19 +45,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
+    default: "Body Fat Calculator — Free Body Fat Percentage Tool",
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_TAGLINE,
   keywords: [
-    "Florida paycheck calculator",
-    "Florida take home pay calculator",
-    "FL paycheck calculator",
-    "Florida salary calculator",
-    "Florida hourly paycheck",
-    "no state income tax Florida",
-    "FICA calculator Florida",
-    "biweekly paycheck calculator Florida",
+    "body fat calculator",
+    "body fat percentage calculator",
+    "body fat percentage",
+    "navy body fat calculator",
+    "us navy body fat calculator",
+    "fat percentage calculator",
+    "bfp calculator",
+    "how to calculate body fat percentage",
   ],
   authors: [{ name: `${SITE_NAME} Team` }],
   creator: SITE_NAME,
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
       { url: `/favicon-32x32.png?v=${ASSET_VERSION}`, type: "image/png", sizes: "32x32" },
       { url: `/favicon-16x16.png?v=${ASSET_VERSION}`, type: "image/png", sizes: "16x16" },
       { url: `/android-chrome-192x192.png?v=${ASSET_VERSION}`, type: "image/png", sizes: "192x192" },
-      { url: `/favicon-512x512.png?v=${ASSET_VERSION}`, type: "image/png", sizes: "512x512" },
+      { url: `/android-chrome-512x512.png?v=${ASSET_VERSION}`, type: "image/png", sizes: "512x512" },
     ],
     apple: [{ url: `/apple-touch-icon.png?v=${ASSET_VERSION}`, sizes: "180x180" }],
     shortcut: [{ url: `/favicon.ico?v=${ASSET_VERSION}`, type: "image/x-icon" }],
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
+    title: "Body Fat Calculator — Free Body Fat Percentage Tool",
     description: SITE_TAGLINE,
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
@@ -100,26 +100,26 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Florida Paycheck Calculator — free take-home pay tool",
+        alt: "Body Fat Calculator — free body fat percentage tool",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
+    title: "Body Fat Calculator — Free Body Fat Percentage Tool",
     description: SITE_TAGLINE,
     images: [
       {
         url: TWITTER_IMAGE,
         width: 1200,
         height: 675,
-        alt: "Florida Paycheck Calculator — free take-home pay tool",
+        alt: "Body Fat Calculator — free body fat percentage tool",
       },
     ],
   },
   applicationName: SITE_NAME,
-  category: "Finance",
-  classification: "Payroll Calculator",
+  category: "Health",
+  classification: "Body Fat Calculator",
 };
 
 export default function RootLayout({
@@ -131,7 +131,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${sora.variable}`}>
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="icon" href={`/favicon.ico?v=${ASSET_VERSION}`} type="image/x-icon" sizes="48x48" />
         <link rel="icon" href={`/favicon.svg?v=${ASSET_VERSION}`} type="image/svg+xml" />
         <link rel="icon" href={`/favicon-32x32.png?v=${ASSET_VERSION}`} type="image/png" sizes="32x32" />
@@ -145,7 +145,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className="font-sans antialiased text-zinc-100 min-h-screen flex flex-col site-atmosphere"
+        className="font-sans antialiased text-black min-h-screen flex flex-col bg-white site-atmosphere"
         suppressHydrationWarning
       >
         <MobileMenuProvider>

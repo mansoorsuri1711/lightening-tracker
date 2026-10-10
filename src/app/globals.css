@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 244, 244, 245;
-  --background-start-rgb: 4, 24, 32;
-  --background-end-rgb: 4, 24, 32;
-  --accent: #2ec4b6;
-  --sunrise: #f08020;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  --accent: #000000;
+  --sunrise: #000000;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  background: #ffffff;
 }
 
 img {
@@ -59,14 +59,14 @@ footer {
 }
 
 .site-atmosphere {
-  background-color: #041820;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(46, 196, 182, 0.16), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(240, 128, 32, 0.1), transparent 50%),
-    linear-gradient(180deg, #041820 0%, #062028 40%, #041820 100%);
-  background-attachment: fixed;
+  background-color: #ffffff;
+  background-image: none;
 }
 
 .hero-glow {
   animation: float-glow 8s ease-in-out infinite;
+}
+
+a {
+  color: inherit;
 }

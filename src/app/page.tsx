@@ -1,18 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import PaycheckCalculator from "@/components/PaycheckCalculator";
+import BodyFatCalculator from "@/components/BodyFatCalculator";
 import FaqSection from "@/components/FaqSection";
 import CtaButton from "@/components/CtaButton";
 import { WEB_APPLICATION_JSON_LD } from "@/lib/appFacts";
 import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
 import {
-  BRAND_BREAKDOWN,
+  BRAND_CHART,
   BRAND_HERO,
-  BRAND_HOW_TO,
   BRAND_LOGO,
-  BRAND_NO_STATE_TAX,
-  BRAND_PAY_FREQUENCY,
   OG_IMAGE,
   SITE_NAME,
   SITE_ORIGIN,
@@ -21,16 +18,16 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    default: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
+    default: "Body Fat Calculator — Free Body Fat Percentage Tool",
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Free Florida paycheck calculator for salary or hourly wages. Estimate take-home pay after federal tax and FICA with Florida’s $0 state income tax.",
+    "Free body fat calculator using the U.S. Navy method. Estimate body fat percentage for men and women with metric or imperial units, plus a BMI comparison.",
   alternates: { canonical: SITE_ORIGIN },
   openGraph: {
-    title: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
+    title: "Body Fat Calculator — Free Body Fat Percentage Tool",
     description:
-      "Estimate Florida net pay per paycheck with federal tax, FICA, deductions, and $0 state income tax.",
+      "Estimate body fat percentage with the U.S. Navy circumference method and BMI formula. Instant results, no signup.",
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
     type: "website",
@@ -39,7 +36,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Florida Paycheck Calculator homepage tool preview",
+        alt: "Body Fat Calculator homepage tool preview",
       },
     ],
   },
@@ -47,29 +44,29 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "Does Florida have state income tax on paychecks?",
+    question: "How does this body fat calculator work?",
     answer:
-      "No. Florida does not levy a personal state income tax, so this calculator shows $0 Florida income tax withholding. You still pay federal income tax and FICA (Social Security and Medicare).",
+      "Enter sex, age, weight, height, neck, waist, and (for women) hip. The tool applies the U.S. Navy circumference formulas and also shows a BMI-based body fat estimate for comparison.",
   },
   {
-    question: "How does this Florida paycheck calculator work?",
+    question: "Is the U.S. Navy method accurate?",
     answer:
-      "Enter salary or hourly wages, pay frequency, filing status, and deductions. The tool annualizes your gross pay, estimates 2026 federal income tax with the standard deduction, applies SSA FICA rates, and divides everything back into a per-paycheck net amount.",
+      "The Navy method is a practical tape-measure estimate widely used for screening. It is less precise than DEXA or hydrostatic weighing, but it is useful for tracking trends at home when you measure consistently.",
   },
   {
-    question: "What is FICA on a Florida paycheck?",
+    question: "What is a healthy body fat percentage?",
     answer:
-      "FICA is Social Security (6.2% employee share up to the annual wage base) plus Medicare (1.45%, with Additional Medicare Tax above high-income thresholds). Florida residency does not change FICA rates.",
+      "Healthy ranges differ by sex and age. Broad ACE-style categories place many adult men around 18–24% as average and many adult women around 25–31% as average. See our men and women chart pages for category bands.",
   },
   {
-    question: "Should I choose biweekly or semi-monthly?",
+    question: "Should I use metric or imperial units?",
     answer:
-      "Biweekly is 26 checks per year; semi-monthly is 24. The same annual salary produces different per-check amounts. Use our pay frequency guide if you are comparing offers that quote different schedules.",
+      "Either works. Switch units at the top of the calculator — helpful if you are in the United States (inches/pounds) or prefer centimeters and kilograms.",
   },
   {
-    question: "Is this the same as my employer’s payroll system?",
+    question: "Why do Navy and BMI estimates differ?",
     answer:
-      "No. Employers use IRS Publication 15-T tables, exact W-4 entries, benefits elections, and local payroll rules. This site is an educational estimate so you can plan take-home pay before tax filing season.",
+      "The Navy method uses circumference measurements that better reflect fat distribution. BMI body-fat formulas use only height, weight, age, and sex, so muscular or apple-shaped bodies can diverge between the two.",
   },
 ];
 
@@ -83,7 +80,7 @@ export default function Home() {
         url: `${SITE_ORIGIN}/`,
         name: SITE_NAME,
         description:
-          "Free Florida paycheck calculator with federal tax, FICA, and $0 state income tax.",
+          "Free body fat percentage calculator with U.S. Navy method and BMI estimate.",
         inLanguage: "en-US",
         publisher: { "@id": `${SITE_ORIGIN}/#organization` },
       },
@@ -91,7 +88,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${SITE_ORIGIN}/#webpage`,
         url: `${SITE_ORIGIN}/`,
-        name: "Florida Paycheck Calculator — Free Take-Home Pay Estimator",
+        name: "Body Fat Calculator — Free Body Fat Percentage Tool",
         isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
         primaryImageOfPage: {
           "@type": "ImageObject",
@@ -120,29 +117,29 @@ export default function Home() {
       },
       {
         "@type": "HowTo",
-        name: "How to estimate Florida take-home pay",
+        name: "How to estimate body fat percentage",
         description:
-          "Estimate your Florida net paycheck after federal tax and FICA in a few steps.",
+          "Estimate body fat percentage with tape measurements using the U.S. Navy method.",
         step: [
           {
             "@type": "HowToStep",
-            name: "Enter wages",
-            text: "Add your annual salary or hourly rate and hours per week.",
+            name: "Choose units and sex",
+            text: "Select imperial or metric units and male or female formulas.",
           },
           {
             "@type": "HowToStep",
-            name: "Choose pay frequency",
-            text: "Select weekly, biweekly, semi-monthly, or monthly.",
+            name: "Enter body stats",
+            text: "Add age, weight, and height.",
           },
           {
             "@type": "HowToStep",
-            name: "Set filing status and deductions",
-            text: "Pick a federal filing status and enter pre-tax or post-tax deductions.",
+            name: "Add tape measurements",
+            text: "Measure neck and waist; women also enter hip circumference.",
           },
           {
             "@type": "HowToStep",
-            name: "Review take-home pay",
-            text: "Read net pay, federal tax, FICA, and Florida’s $0 state income tax.",
+            name: "Review results",
+            text: "Read body fat percentage, category, fat mass, lean mass, and BMI comparison.",
           },
         ],
       },
@@ -159,104 +156,87 @@ export default function Home() {
       <div className="container mx-auto px-3 pt-4 pb-16 sm:px-4 sm:pt-5 md:pt-6 lg:max-w-7xl">
         <section className="mb-10 md:mb-14">
           <div className="mb-4 max-w-3xl sm:mb-5">
-            <h1 className="font-display text-[1.65rem] font-bold leading-tight text-white sm:text-4xl md:text-5xl">
-              Florida Paycheck Calculator
+            <h1 className="font-display text-[1.65rem] font-bold leading-tight text-black sm:text-4xl md:text-5xl">
+              Know your body fat percentage in minutes
             </h1>
-            <p className="mt-2 text-sm leading-snug text-gray-300 sm:mt-3 sm:text-base md:text-lg">
-              Estimate take-home pay for Florida salary or hourly jobs after federal income tax and
-              FICA — with Florida&apos;s $0 state income tax already reflected.
+            <p className="mt-2 text-sm leading-snug text-black sm:mt-3 sm:text-base md:text-lg">
+              Free body fat percentage calculator for men and women. Uses the U.S. Navy method with a
+              BMI estimate so you can track composition — not just scale weight.
             </p>
-            <p className="mt-1.5 hidden text-sm text-gray-400 sm:flex sm:items-center sm:gap-1.5 sm:flex-wrap">
+            <p className="mt-1.5 hidden text-sm font-medium text-amber-600 sm:flex sm:flex-wrap sm:items-center sm:gap-1.5">
               <span>{SITE_RATING.ratingValue}</span>
-              <span className="tracking-tight text-amber-400" aria-hidden="true">
+              <span className="tracking-tight text-amber-500" aria-hidden="true">
                 ★★★★☆
               </span>
-              <span>
-                ({Number(SITE_RATING.ratingCount).toLocaleString()}) · Free · Web · Finance
+              <span className="text-amber-700">
+                ({Number(SITE_RATING.ratingCount).toLocaleString()}) · Free · Web · Health
               </span>
             </p>
           </div>
 
-          <PaycheckCalculator />
+          <BodyFatCalculator />
         </section>
 
         <article className="max-w-4xl">
-          <section id="what-is-florida-paycheck-calculator" className="mb-14">
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-accent mb-4">
-              What a Florida paycheck calculator shows you?
+          <section id="what-is-body-fat-calculator" className="mb-14">
+            <h2 className="mb-4 font-display text-2xl font-bold text-black md:text-3xl">
+              What a body fat calculator shows you
             </h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              A Florida paycheck calculator converts gross wages into an estimated net deposit. Because
-              Florida has no personal state income tax, the main variables are federal withholding,
-              Social Security, Medicare, benefits deductions, and how often you get paid.
+            <p className="mb-4 leading-relaxed text-black">
+              A body fat calculator estimates the share of your weight that is fat mass versus lean
+              tissue. Scale weight alone cannot tell you whether a change came from muscle, water, or
+              fat — body fat percentage fills that gap for training and health tracking.
             </p>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              Unlike generic national tools buried in payroll marketing pages, this calculator stays
-              focused on Florida workers: salary and hourly modes, clear FICA lines, and an explicit
-              $0 Florida state tax row so the savings versus high-tax states is obvious.
+            <p className="mb-4 leading-relaxed text-black">
+              This tool focuses on the U.S. Navy circumference method because it needs only a tape
+              measure, works with imperial or metric units, and is the formula people search for when
+              they want a practical at-home estimate.
             </p>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Use it when comparing job offers, updating a W-4, planning a raise, or checking how
-              401(k) contributions change take-home pay.
+            <p className="mb-6 leading-relaxed text-black">
+              Prefer a Navy-only deep dive? Open the{" "}
+              <Link href="/us-navy-body-fat-calculator" className="text-black hover:underline">
+                US Navy body fat calculator guide
+              </Link>
+              .
             </p>
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-secondary">
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/15 bg-white">
               <Image
                 src={BRAND_HERO}
-                alt="Florida paycheck calculator showing take-home pay estimate with tax breakdown"
+                alt="Body fat calculator hero showing fitness composition tracking"
                 fill
                 sizes="(max-width: 768px) 100vw, 800px"
                 className="object-cover"
-              />
-            </div>
-          </section>
-
-          <section id="paycheck-breakdown" className="mb-14">
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-accent mb-4">
-              Florida paycheck breakdown
-            </h2>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Gross pay is split into federal income tax, FICA, optional deductions, and take-home.
-              Local income taxes are uncommon for Florida residents, so most people see federal and
-              payroll taxes as the primary withholdings.
-            </p>
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-secondary">
-              <Image
-                src={BRAND_BREAKDOWN}
-                alt="Visual breakdown of a Florida paycheck into taxes, FICA, and take-home pay"
-                fill
-                sizes="(max-width: 768px) 100vw, 800px"
-                className="object-cover"
+                priority
               />
             </div>
           </section>
 
           <section id="how-to-use" className="mb-14">
-            <h2 className="mb-12 font-display text-2xl font-bold text-accent md:mb-16 md:text-3xl">
-              How to use this Florida paycheck calculator?
+            <h2 className="mb-12 font-display text-2xl font-bold text-black md:mb-16 md:text-3xl">
+              How to use this body fat percentage calculator
             </h2>
-
             <ol className="relative">
               {(
                 [
                   {
                     step: "01",
-                    title: "Enter salary or hourly wages",
-                    body: "Use annual salary for salaried roles, or hourly rate plus hours per week for hourly jobs.",
+                    title: "Pick units and sex",
+                    body: "Imperial for inches and pounds, metric for centimeters and kilograms. Sex selects the correct Navy formula.",
                   },
                   {
                     step: "02",
-                    title: "Pick your pay frequency",
-                    body: "Weekly, biweekly, semi-monthly, and monthly produce different per-check amounts from the same annual pay.",
+                    title: "Enter age, weight, and height",
+                    body: "Age informs the ideal target comparison. Height and weight also drive the BMI body-fat estimate.",
                   },
                   {
                     step: "03",
-                    title: "Add filing status and deductions",
-                    body: "Filing status shapes the federal estimate. Pre-tax deductions lower taxable wages before FICA and federal tax.",
+                    title: "Measure neck, waist, and hip",
+                    body: "Men need neck and waist. Women also enter hip. Measure to the nearest 0.25 in (0.5 cm) for better consistency.",
                   },
                   {
                     step: "04",
-                    title: "Review net pay and tax lines",
-                    body: "Compare take-home, federal tax, Social Security, Medicare, and Florida’s $0 state income tax.",
+                    title: "Read percentage and category",
+                    body: "See Navy body fat %, category, fat mass, lean mass, ideal target, and the BMI method comparison.",
                   },
                 ] as const
               ).map((item, index, list) => (
@@ -268,18 +248,18 @@ export default function Home() {
                     {index < list.length - 1 ? (
                       <span
                         aria-hidden="true"
-                        className="absolute left-1/2 top-10 bottom-[-3rem] w-px -translate-x-1/2 bg-accent/45 md:top-11 md:bottom-[-4rem]"
+                        className="absolute bottom-[-3rem] left-1/2 top-10 w-px -translate-x-1/2 bg-black/20 md:bottom-[-4rem] md:top-11"
                       />
                     ) : null}
-                    <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-accent bg-primary text-accent font-display text-sm font-bold md:h-11 md:w-11">
+                    <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-black bg-white font-display text-sm font-bold text-black md:h-11 md:w-11">
                       {item.step}
                     </span>
                   </div>
                   <div className="min-w-0 flex-1 pt-1.5 md:pt-2">
-                    <h3 className="font-display text-lg font-bold leading-snug tracking-tight text-white md:text-xl">
+                    <h3 className="font-display text-lg font-bold leading-snug tracking-tight text-black md:text-xl">
                       {item.title}
                     </h3>
-                    <p className="mt-2 max-w-lg text-sm leading-relaxed text-zinc-400 md:text-[15px]">
+                    <p className="mt-2 max-w-lg text-sm leading-relaxed text-black md:text-[15px]">
                       {item.body}
                     </p>
                   </div>
@@ -288,112 +268,94 @@ export default function Home() {
             </ol>
           </section>
 
-          <section id="no-state-tax" className="mb-14">
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-accent mb-4">
-              Why Florida take-home pay can look higher?
+          <section id="categories" className="mb-14">
+            <h2 className="mb-4 font-display text-2xl font-bold text-black md:text-3xl">
+              Body fat percentage categories
             </h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              Workers who move from states with income tax often keep more of each paycheck in
-              Florida, all else equal. Federal and FICA rules still apply, so a Florida paycheck is
-              not “tax-free”—it simply skips a state income tax line.
-            </p>
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-secondary mb-4">
-              <Image
-                src={BRAND_NO_STATE_TAX}
-                alt="Illustration highlighting Florida’s $0 state income tax on paychecks"
-                fill
-                sizes="(max-width: 768px) 100vw, 800px"
-                className="object-cover"
-              />
-            </div>
-            <p className="text-gray-300 leading-relaxed">
-              Read the full overview in{" "}
-              <Link href="/florida-no-state-income-tax" className="text-accent hover:underline">
-                Florida&apos;s no state income tax guide
-              </Link>
-              , then model your own numbers above.
-            </p>
-          </section>
-
-          <section id="pay-frequency" className="mb-14">
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-accent mb-4">
-              Pay frequency changes the check, not the year
-            </h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              A $72,000 salary is about $2,769 biweekly (26 checks) or $3,000 semi-monthly (24 checks).
-              Annual tax liability is similar; cash-flow timing is not. That distinction matters for
-              budgeting rent, loans, and retirement contributions.
-            </p>
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-secondary mb-4">
-              <Image
-                src={BRAND_PAY_FREQUENCY}
-                alt="Comparison of weekly, biweekly, semi-monthly, and monthly Florida pay schedules"
-                fill
-                sizes="(max-width: 768px) 100vw, 800px"
-                className="object-cover"
-              />
-            </div>
-            <p className="text-gray-300 leading-relaxed">
-              See examples in our{" "}
-              <Link href="/pay-frequency-guide" className="text-accent hover:underline">
-                Florida pay frequency guide
+            <p className="mb-6 leading-relaxed text-black">
+              Categories help you interpret a number. They are population guides, not personal medical
+              advice. Explore dedicated charts for{" "}
+              <Link href="/body-fat-percentage-men" className="text-black hover:underline">
+                men
+              </Link>{" "}
+              and{" "}
+              <Link href="/body-fat-percentage-women" className="text-black hover:underline">
+                women
               </Link>
               .
             </p>
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/15 bg-white">
+              <Image
+                src={BRAND_CHART}
+                alt="Body fat percentage category chart from essential fat to obese"
+                fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-cover"
+              />
+            </div>
           </section>
 
-          <section id="who-should-use" className="mb-14">
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-accent mb-4">
-              Who should use this tool?
+          <section id="related-tools" className="mb-14">
+            <h2 className="mb-4 font-display text-2xl font-bold text-black md:text-3xl">
+              Related calculators and guides
             </h2>
             <ul className="grid gap-4 md:grid-cols-2">
               {[
-                "Florida employees comparing salary offers or raises",
-                "Hourly workers estimating overtime-adjusted annual pay",
-                "People relocating to Florida and modeling take-home changes",
-                "Anyone checking how 401(k) or health premiums affect net pay",
+                {
+                  href: "/us-navy-body-fat-calculator",
+                  title: "US Navy body fat calculator",
+                  body: "Formulas, measurement tips, and Navy-focused FAQ.",
+                },
+                {
+                  href: "/visceral-fat-calculator",
+                  title: "Visceral fat calculator",
+                  body: "Waist and waist-to-height risk screening for abdominal fat.",
+                },
+                {
+                  href: "/blog/how-to-measure-body-fat",
+                  title: "How to measure body fat",
+                  body: "Tape, calipers, BIA, and lab methods compared.",
+                },
+                {
+                  href: "/blog/how-to-calculate-body-fat-percentage",
+                  title: "How to calculate body fat percentage",
+                  body: "Step-by-step math behind the Navy equations.",
+                },
               ].map((item) => (
-                <li
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-secondary/80 p-4 text-gray-300"
-                >
-                  {item}
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block rounded-2xl border border-black/15 bg-white p-4 transition hover:border-black/40"
+                  >
+                    <h3 className="font-display text-lg font-bold text-black">{item.title}</h3>
+                    <p className="mt-2 text-sm text-black">{item.body}</p>
+                  </Link>
                 </li>
               ))}
             </ul>
           </section>
 
           <section id="assumptions" className="mb-14">
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-accent mb-4">
+            <h2 className="mb-4 font-display text-2xl font-bold text-black md:text-3xl">
               Assumptions and limitations
             </h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              Estimates use 2026 federal brackets, standard deduction amounts, and SSA FICA rates.
-              They simplify IRS Publication 15-T withholding, ignore city payroll nuances, and do not
-              model every credit or multiple jobs. Confirm numbers with your payroll provider.
+            <p className="leading-relaxed text-black">
+              Results assume careful tape placement and adult body proportions. Pregnancy, edema,
+              extreme muscle mass, and measurement error can skew estimates. This site is educational —
+              not a substitute for clinical body-composition testing.
             </p>
-            <div className="relative w-full max-w-2xl aspect-video mx-auto rounded-2xl overflow-hidden border border-white/10 bg-secondary">
-              <Image
-                src={BRAND_HOW_TO}
-                alt="Steps for calculating Florida take-home pay with federal tax and FICA"
-                fill
-                sizes="(max-width: 768px) 100vw, 672px"
-                className="object-cover"
-              />
-            </div>
           </section>
 
           <FaqSection items={faqs} />
 
-          <section className="mt-16 rounded-2xl border border-accent/30 bg-secondary p-8 text-center">
-            <h2 className="font-display text-2xl font-bold text-white mb-3">
-              Ready to estimate your Florida paycheck?
+          <section className="mt-16 rounded-2xl border border-black/15 bg-white p-8 text-center">
+            <h2 className="mb-3 font-display text-2xl font-bold text-black">
+              Ready to check your body fat percentage?
             </h2>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Jump back to the calculator, adjust wages and deductions, and see how federal tax and
-              FICA shape your take-home pay.
+            <p className="mx-auto mb-6 max-w-2xl text-black">
+              Jump back to the calculator, adjust measurements, and compare Navy and BMI estimates.
             </p>
-            <CtaButton href="/#calculator" ariaLabel="Jump to Florida paycheck calculator">
+            <CtaButton href="/#calculator" ariaLabel="Jump to body fat calculator">
               BACK TO CALCULATOR
             </CtaButton>
           </section>

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useMobileMenu } from './MobileMenuProvider';
-import { BRAND_LOGO, SITE_SHORT_NAME } from '@/lib/siteConfig';
+import { BRAND_LOGO_MARK, SITE_SHORT_NAME } from '@/lib/siteConfig';
 
 type NavItem = {
   href: string;
@@ -23,9 +23,10 @@ const navSections: NavSection[] = [
     title: 'MAIN',
     items: [
       { href: '/', label: 'Calculator' },
-      { href: '/how-florida-paychecks-work', label: 'How Paychecks Work' },
-      { href: '/florida-no-state-income-tax', label: 'No State Income Tax' },
-      { href: '/pay-frequency-guide', label: 'Pay Frequency' },
+      { href: '/us-navy-body-fat-calculator', label: 'US Navy Method' },
+      { href: '/body-fat-percentage-men', label: 'Body Fat % Men' },
+      { href: '/body-fat-percentage-women', label: 'Body Fat % Women' },
+      { href: '/visceral-fat-calculator', label: 'Visceral Fat' },
     ],
   },
   {
@@ -45,7 +46,7 @@ function MenuButton({ onClick, isOpen }: { onClick: () => void; isOpen?: boolean
     <button
       type="button"
       onClick={onClick}
-      className="relative z-[60] flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/5 xl:hidden"
+      className="relative z-[60] flex h-10 w-10 items-center justify-center rounded-md text-black hover:bg-black/5 xl:hidden"
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
       aria-expanded={!!isOpen}
       aria-controls="mobile-nav-panel"
@@ -102,28 +103,28 @@ export default function MobileNavigation() {
       ? createPortal(
           <div
             id="mobile-nav-panel"
-            className="fixed inset-0 z-[100] flex flex-col bg-[#041820] xl:hidden"
+            className="fixed inset-0 z-[100] flex flex-col bg-white xl:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
           >
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+            <div className="flex items-center justify-between border-b border-black/10 px-4 py-3">
               <Link href="/" className="flex min-w-0 items-center gap-2.5" onClick={closeMenu}>
                 <div className="relative h-8 w-8 flex-shrink-0 overflow-hidden rounded-md">
                   <Image
-                    src={BRAND_LOGO}
+                    src={BRAND_LOGO_MARK}
                     alt=""
                     fill
                     sizes="32px"
                     className="object-contain"
                   />
                 </div>
-                <span className="truncate text-base font-bold text-white">{SITE_SHORT_NAME}</span>
+                <span className="truncate text-base font-bold text-black">{SITE_SHORT_NAME}</span>
               </Link>
               <button
                 type="button"
                 onClick={closeMenu}
-                className="flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/5"
+                className="flex h-10 w-10 items-center justify-center rounded-md text-black hover:bg-black/5"
                 aria-label="Close menu"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6" aria-hidden="true">
@@ -135,7 +136,7 @@ export default function MobileNavigation() {
             <nav className="flex-1 overflow-y-auto px-3 py-4">
               {navSections.map((section) => (
                 <div key={section.title} className="mb-5">
-                  <p className="px-2 pb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
+                  <p className="px-2 pb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-black">
                     {section.title}
                   </p>
                   <ul className="space-y-1">
@@ -148,12 +149,12 @@ export default function MobileNavigation() {
                             onClick={closeMenu}
                             className={`flex items-center justify-between rounded-lg px-3 py-3 text-[15px] font-medium transition-colors ${
                               active
-                                ? 'bg-white/5 text-accent'
-                                : 'text-zinc-100 hover:bg-white/5 hover:text-white'
+                                ? 'bg-black/5 font-semibold text-black'
+                                : 'text-black hover:bg-black/5'
                             }`}
                           >
                             <span>{item.label}</span>
-                            <span className="text-zinc-600" aria-hidden="true">
+                            <span className="text-black" aria-hidden="true">
                               ›
                             </span>
                           </Link>
@@ -165,11 +166,11 @@ export default function MobileNavigation() {
               ))}
             </nav>
 
-            <div className="border-t border-white/10 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+            <div className="border-t border-black/10 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               <Link
                 href="/#calculator"
                 onClick={closeMenu}
-                className="flex w-full items-center justify-center rounded-lg bg-accent px-4 py-3 text-sm font-bold text-black"
+                className="flex w-full items-center justify-center rounded-lg bg-black px-4 py-3 text-sm font-bold text-white"
               >
                 Open Calculator
               </Link>

@@ -24,20 +24,20 @@ export default function FaqSection({
 
   return (
     <section id={id} className="mt-16">
-      <h2 className="text-2xl md:text-3xl font-bold text-accent mb-6">{title}</h2>
+      <h2 className="mb-6 text-2xl font-bold text-black md:text-3xl">{title}</h2>
       <div className="space-y-3">
         {items.map((item) => (
           <details
             key={item.question}
-            className="group rounded-xl border border-slate-700 bg-[#0D2433] open:border-accent/40"
+            className="group rounded-xl border border-black/15 bg-white open:border-black/30"
           >
-            <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-white flex items-center justify-between gap-4">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-semibold text-black">
               <span>{item.question}</span>
-              <span className="text-accent transition group-open:rotate-45 text-xl leading-none" aria-hidden="true">
+              <span className="text-xl leading-none text-black transition group-open:rotate-45" aria-hidden="true">
                 +
               </span>
             </summary>
-            <p className="px-5 pb-4 text-gray-300 leading-relaxed">{item.answer}</p>
+            <p className="px-5 pb-4 leading-relaxed text-black">{item.answer}</p>
           </details>
         ))}
       </div>

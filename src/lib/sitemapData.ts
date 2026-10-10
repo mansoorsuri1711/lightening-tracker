@@ -12,7 +12,7 @@ export type SitemapPage = {
   images?: Array<{ loc: string; title: string; caption: string }>;
 };
 
-const LASTMOD = "2026-10-04";
+const LASTMOD = "2026-10-11";
 
 export const SITEMAP_PAGES: SitemapPage[] = [
   {
@@ -22,58 +22,71 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 1,
     images: [
       {
-        loc: imageLoc("/favicon-512x512.png"),
-        title: "Florida Paycheck Calculator logo",
-        caption: "Brand mark for the free Florida take-home pay calculator",
+        loc: imageLoc("/android-chrome-512x512.png"),
+        title: "Body Fat Calculator logo",
+        caption: "Brand mark for the free body fat percentage calculator",
       },
       {
-        loc: imageLoc("/hero-florida-paycheck-calculator.webp"),
-        title: "Florida Paycheck Calculator hero",
-        caption: "Homepage visual for estimating Florida net pay",
+        loc: imageLoc("/hero-desktop-1920x1080.png"),
+        title: "Body Fat Calculator hero",
+        caption: "Homepage visual for estimating body fat percentage",
       },
       {
-        loc: imageLoc("/florida-paycheck-breakdown.webp"),
-        title: "Florida paycheck breakdown",
-        caption: "Visual of taxes, FICA, and take-home on a Florida paycheck",
+        loc: imageLoc("/body-fat-chart-1600x900.png"),
+        title: "Body fat percentage chart",
+        caption: "Category chart from essential fat to obese ranges",
       },
     ],
   },
   {
-    path: "/how-florida-paychecks-work",
+    path: "/us-navy-body-fat-calculator",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/florida-paycheck-breakdown.webp"),
-        title: "How Florida paychecks work",
-        caption: "Guide visual for gross-to-net Florida paycheck steps",
+        loc: imageLoc("/hero-desktop-1920x1080.png"),
+        title: "US Navy body fat calculator",
+        caption: "Guide visual for the U.S. Navy circumference method",
       },
     ],
   },
   {
-    path: "/florida-no-state-income-tax",
+    path: "/body-fat-percentage-men",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/florida-no-state-income-tax.webp"),
-        title: "Florida no state income tax",
-        caption: "Illustration that Florida personal state income tax is $0",
+        loc: imageLoc("/body-fat-chart-1600x900.png"),
+        title: "Body fat percentage men chart",
+        caption: "Healthy and category ranges for male body fat percentage",
       },
     ],
   },
   {
-    path: "/pay-frequency-guide",
+    path: "/body-fat-percentage-women",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/florida-pay-frequency-comparison.webp"),
-        title: "Florida pay frequency comparison",
-        caption: "Weekly, biweekly, semi-monthly, and monthly paycheck schedules",
+        loc: imageLoc("/body-fat-chart-1600x900.png"),
+        title: "Body fat percentage women chart",
+        caption: "Healthy and category ranges for female body fat percentage",
+      },
+    ],
+  },
+  {
+    path: "/visceral-fat-calculator",
+    lastMod: LASTMOD,
+    changeFreq: "weekly",
+    priority: 0.9,
+    images: [
+      {
+        loc: imageLoc("/hero-mobile-1080x1350.png"),
+        title: "Visceral fat calculator",
+        caption: "Waist-based visceral fat risk estimator",
       },
     ],
   },
@@ -85,7 +98,7 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     images: [
       {
         loc: imageLoc("/android-chrome-512x512.png"),
-        title: "About Florida Paycheck Calculator",
+        title: "About Body Fat Calculator",
         caption: "Brand logo used on the About page",
       },
     ],
@@ -97,41 +110,41 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.8,
   },
   {
-    path: "/blog/how-to-calculate-florida-take-home-pay",
+    path: "/blog/how-to-measure-body-fat",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.75,
     images: [
       {
-        loc: imageLoc("/how-to-calculate-florida-take-home-pay.webp"),
-        title: "How to calculate Florida take-home pay",
-        caption: "Step visual for estimating Florida net pay",
+        loc: imageLoc("/body-fat-chart-1600x900.png"),
+        title: "How to measure body fat",
+        caption: "Guide visual for measuring body fat at home and in clinics",
       },
     ],
   },
   {
-    path: "/blog/fica-taxes-explained",
+    path: "/blog/how-to-calculate-body-fat-percentage",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.75,
     images: [
       {
-        loc: imageLoc("/fica-taxes-explained.webp"),
-        title: "FICA taxes explained",
-        caption: "Social Security and Medicare withholdings on a paycheck",
+        loc: imageLoc("/hero-desktop-1920x1080.png"),
+        title: "How to calculate body fat percentage",
+        caption: "Step visual for calculating body fat percentage with Navy formulas",
       },
     ],
   },
   {
-    path: "/blog/federal-tax-brackets",
+    path: "/blog/ideal-body-fat-percentage",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.75,
     images: [
       {
-        loc: imageLoc("/federal-tax-brackets-2026.webp"),
-        title: "2026 federal tax brackets",
-        caption: "Federal income tax bracket reference for paycheck planning",
+        loc: imageLoc("/body-fat-chart-1600x900.png"),
+        title: "Ideal body fat percentage",
+        caption: "Ideal and healthy body fat percentage ranges by sex and age",
       },
     ],
   },

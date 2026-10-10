@@ -1,9 +1,9 @@
 'use client';
 
 const categories = [
-  { name: 'Take-Home Pay', href: '/blog/how-to-calculate-florida-take-home-pay' },
-  { name: 'FICA Taxes', href: '/blog/fica-taxes-explained' },
-  { name: 'Tax Brackets', href: '/blog/federal-tax-brackets' },
+  { name: 'Measure Body Fat', href: '/blog/how-to-measure-body-fat' },
+  { name: 'Calculate Percentage', href: '/blog/how-to-calculate-body-fat-percentage' },
+  { name: 'Ideal Ranges', href: '/blog/ideal-body-fat-percentage' },
 ];
 
 export default function BlogCategoryDropdown() {
@@ -13,7 +13,7 @@ export default function BlogCategoryDropdown() {
         <a
           key={category.href}
           href={category.href}
-          className="rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-zinc-200 transition hover:border-accent hover:text-accent"
+          className="rounded-full border border-black/20 bg-white px-3 py-1.5 text-xs font-medium text-black transition hover:border-black hover:underline"
         >
           {category.name}
         </a>
