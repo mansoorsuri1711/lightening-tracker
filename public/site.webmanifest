@@ -1,6 +1,6 @@
 {
-  "name": "Body Fat Calculator",
-  "short_name": "Body Fat Calc",
+  "name": "BMI Calculator Women",
+  "short_name": "BMI Women",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#1A1225",
+  "background_color": "#FFF0F5",
   "display": "standalone"
 }

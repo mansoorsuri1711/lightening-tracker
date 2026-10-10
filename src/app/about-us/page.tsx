@@ -6,13 +6,13 @@ import CtaButton from "@/components/CtaButton";
 import { BRAND_LOGO, CONTACT_EMAIL, SITE_DOMAIN, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About Body Fat Calculator",
+  title: "About BMI Calculator Women",
   description:
-    "Learn why Body Fat Calculator exists: clear Navy-method estimates, category charts, and free tools without signup walls.",
+    "Learn why BMI Calculator Women exists: a free female BMI tool, women’s chart, healthy ranges, and clear educational guides.",
   alternates: { canonical: `${SITE_ORIGIN}/about-us` },
   openGraph: {
-    title: "About Body Fat Calculator",
-    description: `Independent educational body fat tools on ${SITE_DOMAIN}.`,
+    title: "About BMI Calculator Women",
+    description: `Independent educational BMI tools for women on ${SITE_DOMAIN}.`,
     url: `${SITE_ORIGIN}/about-us`,
     siteName: SITE_NAME,
     type: "website",
@@ -24,10 +24,10 @@ export default function AboutPage() {
     <div className="container mx-auto max-w-4xl px-4 py-10">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About Us" }]} />
       <div className="mb-10 flex flex-col items-start gap-8 md:flex-row">
-        <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-2xl border border-black/15 bg-white">
+        <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-2xl border border-brand/15 bg-white">
           <Image
             src={BRAND_LOGO}
-            alt="Body Fat Calculator logo"
+            alt="BMI Calculator Women logo"
             fill
             sizes="160px"
             className="object-contain p-3"
@@ -35,53 +35,51 @@ export default function AboutPage() {
           />
         </div>
         <div>
-          <h1 className="mb-4 font-display text-3xl font-bold text-black md:text-4xl">
+          <h1 className="mb-4 font-display text-3xl font-bold text-brand md:text-4xl">
             About {SITE_NAME}
           </h1>
-          <p className="mb-4 leading-relaxed text-black">
-            {SITE_NAME} is an independent educational site at {SITE_DOMAIN}. We built a free body fat
-            percentage calculator so anyone can estimate composition with the U.S. Navy method — plus
-            BMI comparison and category context — without creating an account.
+          <p className="mb-4 leading-relaxed text-ink">
+            {SITE_NAME} is an independent educational site at {SITE_DOMAIN}. We built a free BMI
+            calculator for women so anyone can check body mass index, WHO category, and healthy
+            weight range — without creating an account.
           </p>
-          <p className="leading-relaxed text-black">
-            Our guides cover Navy formulas, men&apos;s and women&apos;s ranges, visceral fat screening,
-            and how to measure or calculate body fat. Everything is educational; confirm important
-            health decisions with a clinician.
+          <p className="leading-relaxed text-ink">
+            Our guides cover women&apos;s BMI charts, healthy ranges, age notes, formulas, and
+            height–weight tables. Everything is educational; confirm important health decisions with
+            a clinician.
           </p>
         </div>
       </div>
 
       <section className="mb-10">
-        <h2 className="mb-3 font-display text-2xl font-bold text-black">What we publish</h2>
-        <ul className="space-y-3 text-black">
-          <li className="rounded-2xl border border-black/15 bg-white p-4">
-            A working body fat calculator with imperial and metric units
+        <h2 className="mb-3 font-display text-2xl font-bold text-brand">What we publish</h2>
+        <ul className="space-y-3 text-ink">
+          <li className="rounded-2xl border border-brand/15 bg-white p-4">
+            A working BMI calculator for women with imperial and metric units
           </li>
-          <li className="rounded-2xl border border-black/15 bg-white p-4">
-            Navy method, men/women charts, and visceral fat risk tools
+          <li className="rounded-2xl border border-brand/15 bg-white p-4">
+            BMI chart women, healthy BMI, and BMI-by-age hub pages
           </li>
-          <li className="rounded-2xl border border-black/15 bg-white p-4">
-            SERP-driven articles on measuring, calculating, and ideal body fat percentage
+          <li className="rounded-2xl border border-brand/15 bg-white p-4">
+            SERP-driven articles on calculating BMI, meaning, formula, and height–weight charts
           </li>
         </ul>
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-3 font-display text-2xl font-bold text-black">Contact</h2>
-        <p className="mb-4 leading-relaxed text-black">
+        <h2 className="mb-3 font-display text-2xl font-bold text-brand">Contact</h2>
+        <p className="mb-4 leading-relaxed text-ink">
           Questions or corrections:{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-black hover:underline">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand underline hover:no-underline">
             {CONTACT_EMAIL}
           </a>{" "}
           or our{" "}
-          <Link href="/contact-us" className="text-black hover:underline">
+          <Link href="/contact-us" className="text-brand underline hover:no-underline">
             contact page
           </Link>
           .
         </p>
-        <CtaButton href="/#calculator" ariaLabel="Open body fat calculator">
-          TRY THE CALCULATOR
-        </CtaButton>
+        <CtaButton href="/#calculator">TRY THE CALCULATOR</CtaButton>
       </section>
     </div>
   );

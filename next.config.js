@@ -27,56 +27,91 @@ const nextConfig = {
         destination: '/about-us',
         permanent: true,
       },
-      // Legacy Florida paycheck routes → Body Fat Calculator
+      // Legacy body-fat routes → BMI Calculator Women
+      {
+        source: '/us-navy-body-fat-calculator',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/body-fat-percentage-men',
+        destination: '/bmi-chart-women',
+        permanent: true,
+      },
+      {
+        source: '/body-fat-percentage-women',
+        destination: '/bmi-chart-women',
+        permanent: true,
+      },
+      {
+        source: '/visceral-fat-calculator',
+        destination: '/healthy-bmi',
+        permanent: true,
+      },
+      {
+        source: '/blog/how-to-measure-body-fat',
+        destination: '/blog/how-to-calculate-bmi',
+        permanent: true,
+      },
+      {
+        source: '/blog/how-to-calculate-body-fat-percentage',
+        destination: '/blog/bmi-formula',
+        permanent: true,
+      },
+      {
+        source: '/blog/ideal-body-fat-percentage',
+        destination: '/blog/what-is-bmi',
+        permanent: true,
+      },
+      // Older unrelated leftovers
       {
         source: '/how-florida-paychecks-work',
-        destination: '/us-navy-body-fat-calculator',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/florida-no-state-income-tax',
-        destination: '/body-fat-percentage-men',
+        destination: '/healthy-bmi',
         permanent: true,
       },
       {
         source: '/pay-frequency-guide',
-        destination: '/body-fat-percentage-women',
+        destination: '/bmi-by-age',
         permanent: true,
       },
       {
         source: '/blog/how-to-calculate-florida-take-home-pay',
-        destination: '/blog/how-to-calculate-body-fat-percentage',
+        destination: '/blog/how-to-calculate-bmi',
         permanent: true,
       },
       {
         source: '/blog/fica-taxes-explained',
-        destination: '/blog/how-to-measure-body-fat',
+        destination: '/blog/what-is-bmi',
         permanent: true,
       },
       {
         source: '/blog/federal-tax-brackets',
-        destination: '/blog/ideal-body-fat-percentage',
+        destination: '/blog/bmi-formula',
         permanent: true,
       },
       {
         source: '/blog/federal-tax-brackets-2026',
-        destination: '/blog/ideal-body-fat-percentage',
+        destination: '/blog/bmi-formula',
         permanent: true,
       },
-      // Older CD calculator leftovers
       {
         source: '/how-cds-work',
-        destination: '/us-navy-body-fat-calculator',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/cd-ladder',
-        destination: '/body-fat-percentage-men',
+        destination: '/bmi-chart-women',
         permanent: true,
       },
       {
         source: '/cd-vs-savings-account',
-        destination: '/body-fat-percentage-women',
+        destination: '/healthy-bmi',
         permanent: true,
       },
       // Legacy asset paths

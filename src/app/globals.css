@@ -3,16 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
+  --foreground-rgb: 26, 18, 37;
+  --background-start-rgb: 251, 244, 248;
   --background-end-rgb: 255, 255, 255;
-  --accent: #000000;
-  --sunrise: #000000;
+  --accent: #ff7a7a;
+  --brand: #1a1225;
+  --pink: #ff7a9a;
+  --lilac: #c9a0dc;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #ffffff;
+  background: #fff7fb;
 }
 
 img {
@@ -54,13 +56,17 @@ footer {
   }
   50% {
     transform: translate3d(0, -10px, 0);
-    opacity: 0.75;
+    opacity: 0.8;
   }
 }
 
 .site-atmosphere {
-  background-color: #ffffff;
-  background-image: none;
+  background-color: #fff7fb;
+  background-image:
+    radial-gradient(ellipse 85% 55% at 8% -8%, rgba(255, 122, 154, 0.22), transparent 55%),
+    radial-gradient(ellipse 75% 50% at 92% 0%, rgba(201, 160, 220, 0.28), transparent 52%),
+    radial-gradient(ellipse 60% 40% at 50% 110%, rgba(255, 122, 122, 0.12), transparent 55%),
+    linear-gradient(180deg, #fbf0f6 0%, #fff7fb 32%, #ffffff 72%);
 }
 
 .hero-glow {

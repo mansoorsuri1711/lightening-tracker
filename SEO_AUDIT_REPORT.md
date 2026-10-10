@@ -1,7 +1,6 @@
-# SEO Audit — Body Fat Calculator
+# SEO Audit — BMI Calculator Women
 
-- Domain: bodyfatcalculator.io
-- Brand: Body Fat Calculator
-- Last rebrand pass: 2026-10-11
-- Sitemap index: `/sitemap-index.xml`
-- Primary schema: WebApplication + AggregateRating, FAQ, HowTo, Article, BreadcrumbList
+- Domain: bmicalculatorwomen.io
+- Brand: BMI Calculator Women
+- Primary keyword: bmi calculator women
+- Last review: 2026-10-11

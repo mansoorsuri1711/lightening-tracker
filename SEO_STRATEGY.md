@@ -1,26 +1,26 @@
-# SEO Strategy — bodyfatcalculator.io
+# SEO Strategy — bmicalculatorwomen.io
 
-Primary keyword: **body fat calculator** (also body fat percentage calculator).
+Primary keyword: **bmi calculator women** (also bmi calculator for women / bmi calculator female).
 
 ## Core pages
 
-| URL | Intent |
-|-----|--------|
-| `/` | body fat calculator / percentage calculator |
-| `/us-navy-body-fat-calculator` | navy / us navy body fat calculator |
-| `/body-fat-percentage-men` | body fat percentage men |
-| `/body-fat-percentage-women` | body fat percentage women |
-| `/visceral-fat-calculator` | visceral fat calculator |
+| Path | Target intent |
+|------|----------------|
+| `/` | bmi calculator women / female |
+| `/bmi-chart-women` | bmi chart women / for women / female |
+| `/healthy-bmi` | healthy bmi / normal bmi / what is a good bmi |
+| `/bmi-by-age` | bmi calculator women age / by age |
 
-## Blogs (SERP-backed only)
+## Blog posts (SERP-backed only)
 
-1. `/blog/how-to-measure-body-fat` — how to measure body fat
-2. `/blog/how-to-calculate-body-fat-percentage` — how to calculate body fat percentage
-3. `/blog/ideal-body-fat-percentage` — ideal / healthy body fat percentage
+1. `/blog/how-to-calculate-bmi` — how to calculate bmi / how to compute bmi
+2. `/blog/what-is-bmi` — what is bmi / bmi meaning
+3. `/blog/bmi-formula` — bmi formula
+4. `/blog/height-and-weight-chart-for-women` — height and weight chart / how much should i weigh
 
-## Differentiators vs typical SERP winners
+## Differentiators vs CDC / Calculator.net / Omni
 
-- Instant Navy + BMI dual estimate with imperial/metric toggle
-- Dedicated men/women + visceral tools (not one giant doorway page)
-- Custom legal/about pages, unique image alts, hand-maintained JSON-LD
-- Honest accuracy limits (not “lab-accurate” hype)
+- Women-first default UX and copy (not a gender toggle buried in a generic tool)
+- Chart + healthy range + age notes on dedicated hubs (less doorway cannibalization)
+- Original tables, FAQ schema, HowTo + WebApplication rating markup
+- Brand imagery and plum/coral/teal theme from site assets

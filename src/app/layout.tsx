@@ -37,7 +37,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#ffffff",
+  themeColor: "#1A1225",
   viewportFit: "cover",
   interactiveWidget: "resizes-visual",
 };
@@ -45,19 +45,22 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Body Fat Calculator — Free Body Fat Percentage Tool",
+    default: "BMI Calculator Women — Free Female BMI Tool & Chart",
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_TAGLINE,
   keywords: [
-    "body fat calculator",
-    "body fat percentage calculator",
-    "body fat percentage",
-    "navy body fat calculator",
-    "us navy body fat calculator",
-    "fat percentage calculator",
-    "bfp calculator",
-    "how to calculate body fat percentage",
+    "bmi calculator women",
+    "bmi calculator for women",
+    "bmi calculator female",
+    "bmi chart women",
+    "bmi chart for women",
+    "bmi chart female",
+    "healthy bmi",
+    "how to calculate bmi",
+    "bmi formula",
+    "what is bmi",
+    "bmi calculator by age",
   ],
   authors: [{ name: `${SITE_NAME} Team` }],
   creator: SITE_NAME,
@@ -89,7 +92,7 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "Body Fat Calculator — Free Body Fat Percentage Tool",
+    title: "BMI Calculator Women — Free Female BMI Tool & Chart",
     description: SITE_TAGLINE,
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
@@ -100,26 +103,26 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Body Fat Calculator — free body fat percentage tool",
+        alt: "BMI Calculator Women — free female BMI calculator and chart",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Body Fat Calculator — Free Body Fat Percentage Tool",
+    title: "BMI Calculator Women — Free Female BMI Tool & Chart",
     description: SITE_TAGLINE,
     images: [
       {
         url: TWITTER_IMAGE,
         width: 1200,
         height: 675,
-        alt: "Body Fat Calculator — free body fat percentage tool",
+        alt: "BMI Calculator Women — free female BMI calculator and chart",
       },
     ],
   },
   applicationName: SITE_NAME,
   category: "Health",
-  classification: "Body Fat Calculator",
+  classification: "BMI Calculator for Women",
 };
 
 export default function RootLayout({
@@ -145,7 +148,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className="font-sans antialiased text-black min-h-screen flex flex-col bg-white site-atmosphere"
+        className="font-sans antialiased text-ink min-h-screen flex flex-col bg-blush site-atmosphere"
         suppressHydrationWarning
       >
         <MobileMenuProvider>

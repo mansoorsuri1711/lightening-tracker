@@ -4,13 +4,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Body Fat Blog — Measure, Calculate & Ideal Ranges",
+  title: "BMI Blog for Women — Calculate, Meaning & Charts",
   description:
-    "SERP-focused body fat articles on measuring body fat, calculating percentage, and ideal ranges for men and women.",
+    "SERP-focused BMI articles for women: how to calculate BMI, what BMI means, the BMI formula, and height–weight charts.",
   alternates: { canonical: `${SITE_ORIGIN}/blog` },
   openGraph: {
-    title: "Body Fat Blog — Measure, Calculate & Ideal Ranges",
-    description: "Educational body fat guides from Body Fat Calculator.",
+    title: "BMI Blog for Women — Calculate, Meaning & Charts",
+    description: "Educational BMI guides from BMI Calculator Women.",
     url: `${SITE_ORIGIN}/blog`,
     siteName: SITE_NAME,
     type: "website",
@@ -19,26 +19,34 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    href: "/blog/how-to-measure-body-fat",
-    title: "How to Measure Body Fat at Home",
+    href: "/blog/how-to-calculate-bmi",
+    title: "How to Calculate BMI (Step by Step)",
     excerpt:
-      "Tape, calipers, smart scales, and lab methods — what each measures and when to use them.",
-    date: "October 2026",
-    read: "10 min read",
-  },
-  {
-    href: "/blog/how-to-calculate-body-fat-percentage",
-    title: "How to Calculate Body Fat Percentage",
-    excerpt:
-      "Step-by-step Navy formulas, BMI estimate math, and how to turn percentage into fat mass.",
+      "Metric and imperial walkthroughs so you can compute body mass index without a spreadsheet.",
     date: "October 2026",
     read: "9 min read",
   },
   {
-    href: "/blog/ideal-body-fat-percentage",
-    title: "Ideal Body Fat Percentage by Sex and Age",
+    href: "/blog/what-is-bmi",
+    title: "What Is BMI? Meaning, Uses, and Limits",
     excerpt:
-      "Healthy and ideal ranges, why charts differ for men and women, and how to set realistic targets.",
+      "Plain-language body mass index meaning for women — what the number measures and what it misses.",
+    date: "October 2026",
+    read: "8 min read",
+  },
+  {
+    href: "/blog/bmi-formula",
+    title: "BMI Formula — Metric & Imperial Equations",
+    excerpt:
+      "The exact BMI formulas with worked examples for kg/m² and the 703 imperial shortcut.",
+    date: "October 2026",
+    read: "7 min read",
+  },
+  {
+    href: "/blog/height-and-weight-chart-for-women",
+    title: "Height and Weight Chart for Women",
+    excerpt:
+      "Healthy weight ranges by height — the practical answer to “how much should I weigh?”",
     date: "October 2026",
     read: "8 min read",
   },
@@ -48,27 +56,27 @@ export default function BlogPage() {
   return (
     <div className="container mx-auto max-w-5xl px-4 py-10">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
-      <h1 className="mb-3 font-display text-3xl font-bold text-black md:text-4xl">
-        Body Fat Blog
+      <h1 className="mb-3 font-display text-3xl font-bold text-brand md:text-4xl">
+        BMI blog for women
       </h1>
-      <p className="mb-10 text-lg text-black">
-        Only high-intent topics people search alongside body fat calculators — measuring, calculating,
-        and ideal percentage ranges.
+      <p className="mb-10 text-lg text-ink/85">
+        Only high-intent topics people search with a BMI calculator for women — how to calculate,
+        meaning, formula, and height–weight charts.
       </p>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {posts.map((post) => (
           <article
             key={post.href}
-            className="rounded-2xl border border-black/15 bg-white p-6 transition-colors hover:border-black/40"
+            className="rounded-2xl border border-pink/20 bg-white/90 p-6 transition-colors hover:border-pink/50"
           >
-            <h2 className="mb-3 font-display text-xl font-bold text-black">{post.title}</h2>
-            <p className="mb-4 text-black">{post.excerpt}</p>
-            <div className="mb-4 flex items-center gap-2 text-sm text-black">
+            <h2 className="mb-3 font-display text-xl font-bold text-brand">{post.title}</h2>
+            <p className="mb-4 text-ink/85">{post.excerpt}</p>
+            <div className="mb-4 flex items-center gap-2 text-sm text-ink/65">
               <span>{post.date}</span>
               <span>•</span>
               <span>{post.read}</span>
             </div>
-            <Link href={post.href} className="font-semibold text-black hover:underline">
+            <Link href={post.href} className="font-semibold text-pink-deep hover:underline">
               Read more →
             </Link>
           </article>

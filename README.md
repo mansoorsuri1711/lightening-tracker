@@ -1,12 +1,12 @@
-# Body Fat Calculator
+# BMI Calculator Women
 
-Free body fat percentage calculator for [bodyfatcalculator.io](https://bodyfatcalculator.io) — U.S. Navy method, BMI estimate, men/women charts, and visceral fat risk screening.
+Free BMI calculator for women at [bmicalculatorwomen.io](https://bmicalculatorwomen.io) — WHO categories, healthy weight range, women’s BMI chart, and age-aware guidance.
 
 ## Stack
 
-- Next.js (App Router) + TypeScript
+- Next.js App Router + TypeScript
 - Tailwind CSS
-- Static SEO routes: `/sitemap-index.xml`, `/index.xml`, `/image-sitemap.xml`, `/robots.txt`
+- Static SEO routes (`sitemap-index.xml`, `index.xml`, `image-sitemap.xml`, `robots.txt`)
 
 ## Develop
 

@@ -23,70 +23,57 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     images: [
       {
         loc: imageLoc("/android-chrome-512x512.png"),
-        title: "Body Fat Calculator logo",
-        caption: "Brand mark for the free body fat percentage calculator",
+        title: "BMI Calculator Women logo",
+        caption: "Brand mark for the free BMI calculator for women",
       },
       {
         loc: imageLoc("/hero-desktop-1920x1080.png"),
-        title: "Body Fat Calculator hero",
-        caption: "Homepage visual for estimating body fat percentage",
+        title: "BMI Calculator Women hero",
+        caption: "Homepage visual for calculating women’s body mass index",
       },
       {
-        loc: imageLoc("/body-fat-chart-1600x900.png"),
-        title: "Body fat percentage chart",
-        caption: "Category chart from essential fat to obese ranges",
+        loc: imageLoc("/bmi-chart-women-1600x960.png"),
+        title: "BMI chart for women",
+        caption: "Women’s BMI category chart from underweight to obesity classes",
       },
     ],
   },
   {
-    path: "/us-navy-body-fat-calculator",
+    path: "/bmi-chart-women",
+    lastMod: LASTMOD,
+    changeFreq: "weekly",
+    priority: 0.95,
+    images: [
+      {
+        loc: imageLoc("/bmi-chart-women-1600x960.png"),
+        title: "BMI chart women",
+        caption: "Height and weight BMI chart designed for women",
+      },
+    ],
+  },
+  {
+    path: "/healthy-bmi",
+    lastMod: LASTMOD,
+    changeFreq: "weekly",
+    priority: 0.9,
+    images: [
+      {
+        loc: imageLoc("/bmi-chart-women-1600x960.png"),
+        title: "Healthy BMI for women",
+        caption: "Healthy and normal BMI ranges for adult women",
+      },
+    ],
+  },
+  {
+    path: "/bmi-by-age",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.9,
     images: [
       {
         loc: imageLoc("/hero-desktop-1920x1080.png"),
-        title: "US Navy body fat calculator",
-        caption: "Guide visual for the U.S. Navy circumference method",
-      },
-    ],
-  },
-  {
-    path: "/body-fat-percentage-men",
-    lastMod: LASTMOD,
-    changeFreq: "weekly",
-    priority: 0.9,
-    images: [
-      {
-        loc: imageLoc("/body-fat-chart-1600x900.png"),
-        title: "Body fat percentage men chart",
-        caption: "Healthy and category ranges for male body fat percentage",
-      },
-    ],
-  },
-  {
-    path: "/body-fat-percentage-women",
-    lastMod: LASTMOD,
-    changeFreq: "weekly",
-    priority: 0.9,
-    images: [
-      {
-        loc: imageLoc("/body-fat-chart-1600x900.png"),
-        title: "Body fat percentage women chart",
-        caption: "Healthy and category ranges for female body fat percentage",
-      },
-    ],
-  },
-  {
-    path: "/visceral-fat-calculator",
-    lastMod: LASTMOD,
-    changeFreq: "weekly",
-    priority: 0.9,
-    images: [
-      {
-        loc: imageLoc("/hero-mobile-1080x1350.png"),
-        title: "Visceral fat calculator",
-        caption: "Waist-based visceral fat risk estimator",
+        title: "BMI calculator by age for women",
+        caption: "How age changes BMI interpretation for women",
       },
     ],
   },
@@ -98,7 +85,7 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     images: [
       {
         loc: imageLoc("/android-chrome-512x512.png"),
-        title: "About Body Fat Calculator",
+        title: "About BMI Calculator Women",
         caption: "Brand logo used on the About page",
       },
     ],
@@ -110,41 +97,54 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.8,
   },
   {
-    path: "/blog/how-to-measure-body-fat",
+    path: "/blog/how-to-calculate-bmi",
     lastMod: LASTMOD,
     changeFreq: "monthly",
-    priority: 0.75,
-    images: [
-      {
-        loc: imageLoc("/body-fat-chart-1600x900.png"),
-        title: "How to measure body fat",
-        caption: "Guide visual for measuring body fat at home and in clinics",
-      },
-    ],
-  },
-  {
-    path: "/blog/how-to-calculate-body-fat-percentage",
-    lastMod: LASTMOD,
-    changeFreq: "monthly",
-    priority: 0.75,
+    priority: 0.8,
     images: [
       {
         loc: imageLoc("/hero-desktop-1920x1080.png"),
-        title: "How to calculate body fat percentage",
-        caption: "Step visual for calculating body fat percentage with Navy formulas",
+        title: "How to calculate BMI",
+        caption: "Step-by-step guide to calculating body mass index for women",
       },
     ],
   },
   {
-    path: "/blog/ideal-body-fat-percentage",
+    path: "/blog/what-is-bmi",
+    lastMod: LASTMOD,
+    changeFreq: "monthly",
+    priority: 0.8,
+    images: [
+      {
+        loc: imageLoc("/bmi-chart-women-1600x960.png"),
+        title: "What is BMI",
+        caption: "Plain-language explanation of body mass index meaning",
+      },
+    ],
+  },
+  {
+    path: "/blog/bmi-formula",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.75,
     images: [
       {
-        loc: imageLoc("/body-fat-chart-1600x900.png"),
-        title: "Ideal body fat percentage",
-        caption: "Ideal and healthy body fat percentage ranges by sex and age",
+        loc: imageLoc("/hero-mobile-1080x1350.png"),
+        title: "BMI formula",
+        caption: "Metric and imperial BMI formulas with worked examples",
+      },
+    ],
+  },
+  {
+    path: "/blog/height-and-weight-chart-for-women",
+    lastMod: LASTMOD,
+    changeFreq: "monthly",
+    priority: 0.75,
+    images: [
+      {
+        loc: imageLoc("/bmi-chart-women-1600x960.png"),
+        title: "Height and weight chart for women",
+        caption: "Healthy weight ranges by height for adult women",
       },
     ],
   },

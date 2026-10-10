@@ -12,10 +12,35 @@ module.exports = {
         display: ['var(--font-sora)', 'var(--font-outfit)', 'sans-serif'],
       },
       colors: {
-        primary: '#ffffff',
-        secondary: '#ffffff',
-        accent: '#000000',
-        sunrise: '#000000',
+        brand: {
+          DEFAULT: '#1A1225',
+          deep: '#120B1A',
+          soft: '#3B2458',
+          glow: '#6B3FA0',
+        },
+        mist: '#FBF4F8',
+        blush: '#FFF0F5',
+        ink: '#1A1225',
+        pink: {
+          DEFAULT: '#FF7A9A',
+          soft: '#FFB3C6',
+          deep: '#E85A7A',
+        },
+        coral: {
+          DEFAULT: '#FF7A7A',
+          deep: '#F0627A',
+        },
+        lilac: '#C9A0DC',
+        teal: {
+          DEFAULT: '#5DD39E',
+          deep: '#3BB87F',
+        },
+        sky: '#7CC6FE',
+        gold: '#FFC857',
+        primary: '#1A1225',
+        secondary: '#FBF4F8',
+        accent: '#FF7A7A',
+        sunrise: '#FF7A9A',
       },
       keyframes: {
         'fade-up': {

@@ -1,30 +1,30 @@
 {
-  "name": "Body Fat Calculator",
-  "short_name": "Body Fat Calc",
-  "description": "Free body fat percentage calculator using the U.S. Navy method and BMI estimate.",
+  "name": "BMI Calculator Women",
+  "short_name": "BMI Women",
+  "description": "Free BMI calculator for women with WHO categories, healthy weight range, and women’s BMI chart.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#FFF0F5",
+  "theme_color": "#1A1225",
   "icons": [
     {
-      "src": "/favicon.ico?v=20261011-bf1",
+      "src": "/favicon.ico?v=20261011-bmw1",
       "sizes": "48x48",
       "type": "image/x-icon"
     },
     {
-      "src": "/android-chrome-192x192.png?v=20261011-bf1",
+      "src": "/android-chrome-192x192.png?v=20261011-bmw1",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png?v=20261011-bf1",
+      "src": "/android-chrome-512x512.png?v=20261011-bmw1",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/android-chrome-512x512.png?v=20261011-bf1",
+      "src": "/android-chrome-512x512.png?v=20261011-bmw1",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
