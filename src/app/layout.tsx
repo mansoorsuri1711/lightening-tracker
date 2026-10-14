@@ -131,10 +131,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${sora.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${outfit.variable} ${sora.variable}`}
+      style={{ backgroundColor: "#080F1C", colorScheme: "dark" }}
+    >
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#080F1C" />
+        <style
+          dangerouslySetInnerHTML={{
+            __html:
+              "html,body{background-color:#080F1C!important;color-scheme:dark}#__next,main{background-color:transparent}",
+          }}
+        />
         <link rel="icon" href={`/favicon.ico?v=${ASSET_VERSION}`} type="image/x-icon" sizes="48x48" />
         <link rel="icon" href={`/favicon.svg?v=${ASSET_VERSION}`} type="image/svg+xml" />
         <link rel="icon" href={`/favicon-32x32.png?v=${ASSET_VERSION}`} type="image/png" sizes="32x32" />
@@ -149,6 +161,7 @@ export default function RootLayout({
       </head>
       <body
         className="font-sans antialiased text-ink min-h-screen flex flex-col bg-brand site-atmosphere"
+        style={{ backgroundColor: "#080F1C" }}
         suppressHydrationWarning
       >
         <MobileMenuProvider>

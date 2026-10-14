@@ -40,13 +40,14 @@ const faqs = [
 
 export default function NflParlayPage() {
   return (
-    <div className="container mx-auto max-w-6xl px-4 py-10">
+    <>
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "NFL Parlay Calculator" },
+          { label: "NFL Parlay Calculator", href: "/nfl-parlay-calculator" },
         ]}
       />
+      <div className="container mx-auto max-w-6xl px-4 pb-10 pt-8">
       <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
         NFL parlay calculator
       </h1>
@@ -100,6 +101,7 @@ export default function NflParlayPage() {
       <div className="mt-12">
         <FaqSection title="NFL parlay FAQs" items={faqs} />
       </div>
-    </div>
+      </div>
+    </>
   );
 }

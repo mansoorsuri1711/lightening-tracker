@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="container mx-auto max-w-3xl px-4 py-10">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]} />
+    <>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Privacy Policy", href: "/privacy" }]} />
+      <div className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
       <h1 className="mb-6 font-display text-3xl font-bold text-white">Privacy Policy</h1>
       <div className="space-y-5 text-white/80 leading-relaxed">
         <p>Last updated: October 14, 2026</p>
@@ -51,6 +52,7 @@ export default function PrivacyPage() {
           .
         </p>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

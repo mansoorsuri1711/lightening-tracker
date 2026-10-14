@@ -46,8 +46,9 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-10">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
+    <>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }]} />
+      <div className="container mx-auto max-w-5xl px-4 pb-10 pt-8">
       <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
         Parlay calculator blog
       </h1>
@@ -79,6 +80,7 @@ export default function BlogPage() {
           </Link>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }

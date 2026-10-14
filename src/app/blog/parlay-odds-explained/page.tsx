@@ -42,20 +42,21 @@ const faqs = [
 
 export default function ParlayOddsExplainedPage() {
   return (
-    <article className="container mx-auto max-w-3xl px-4 py-10">
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: "Parlay Odds Explained", href: "/blog/parlay-odds-explained" },
+        ]}
+      />
+      <article className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
       <BlogPostSchema
         title={TITLE}
         description={DESC}
         slug={SLUG}
         datePublished={DATE}
         image={`${SITE_ORIGIN}${BRAND_FEATURE_3}`}
-      />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "Parlay Odds Explained" },
-        ]}
       />
       <h1 className="mb-4 font-display text-3xl font-bold text-white md:text-4xl">{TITLE}</h1>
       <p className="mb-6 text-sm text-white/50">Updated October 14, 2026 · 8 min read</p>
@@ -148,6 +149,7 @@ export default function ParlayOddsExplainedPage() {
       <div className="mt-12 text-center">
         <CtaButton href="/#calculator">TEST YOUR ODDS</CtaButton>
       </div>
-    </article>
+      </article>
+    </>
   );
 }

@@ -40,13 +40,14 @@ const faqs = [
 
 export default function MoneylineParlayPage() {
   return (
-    <div className="container mx-auto max-w-6xl px-4 py-10">
+    <>
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Moneyline Parlay Calculator" },
+          { label: "Moneyline Parlay Calculator", href: "/moneyline-parlay-calculator" },
         ]}
       />
+      <div className="container mx-auto max-w-6xl px-4 pb-10 pt-8">
       <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
         Moneyline parlay calculator
       </h1>
@@ -95,6 +96,7 @@ export default function MoneylineParlayPage() {
       <div className="mt-12">
         <FaqSection title="Moneyline parlay FAQs" items={faqs} />
       </div>
-    </div>
+      </div>
+    </>
   );
 }

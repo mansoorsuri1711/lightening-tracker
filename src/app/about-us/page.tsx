@@ -21,8 +21,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-10">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About Us" }]} />
+    <>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About Us", href: "/about-us" }]} />
+      <div className="container mx-auto max-w-4xl px-4 pb-10 pt-8">
       <div className="mb-10 flex flex-col items-start gap-8 md:flex-row">
         <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-brand-soft">
           <Image
@@ -87,6 +88,7 @@ export default function AboutPage() {
       </section>
 
       <CtaButton href="/#calculator">OPEN CALCULATOR</CtaButton>
-    </div>
+      </div>
+    </>
   );
 }

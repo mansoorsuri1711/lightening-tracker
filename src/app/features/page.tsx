@@ -73,8 +73,9 @@ const features = [
 
 export default function FeaturesPage() {
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-10">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Features" }]} />
+    <>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Features", href: "/features" }]} />
+      <div className="container mx-auto max-w-5xl px-4 pb-10 pt-8">
       <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
         Parlay Calculator features
       </h1>
@@ -131,6 +132,7 @@ export default function FeaturesPage() {
           OPEN CALCULATOR
         </CtaButton>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

@@ -14,6 +14,7 @@ const navLinks = [
   { href: '/round-robin-calculator', label: 'Round Robin' },
   { href: '/blog', label: 'Blog' },
   { href: '/about-us', label: 'About' },
+  { href: '/contact-us', label: 'Contact' },
 ];
 
 export default function Header() {

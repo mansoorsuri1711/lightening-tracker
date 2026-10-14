@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <div className="container mx-auto max-w-3xl px-4 py-10">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Disclaimer" }]} />
+    <>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Disclaimer", href: "/disclaimer" }]} />
+      <div className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
       <h1 className="mb-6 font-display text-3xl font-bold text-white">Disclaimer</h1>
       <div className="space-y-5 text-white/80 leading-relaxed">
         <p>Last updated: October 14, 2026</p>
@@ -42,6 +43,7 @@ export default function DisclaimerPage() {
           .
         </p>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

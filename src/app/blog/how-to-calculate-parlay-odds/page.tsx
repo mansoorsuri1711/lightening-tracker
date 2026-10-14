@@ -47,20 +47,21 @@ const faqs = [
 
 export default function HowToCalculateParlayOddsPage() {
   return (
-    <article className="container mx-auto max-w-3xl px-4 py-10">
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: "How to Calculate Parlay Odds", href: "/blog/how-to-calculate-parlay-odds" },
+        ]}
+      />
+      <article className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
       <BlogPostSchema
         title={TITLE}
         description={DESC}
         slug={SLUG}
         datePublished={DATE}
         image={`${SITE_ORIGIN}${BRAND_HERO}`}
-      />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Calculate Parlay Odds" },
-        ]}
       />
       <h1 className="mb-4 font-display text-3xl font-bold text-white md:text-4xl">{TITLE}</h1>
       <p className="mb-6 text-sm text-white/50">Updated October 14, 2026 · 12 min read</p>
@@ -187,6 +188,7 @@ export default function HowToCalculateParlayOddsPage() {
       <div className="mt-12 text-center">
         <CtaButton href="/#calculator">OPEN PARLAY CALCULATOR</CtaButton>
       </div>
-    </article>
+      </article>
+    </>
   );
 }

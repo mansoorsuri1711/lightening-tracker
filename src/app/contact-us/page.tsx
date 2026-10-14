@@ -19,17 +19,19 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto max-w-3xl px-4 py-10">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact Us" }]} />
-      <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">Contact us</h1>
-      <p className="mb-8 text-lg text-white/80">
-        Feedback on the calculator, odds formats, or guides? Send a message or email{" "}
-        <a href={`mailto:${CONTACT_EMAIL}`} className="text-violet-soft underline">
-          {CONTACT_EMAIL}
-        </a>
-        .
-      </p>
-      <ContactForm />
-    </div>
+    <>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact Us", href: "/contact-us" }]} />
+      <div className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
+        <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">Contact us</h1>
+        <p className="mb-8 text-lg text-white/80">
+          Feedback on the calculator, odds formats, or guides? Send a message or email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-violet-soft underline">
+            {CONTACT_EMAIL}
+          </a>
+          .
+        </p>
+        <ContactForm />
+      </div>
+    </>
   );
 }

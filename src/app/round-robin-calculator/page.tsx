@@ -35,13 +35,14 @@ const faqs = [
 
 export default function RoundRobinPage() {
   return (
-    <div className="container mx-auto max-w-6xl px-4 py-10">
+    <>
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Round Robin Calculator" },
+          { label: "Round Robin Calculator", href: "/round-robin-calculator" },
         ]}
       />
+      <div className="container mx-auto max-w-6xl px-4 pb-10 pt-8">
       <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
         Round robin bet calculator
       </h1>
@@ -71,6 +72,7 @@ export default function RoundRobinPage() {
       <div className="mt-12">
         <FaqSection title="Round robin FAQs" items={faqs} />
       </div>
-    </div>
+      </div>
+    </>
   );
 }

@@ -37,6 +37,7 @@ export default function Footer() {
               <li><Link href="/blog/what-is-a-parlay-bet" className="text-white/85 hover:text-white hover:underline">What Is a Parlay Bet?</Link></li>
               <li><Link href="/blog/parlay-odds-explained" className="text-white/85 hover:text-white hover:underline">Parlay Odds Explained</Link></li>
               <li><Link href="/about-us" className="text-white/85 hover:text-white hover:underline">About Us</Link></li>
+              <li><Link href="/contact-us" className="text-white/85 hover:text-white hover:underline">Contact Us</Link></li>
               <li><Link href="/privacy" className="text-white/85 hover:text-white hover:underline">Privacy Policy</Link></li>
               <li><Link href="/disclaimer" className="text-white/85 hover:text-white hover:underline">Disclaimer</Link></li>
             </ul>

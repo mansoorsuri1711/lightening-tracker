@@ -68,12 +68,13 @@ export default function HowItWorksPage() {
   };
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-10">
+    <>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "How It Works", href: "/how-it-works" }]} />
+      <div className="container mx-auto max-w-4xl px-4 pb-10 pt-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "How It Works" }]} />
       <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
         How the parlay calculator works
       </h1>
@@ -119,6 +120,7 @@ export default function HowItWorksPage() {
       <div className="mt-12 text-center">
         <CtaButton href="/#calculator">TRY IT FREE</CtaButton>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

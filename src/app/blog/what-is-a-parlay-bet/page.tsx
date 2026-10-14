@@ -42,20 +42,21 @@ const faqs = [
 
 export default function WhatIsParlayPage() {
   return (
-    <article className="container mx-auto max-w-3xl px-4 py-10">
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: "What Is a Parlay Bet?", href: "/blog/what-is-a-parlay-bet" },
+        ]}
+      />
+      <article className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
       <BlogPostSchema
         title={TITLE}
         description={DESC}
         slug={SLUG}
         datePublished={DATE}
         image={`${SITE_ORIGIN}${BRAND_FEATURE_2}`}
-      />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "What Is a Parlay Bet?" },
-        ]}
       />
       <h1 className="mb-4 font-display text-3xl font-bold text-white md:text-4xl">{TITLE}</h1>
       <p className="mb-6 text-sm text-white/50">Updated October 14, 2026 · 9 min read</p>
@@ -151,6 +152,7 @@ export default function WhatIsParlayPage() {
       <div className="mt-12 text-center">
         <CtaButton href="/#calculator">CALCULATE A PARLAY</CtaButton>
       </div>
-    </article>
+      </article>
+    </>
   );
 }

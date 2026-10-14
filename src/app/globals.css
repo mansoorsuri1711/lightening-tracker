@@ -10,10 +10,17 @@
   --brand: #080f1c;
   --pink: #3ddc84;
   --violet: #c6f432;
+  color-scheme: dark;
+  background-color: #080f1c;
+}
+
+html {
+  background-color: #080f1c;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
+  background-color: #080f1c;
   background: #080f1c;
 }
 
