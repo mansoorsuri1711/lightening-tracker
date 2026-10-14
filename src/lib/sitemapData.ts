@@ -12,7 +12,7 @@ export type SitemapPage = {
   images?: Array<{ loc: string; title: string; caption: string }>;
 };
 
-const LASTMOD = "2026-10-11";
+const LASTMOD = "2026-10-14";
 
 export const SITEMAP_PAGES: SitemapPage[] = [
   {
@@ -23,57 +23,78 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     images: [
       {
         loc: imageLoc("/android-chrome-512x512.png"),
-        title: "BMI Calculator Women logo",
-        caption: "Brand mark for the free BMI calculator for women",
+        title: "Parlay Calculator logo",
+        caption: "Brand mark for Parlay Calculator on parlaycalculator.net",
       },
       {
-        loc: imageLoc("/hero-desktop-1920x1080.png"),
-        title: "BMI Calculator Women hero",
-        caption: "Homepage visual for calculating women’s body mass index",
-      },
-      {
-        loc: imageLoc("/bmi-chart-women-1600x960.png"),
-        title: "BMI chart for women",
-        caption: "Women’s BMI category chart from underweight to obesity classes",
+        loc: imageLoc("/parlay-calculator.webp"),
+        title: "Parlay Calculator tool",
+        caption: "Free parlay odds and payout calculator homepage",
       },
     ],
   },
   {
-    path: "/bmi-chart-women",
+    path: "/features",
+    lastMod: LASTMOD,
+    changeFreq: "weekly",
+    priority: 0.9,
+    images: [
+      {
+        loc: imageLoc("/parlay-calculator-1.webp"),
+        title: "Parlay Calculator features",
+        caption: "Odds formats, multi-leg tickets, and payout breakdown features",
+      },
+    ],
+  },
+  {
+    path: "/how-it-works",
+    lastMod: LASTMOD,
+    changeFreq: "weekly",
+    priority: 0.9,
+    images: [
+      {
+        loc: imageLoc("/parlay-calculator-2.webp"),
+        title: "How Parlay Calculator works",
+        caption: "Steps to calculate combined parlay odds and payout",
+      },
+    ],
+  },
+  {
+    path: "/nfl-parlay-calculator",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.95,
     images: [
       {
-        loc: imageLoc("/bmi-chart-women-1600x960.png"),
-        title: "BMI chart women",
-        caption: "Height and weight BMI chart designed for women",
+        loc: imageLoc("/parlay-calculator-3.webp"),
+        title: "NFL Parlay Calculator",
+        caption: "Calculate NFL multi-leg parlays and payouts",
       },
     ],
   },
   {
-    path: "/healthy-bmi",
+    path: "/moneyline-parlay-calculator",
     lastMod: LASTMOD,
     changeFreq: "weekly",
-    priority: 0.9,
+    priority: 0.95,
     images: [
       {
-        loc: imageLoc("/bmi-chart-women-1600x960.png"),
-        title: "Healthy BMI for women",
-        caption: "Healthy and normal BMI ranges for adult women",
+        loc: imageLoc("/parlay-calculator-1.webp"),
+        title: "Moneyline Parlay Calculator",
+        caption: "Calculate moneyline parlay odds and winnings",
       },
     ],
   },
   {
-    path: "/bmi-by-age",
+    path: "/round-robin-calculator",
     lastMod: LASTMOD,
     changeFreq: "weekly",
-    priority: 0.9,
+    priority: 0.95,
     images: [
       {
-        loc: imageLoc("/hero-desktop-1920x1080.png"),
-        title: "BMI calculator by age for women",
-        caption: "How age changes BMI interpretation for women",
+        loc: imageLoc("/parlay-calculator-2.webp"),
+        title: "Round Robin Bet Calculator",
+        caption: "Calculate round robin parlay combinations and total stake",
       },
     ],
   },
@@ -85,7 +106,7 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     images: [
       {
         loc: imageLoc("/android-chrome-512x512.png"),
-        title: "About BMI Calculator Women",
+        title: "About Parlay Calculator",
         caption: "Brand logo used on the About page",
       },
     ],
@@ -97,54 +118,41 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.8,
   },
   {
-    path: "/blog/how-to-calculate-bmi",
+    path: "/blog/how-to-calculate-parlay-odds",
     lastMod: LASTMOD,
     changeFreq: "monthly",
-    priority: 0.8,
+    priority: 0.9,
     images: [
       {
-        loc: imageLoc("/hero-desktop-1920x1080.png"),
-        title: "How to calculate BMI",
-        caption: "Step-by-step guide to calculating body mass index for women",
+        loc: imageLoc("/parlay-calculator.webp"),
+        title: "How to calculate parlay odds",
+        caption: "Step-by-step guide to calculating parlay odds and payouts",
       },
     ],
   },
   {
-    path: "/blog/what-is-bmi",
+    path: "/blog/what-is-a-parlay-bet",
     lastMod: LASTMOD,
     changeFreq: "monthly",
-    priority: 0.8,
+    priority: 0.85,
     images: [
       {
-        loc: imageLoc("/bmi-chart-women-1600x960.png"),
-        title: "What is BMI",
-        caption: "Plain-language explanation of body mass index meaning",
+        loc: imageLoc("/parlay-calculator-1.webp"),
+        title: "What is a parlay bet",
+        caption: "Explanation of parlay bets, odds, and how they work",
       },
     ],
   },
   {
-    path: "/blog/bmi-formula",
+    path: "/blog/parlay-odds-explained",
     lastMod: LASTMOD,
     changeFreq: "monthly",
-    priority: 0.75,
+    priority: 0.85,
     images: [
       {
-        loc: imageLoc("/hero-mobile-1080x1350.png"),
-        title: "BMI formula",
-        caption: "Metric and imperial BMI formulas with worked examples",
-      },
-    ],
-  },
-  {
-    path: "/blog/height-and-weight-chart-for-women",
-    lastMod: LASTMOD,
-    changeFreq: "monthly",
-    priority: 0.75,
-    images: [
-      {
-        loc: imageLoc("/bmi-chart-women-1600x960.png"),
-        title: "Height and weight chart for women",
-        caption: "Healthy weight ranges by height for adult women",
+        loc: imageLoc("/parlay-calculator-2.webp"),
+        title: "Parlay odds explained",
+        caption: "How combined parlay odds and implied probability work",
       },
     ],
   },

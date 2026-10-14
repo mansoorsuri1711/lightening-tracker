@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { CONTACT_EMAIL, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
+import { CONTACT_EMAIL, SITE_DOMAIN, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
-  description: `Educational disclaimer for ${SITE_NAME} BMI estimates and women’s health guides.`,
+  description: `Legal disclaimer for ${SITE_NAME} — educational odds tool, not a sportsbook.`,
   alternates: { canonical: `${SITE_ORIGIN}/disclaimer` },
 };
 
@@ -12,30 +12,35 @@ export default function DisclaimerPage() {
   return (
     <div className="container mx-auto max-w-3xl px-4 py-10">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Disclaimer" }]} />
-      <h1 className="mb-6 font-display text-3xl font-bold text-brand">Disclaimer</h1>
-      <div className="space-y-5 leading-relaxed text-ink">
+      <h1 className="mb-6 font-display text-3xl font-bold text-white">Disclaimer</h1>
+      <div className="space-y-5 text-white/80 leading-relaxed">
+        <p>Last updated: October 14, 2026</p>
         <p>
-          {SITE_NAME} provides educational calculators and articles about body mass index (BMI),
-          women’s BMI charts, healthy weight ranges, and related formulas. Nothing on this site is
-          medical, dietary, or clinical advice.
+          {SITE_NAME} on {SITE_DOMAIN} provides educational sports betting calculators and articles.
+          We are not a sportsbook, casino, or gambling operator. We do not accept wagers, hold
+          balances, or pay out bets.
         </p>
+        <h2 className="font-display text-xl font-semibold text-white">No guarantees</h2>
         <p>
-          BMI depends on the height and weight you enter and uses simplified published formulas. It
-          does not measure body fat directly. Pregnancy, high muscle mass, edema, age, and ethnicity
-          guidelines can change interpretation. Always consult a qualified professional before making
-          health decisions.
+          Calculator results use standard odds conversion and multiplication. Sportsbooks may apply
+          different parlay juice, boosted odds, same-game pricing, or house rules. Always confirm
+          the price on your ticket. Past examples are illustrative only.
         </p>
+        <h2 className="font-display text-xl font-semibold text-white">Gambling risk</h2>
         <p>
-          We are not affiliated with WHO, CDC, NHLBI, or any clinical device manufacturer. Links to
-          external resources are for convenience only.
+          Sports betting involves risk of loss. Only wager what you can afford to lose. If gambling
+          is a problem, seek help from a licensed support service in your region. You are
+          responsible for complying with local laws and age restrictions.
         </p>
+        <h2 className="font-display text-xl font-semibold text-white">Accuracy</h2>
         <p>
-          Questions:{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand underline hover:no-underline">
+          We strive for accurate formulas and clear guides, but content may contain errors or become
+          outdated. Use the site at your own risk. For questions, contact{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-violet-soft underline">
             {CONTACT_EMAIL}
           </a>
+          .
         </p>
-        <p className="text-sm text-ink/70">Last updated: October 11, 2026</p>
       </div>
     </div>
   );

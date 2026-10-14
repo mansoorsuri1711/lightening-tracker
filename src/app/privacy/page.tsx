@@ -12,41 +12,44 @@ export default function PrivacyPage() {
   return (
     <div className="container mx-auto max-w-3xl px-4 py-10">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]} />
-      <h1 className="mb-6 font-display text-3xl font-bold text-brand">Privacy Policy</h1>
-      <div className="space-y-5 leading-relaxed text-ink">
+      <h1 className="mb-6 font-display text-3xl font-bold text-white">Privacy Policy</h1>
+      <div className="space-y-5 text-white/80 leading-relaxed">
+        <p>Last updated: October 14, 2026</p>
         <p>
-          {SITE_NAME} ({SITE_DOMAIN}) respects your privacy. This policy explains what information we
-          collect and how we use it when you visit our website or use the BMI calculator for women.
+          {SITE_NAME} (“we”, “us”) operates {SITE_DOMAIN}. This policy explains what information we
+          collect when you use our free parlay calculator and related pages.
         </p>
-        <h2 className="text-xl font-semibold text-brand">Information we collect</h2>
+        <h2 className="font-display text-xl font-semibold text-white">Information we collect</h2>
         <p>
-          Calculator inputs stay in your browser session for estimates and are not stored on our
-          servers as account data. If you email us or submit the contact form, we receive the details
-          you choose to send (such as name, email, and message).
+          Odds and stake values you type into the calculator are processed in your browser for the
+          calculation and are not stored on our servers as a betting account. If you contact us, we
+          receive the email address and message you submit. Standard server and analytics logs may
+          include IP address, browser type, and pages visited.
         </p>
-        <h2 className="text-xl font-semibold text-brand">Analytics and cookies</h2>
+        <h2 className="font-display text-xl font-semibold text-white">How we use information</h2>
         <p>
-          We may use privacy-conscious analytics or similar technologies to understand aggregate
-          traffic, popular pages, and performance. You can block cookies in your browser settings.
+          We use contact messages to respond to support requests and feedback. Aggregated analytics
+          help us improve performance and content. We do not sell personal information.
         </p>
-        <h2 className="text-xl font-semibold text-brand">How we use information</h2>
+        <h2 className="font-display text-xl font-semibold text-white">Cookies & analytics</h2>
         <p>
-          Contact details are used only to respond to your message, improve the site, or address
-          legal obligations. We do not sell personal information.
+          We may use first-party cookies or privacy-conscious analytics to understand traffic. You
+          can control cookies through your browser settings.
         </p>
-        <h2 className="text-xl font-semibold text-brand">Third parties</h2>
+        <h2 className="font-display text-xl font-semibold text-white">Third parties</h2>
         <p>
-          Hosting, email, and analytics providers may process limited technical data as needed to
-          operate the site. Those providers have their own privacy terms.
+          Hosting and analytics providers may process technical data on our behalf under their own
+          terms. We do not operate a sportsbook and do not share calculator inputs with betting
+          operators.
         </p>
-        <h2 className="text-xl font-semibold text-brand">Contact</h2>
+        <h2 className="font-display text-xl font-semibold text-white">Contact</h2>
         <p>
           Privacy questions:{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand underline hover:no-underline">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-violet-soft underline">
             {CONTACT_EMAIL}
           </a>
+          .
         </p>
-        <p className="text-sm text-ink/70">Last updated: October 11, 2026</p>
       </div>
     </div>
   );

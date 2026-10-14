@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 26, 18, 37;
-  --background-start-rgb: 251, 244, 248;
-  --background-end-rgb: 255, 255, 255;
-  --accent: #ff7a7a;
-  --brand: #1a1225;
-  --pink: #ff7a9a;
-  --lilac: #c9a0dc;
+  --foreground-rgb: 232, 240, 228;
+  --background-start-rgb: 8, 15, 28;
+  --background-end-rgb: 5, 10, 18;
+  --accent: #c6f432;
+  --brand: #080f1c;
+  --pink: #3ddc84;
+  --violet: #c6f432;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #fff7fb;
+  background: #080f1c;
 }
 
 img {
@@ -61,18 +61,58 @@ footer {
 }
 
 .site-atmosphere {
-  background-color: #fff7fb;
+  background-color: #080f1c;
   background-image:
-    radial-gradient(ellipse 85% 55% at 8% -8%, rgba(255, 122, 154, 0.22), transparent 55%),
-    radial-gradient(ellipse 75% 50% at 92% 0%, rgba(201, 160, 220, 0.28), transparent 52%),
-    radial-gradient(ellipse 60% 40% at 50% 110%, rgba(255, 122, 122, 0.12), transparent 55%),
-    linear-gradient(180deg, #fbf0f6 0%, #fff7fb 32%, #ffffff 72%);
+    radial-gradient(ellipse 90% 60% at 12% -10%, rgba(198, 244, 50, 0.18), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 90% 0%, rgba(61, 220, 132, 0.16), transparent 52%),
+    radial-gradient(ellipse 70% 45% at 50% 110%, rgba(198, 244, 50, 0.1), transparent 55%),
+    linear-gradient(180deg, #0c1524 0%, #080f1c 40%, #050a12 100%);
 }
 
 .hero-glow {
   animation: float-glow 8s ease-in-out infinite;
 }
 
+.brand-gradient-text {
+  background: linear-gradient(120deg, #d9f86a 0%, #3ddc84 45%, #c6f432 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 a {
   color: inherit;
+}
+
+.calc-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(5, 10, 18, 0.8);
+  padding: 0.625rem 0.75rem;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.calc-input:focus {
+  border-color: rgba(198, 244, 50, 0.6);
+  box-shadow: 0 0 0 1px rgba(198, 244, 50, 0.35);
+}
+
+.calc-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
 }

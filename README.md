@@ -1,12 +1,18 @@
-# BMI Calculator Women
+# Parlay Calculator
 
-Free BMI calculator for women at [bmicalculatorwomen.io](https://bmicalculatorwomen.io) — WHO categories, healthy weight range, women’s BMI chart, and age-aware guidance.
+Free sports betting **parlay calculator** for [parlaycalculator.net](https://parlaycalculator.net).
+
+## Features
+
+- American, decimal, and fractional odds
+- Multi-leg payout, profit, and implied probability
+- NFL & moneyline calculator landers
+- Round robin bet calculator
+- SERP-backed guides (how to calculate parlay odds, what is a parlay, odds explained)
 
 ## Stack
 
-- Next.js App Router + TypeScript
-- Tailwind CSS
-- Static SEO routes (`sitemap-index.xml`, `index.xml`, `image-sitemap.xml`, `robots.txt`)
+- Next.js (App Router) + TypeScript + Tailwind CSS
 
 ## Develop
 
@@ -21,3 +27,9 @@ npm run dev
 npm run build
 npm start
 ```
+
+## SEO notes
+
+- Primary keyword: `parlay calculator`
+- Canonical host: `https://parlaycalculator.net`
+- Sitemap index: `/sitemap-index.xml`

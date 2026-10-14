@@ -1,26 +1,34 @@
-# SEO Strategy — bmicalculatorwomen.io
+# Parlay Calculator SEO Strategy
 
-Primary keyword: **bmi calculator women** (also bmi calculator for women / bmi calculator female).
+**Domain:** https://parlaycalculator.net  
+**Primary keyword:** parlay calculator (≈64K US monthly)
 
-## Core pages
+## Keyword map
 
-| Path | Target intent |
-|------|----------------|
-| `/` | bmi calculator women / female |
-| `/bmi-chart-women` | bmi chart women / for women / female |
-| `/healthy-bmi` | healthy bmi / normal bmi / what is a good bmi |
-| `/bmi-by-age` | bmi calculator women age / by age |
+| Intent | Keyword (vol) | URL |
+|--------|---------------|-----|
+| Tool (primary) | parlay calculator (64K) | `/` |
+| Tool variants | parlay odds / payout / bet calculator | `/` (+ redirects) |
+| Modifier | nfl parlay calculator (900) | `/nfl-parlay-calculator` |
+| Modifier | moneyline parlay calculator (800) | `/moneyline-parlay-calculator` |
+| Tool | round robin bet calculator (450) | `/round-robin-calculator` |
+| Informational | how to calculate parlay odds (710) | `/blog/how-to-calculate-parlay-odds` |
+| Informational | what is a parlay bet | `/blog/what-is-a-parlay-bet` |
+| Informational | parlay odds (2.2K) | `/blog/parlay-odds-explained` |
 
-## Blog posts (SERP-backed only)
+Skipped for v1: `kalkulator parlay` (Indonesia) — English-first site.
 
-1. `/blog/how-to-calculate-bmi` — how to calculate bmi / how to compute bmi
-2. `/blog/what-is-bmi` — what is bmi / bmi meaning
-3. `/blog/bmi-formula` — bmi formula
-4. `/blog/height-and-weight-chart-for-women` — height and weight chart / how much should i weigh
+## Competitive gaps we own
 
-## Differentiators vs CDC / Calculator.net / Omni
+- Clean free tool without sportsbook soft-sell clutter
+- American + decimal + fractional in one calculator
+- Dedicated round robin + NFL + moneyline landers
+- Original how-to with formula + worked examples
+- Custom trust pages + FAQ/HowTo/SoftwareApplication schema
 
-- Women-first default UX and copy (not a gender toggle buried in a generic tool)
-- Chart + healthy range + age notes on dedicated hubs (less doorway cannibalization)
-- Original tables, FAQ schema, HowTo + WebApplication rating markup
-- Brand imagery and plum/coral/teal theme from site assets
+## Technical
+
+- Canonicals, OG, Twitter on all indexable pages
+- `/sitemap-index.xml` → `index.xml` + `image-sitemap.xml`
+- Robots Content-Signal + AI bot blocks
+- Visible ratings match AggregateRating schema
