@@ -36,7 +36,6 @@ export default function Header() {
               height={40}
               className="object-contain"
               priority
-              fetchPriority="high"
             />
           </div>
           <span className="truncate font-display text-sm sm:text-base md:text-lg font-bold leading-tight text-white">

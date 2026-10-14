@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useMemo, useState } from "react";
+import { useId, useMemo, useRef, useState } from "react";
 import {
   OddsFormat,
   calculateRoundRobin,
@@ -10,16 +10,15 @@ import {
 
 type Leg = { id: string; odds: string };
 
-function newLeg(odds = "-110"): Leg {
-  return { id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, odds };
-}
-
 export default function RoundRobinCalculator() {
   const formId = useId();
+  const nextLegId = useRef(4);
   const [format, setFormat] = useState<OddsFormat>("american");
   const [stake, setStake] = useState("10");
   const [groupSize, setGroupSize] = useState(2);
-  const [legs, setLegs] = useState<Leg[]>(() => [newLeg(), newLeg(), newLeg(), newLeg()]);
+  const [legs, setLegs] = useState<Leg[]>(() =>
+    Array.from({ length: 4 }, (_, i) => ({ id: `rr-leg-${i}`, odds: "-110" }))
+  );
 
   const result = useMemo(() => {
     const stakeNum = Number(stake);
@@ -125,7 +124,9 @@ export default function RoundRobinCalculator() {
             type="button"
             className="w-full rounded-xl border border-dashed border-violet/40 py-2.5 text-sm font-semibold text-violet-soft"
             disabled={legs.length >= 10}
-            onClick={() => setLegs((prev) => [...prev, newLeg()])}
+            onClick={() =>
+              setLegs((prev) => [...prev, { id: `rr-leg-${nextLegId.current++}`, odds: "-110" }])
+            }
           >
             + Add selection
           </button>

@@ -18,6 +18,7 @@ export const APP_AGGREGATE_RATING = {
 export const ORGANIZATION_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_ORIGIN}/#organization`,
   name: SITE_NAME,
   url: SITE_ORIGIN,
   logo: `${SITE_ORIGIN}${BRAND_LOGO}`,

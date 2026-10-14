@@ -31,6 +31,11 @@ const faqs = [
     answer:
       "Yes. Enter negative favorites (−150) and positive underdogs (+180) on the same ticket. The tool handles mixed American moneylines automatically.",
   },
+  {
+    question: "Is a moneyline parlay better than a spread parlay?",
+    answer:
+      "Not always. Heavy favorites on the moneyline often pay less than −110 spreads on the same side. Run both versions here before you choose.",
+  },
 ];
 
 export default function MoneylineParlayPage() {
@@ -55,10 +60,7 @@ export default function MoneylineParlayPage() {
         .
       </p>
 
-      <ParlayCalculator
-        title="Moneyline parlay odds"
-        defaultLegs={["-150", "-120", "+130"]}
-      />
+      <ParlayCalculator showLabels={false} defaultLegs={["-150", "-120", "+130"]} />
 
       <section className="mt-14 max-w-3xl">
         <h2 className="mb-3 font-display text-2xl font-bold text-white">
@@ -69,10 +71,22 @@ export default function MoneylineParlayPage() {
           pay less than a three-spread ticket — even when you pick the same sides. Underdog
           moneylines flip that math. Run both versions here before you choose.
         </p>
+        <h2 className="mb-3 mt-8 font-display text-2xl font-bold text-white">
+          How to read mixed ML prices
+        </h2>
+        <p className="mb-4 text-white/80 leading-relaxed">
+          Convert each American moneyline to decimal, multiply, then apply stake. Example: −150,
+          −120, and +130 → ≈ 1.667 × 1.833 × 2.30 ≈ 7.03 decimal. A $50 stake returns about $351.50
+          total. Confirm with the calculator above.
+        </p>
         <p className="text-white/80 leading-relaxed">
           New to parlays? Start with{" "}
           <Link href="/blog/what-is-a-parlay-bet" className="text-violet-soft underline">
             what is a parlay bet
+          </Link>
+          . For NFL spreads and totals, open the{" "}
+          <Link href="/nfl-parlay-calculator" className="text-violet-soft underline">
+            NFL parlay calculator
           </Link>
           .
         </p>

@@ -16,7 +16,7 @@ function metaAsset(path: string): string {
 
 /** Brand & content images in /public */
 export const BRAND_LOGO = "/android-chrome-512x512.png";
-export const BRAND_LOGO_MARK = "/logo-icon.png";
+export const BRAND_LOGO_MARK = "/logo-icon.svg";
 export const BRAND_LOGO_HORIZONTAL = "/logo-horizontal-white-text.png";
 export const BRAND_LOGO_HORIZONTAL_DARK = "/logo-horizontal-dark-text.png";
 export const BRAND_HERO = "/parlay-calculator.webp";

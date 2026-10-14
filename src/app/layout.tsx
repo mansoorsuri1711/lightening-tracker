@@ -4,7 +4,6 @@ import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import DeferredStyles from "@/components/DeferredStyles";
 import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
 import WebVitalsTracker from "@/components/WebVitalsTracker";
 import DeferredAnalytics from "@/components/DeferredAnalytics";
@@ -23,6 +22,7 @@ const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-outfit",
+  adjustFontFallback: true,
 });
 
 const sora = Sora({
@@ -30,6 +30,8 @@ const sora = Sora({
   display: "swap",
   variable: "--font-sora",
   weight: "600",
+  adjustFontFallback: true,
+  preload: false,
 });
 
 export const viewport: Viewport = {
@@ -152,7 +154,6 @@ export default function RootLayout({
         <MobileMenuProvider>
           <Header />
           <main className="relative z-10 flex-1">{children}</main>
-          <DeferredStyles />
           <Footer />
           <ScrollToTopWrapper />
         </MobileMenuProvider>

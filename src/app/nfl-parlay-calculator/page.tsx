@@ -31,6 +31,11 @@ const faqs = [
     answer:
       "You can enter any custom prices your book quotes for an SGP. Because correlated SGP odds are set by the sportsbook (not simple independent multiplication), always paste the book’s listed price for accuracy.",
   },
+  {
+    question: "How many legs should an NFL parlay have?",
+    answer:
+      "Shorter parlays (2–3 legs) hit more often; longer tickets pay more but implied probability drops fast. Use this calculator’s win-probability readout before you add a fourth or fifth leg.",
+  },
 ];
 
 export default function NflParlayPage() {
@@ -54,12 +59,9 @@ export default function NflParlayPage() {
         .
       </p>
 
-      <ParlayCalculator
-        title="NFL parlay odds & payout"
-        defaultLegs={["-110", "-110", "+150"]}
-      />
+      <ParlayCalculator showLabels={false} defaultLegs={["-110", "-110", "+150"]} />
 
-      <section className="mt-14 prose-invert max-w-3xl">
+      <section className="mt-14 max-w-3xl">
         <h2 className="mb-3 font-display text-2xl font-bold text-white">
           Building smarter NFL parlays
         </h2>
@@ -69,16 +71,29 @@ export default function NflParlayPage() {
           probability falls just as quickly. Use this NFL parlay calculator to test whether the
           juice is worth the stack before you lock the slip.
         </p>
-        <p className="text-white/80 leading-relaxed">
-          For the formula behind the numbers, see{" "}
-          <Link href="/blog/how-to-calculate-parlay-odds" className="text-violet-soft underline">
-            how to calculate parlay odds
-          </Link>
-          . For every combination instead of one ticket, try the{" "}
+        <h2 className="mb-3 mt-8 font-display text-2xl font-bold text-white">
+          Spreads, totals, and moneylines on one ticket
+        </h2>
+        <p className="mb-4 text-white/80 leading-relaxed">
+          Mix −3.5 favorites, overs/unders, and moneyline dogs in the same builder. Enter each price
+          exactly as your sportsbook shows it. For a single all-or-nothing payout, stay on this page;
+          for every combination of your picks, switch to the{" "}
           <Link href="/round-robin-calculator" className="text-violet-soft underline">
             round robin bet calculator
           </Link>
           .
+        </p>
+        <h2 className="mb-3 mt-8 font-display text-2xl font-bold text-white">
+          Example NFL 3-leg payout
+        </h2>
+        <p className="text-white/80 leading-relaxed">
+          Legs at −110, −110, and +150 → decimals ≈ 1.909 × 1.909 × 2.50 ≈ 9.11. A $20 stake returns
+          about $182 total if every leg cashes. Plug the same numbers into the tool above to confirm,
+          then read{" "}
+          <Link href="/blog/how-to-calculate-parlay-odds" className="text-violet-soft underline">
+            how to calculate parlay odds
+          </Link>{" "}
+          for the full formula.
         </p>
       </section>
 

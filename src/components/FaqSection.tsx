@@ -4,10 +4,13 @@ export default function FaqSection({
   id = "faq",
   title = "Frequently asked questions",
   items,
+  includeSchema = true,
 }: {
   id?: string;
   title?: string;
   items: FaqItem[];
+  /** Set false when the page already embeds FAQPage JSON-LD in a parent graph. */
+  includeSchema?: boolean;
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -33,7 +36,7 @@ export default function FaqSection({
           >
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-semibold text-white">
               <span>{item.question}</span>
-              <span className="text-xl leading-none text-pink transition group-open:rotate-45" aria-hidden="true">
+              <span className="text-xl leading-none text-teal transition group-open:rotate-45" aria-hidden="true">
                 +
               </span>
             </summary>
@@ -41,10 +44,12 @@ export default function FaqSection({
           </details>
         ))}
       </div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      {includeSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      )}
     </section>
   );
 }

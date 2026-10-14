@@ -57,21 +57,26 @@ export default function BlogPage() {
       </p>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {posts.map((post) => (
-          <article
+          <Link
             key={post.href}
-            className="border border-white/10 bg-white/5 p-6 transition-colors hover:border-violet/50"
+            href={post.href}
+            className="group block border border-white/10 bg-white/5 p-6 transition-colors hover:border-violet/50 hover:bg-white/[0.07] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet"
           >
-            <h2 className="mb-3 font-display text-xl font-bold text-white">{post.title}</h2>
-            <p className="mb-4 text-white/75">{post.excerpt}</p>
-            <div className="mb-4 flex items-center gap-2 text-sm text-white/55">
-              <span>{post.date}</span>
-              <span>•</span>
-              <span>{post.read}</span>
-            </div>
-            <Link href={post.href} className="font-semibold text-violet-soft hover:underline">
-              Read more →
-            </Link>
-          </article>
+            <article>
+              <h2 className="mb-3 font-display text-xl font-bold text-white group-hover:text-violet-soft">
+                {post.title}
+              </h2>
+              <p className="mb-4 text-white/75">{post.excerpt}</p>
+              <div className="mb-4 flex items-center gap-2 text-sm text-white/55">
+                <span>{post.date}</span>
+                <span>•</span>
+                <span>{post.read}</span>
+              </div>
+              <span className="font-semibold text-violet-soft group-hover:underline">
+                Read more →
+              </span>
+            </article>
+          </Link>
         ))}
       </div>
     </div>
