@@ -180,31 +180,23 @@ export default function Home() {
             expense-ratio impact in one clear projection.
           </p>
 
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex flex-wrap items-center gap-2 text-sm text-white/70 sm:gap-3">
-              <span
-                className="inline-flex items-center gap-1.5"
-                aria-label={`Rated ${SITE_RATING.ratingValue} out of 5`}
-              >
-                <span className="font-semibold text-gold">{SITE_RATING.ratingValue}</span>
-                <span className="tracking-tight text-gold" aria-hidden="true">
-                  ★★★★★
-                </span>
-                <span>({Number(SITE_RATING.ratingCount).toLocaleString()})</span>
-              </span>
-              <span className="text-white/40">·</span>
-              <span>Free</span>
-              <span className="text-white/40">·</span>
-              <span>Web</span>
-              <span className="text-white/40">·</span>
-              <span>Investment tool</span>
-            </div>
-            <Link
-              href="/how-it-works"
-              className="text-sm font-semibold text-violet-soft underline-offset-4 hover:underline"
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-white/70 sm:gap-3">
+            <span
+              className="inline-flex items-center gap-1.5"
+              aria-label={`Rated ${SITE_RATING.ratingValue} out of 5`}
             >
-              See how the math works →
-            </Link>
+              <span className="font-semibold text-gold">{SITE_RATING.ratingValue}</span>
+              <span className="tracking-tight text-gold" aria-hidden="true">
+                ★★★★★
+              </span>
+              <span>({Number(SITE_RATING.ratingCount).toLocaleString()})</span>
+            </span>
+            <span className="text-white/40">·</span>
+            <span>Free</span>
+            <span className="text-white/40">·</span>
+            <span>Web</span>
+            <span className="text-white/40">·</span>
+            <span>Investment tool</span>
           </div>
         </div>
       </section>
