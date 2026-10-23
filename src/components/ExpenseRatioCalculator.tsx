@@ -46,7 +46,7 @@ export default function ExpenseRatioCalculator() {
   }, [initial, contribution, years, expectedReturn, lowEr, highEr]);
 
   const fieldClass =
-    "w-full rounded-xl border border-white/15 bg-white/[0.07] px-3 py-2.5 text-white outline-none transition placeholder:text-white/35 focus:border-violet/60 focus:bg-white/[0.1] focus:ring-2 focus:ring-violet/30";
+    "w-full rounded-xl border border-white/12 bg-[#071410] px-3 py-2.5 text-white outline-none transition placeholder:text-white/35 focus:border-violet/60 focus:bg-[#0a1a15] focus:ring-2 focus:ring-violet/30";
   const labelClass = "mb-1.5 block text-sm font-medium text-white/80";
 
   return (
