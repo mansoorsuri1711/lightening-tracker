@@ -226,7 +226,7 @@ function GrowthChart({ result }: { result: GrowthResult }) {
         })}
       </svg>
 
-      <div className="mt-2 rounded-xl border border-white/10 bg-[#071410] px-3 py-2.5">
+      <div className="mt-2 rounded-xl border border-white/10 bg-white/[0.05] px-3 py-2.5">
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
           <p className="text-xs font-semibold text-white">
             {active ? `Year ${display.year}` : `Year ${display.year} (end)`}
@@ -344,7 +344,7 @@ export default function IndexFundCalculator({
     : "";
 
   const fieldClass =
-    "w-full rounded-xl border border-white/12 bg-[#071410] px-3 py-2.5 text-white outline-none transition placeholder:text-white/35 focus:border-violet/60 focus:bg-[#0a1a15] focus:ring-2 focus:ring-violet/30";
+    "w-full rounded-xl border border-white/15 bg-[#0a1814] px-3 py-2.5 text-white outline-none transition placeholder:text-white/35 focus:border-violet/60 focus:bg-[#0c1e19] focus:ring-2 focus:ring-violet/30";
   const labelClass = "mb-1.5 block text-sm font-medium text-white/80";
 
   return (
@@ -361,7 +361,7 @@ export default function IndexFundCalculator({
       <div className="flex w-full flex-col gap-4">
         <div className="grid w-full grid-cols-1 items-stretch gap-4 md:grid-cols-2 md:gap-5">
           <form
-            className="flex h-full flex-col space-y-4 rounded-2xl border border-white/10 bg-[#050f0c] p-4 sm:p-5"
+            className="flex h-full flex-col space-y-4 rounded-2xl border border-white/10 bg-white/[0.05] p-4 sm:p-5"
             onSubmit={(e) => e.preventDefault()}
             aria-labelledby={`${formId}-heading`}
           >
@@ -476,7 +476,7 @@ export default function IndexFundCalculator({
             )}
           </form>
 
-          <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-[#050f0c] p-4 sm:p-5">
+          <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.05] p-4 sm:p-5">
             <p className="mb-4 text-sm font-medium uppercase tracking-wide text-violet-soft">
               Projected results
             </p>
