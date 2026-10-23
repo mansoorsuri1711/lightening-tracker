@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import FaqSection from "@/components/FaqSection";
-import CtaButton from "@/components/CtaButton";
 import IndexFundCalculator from "@/components/IndexFundCalculator";
 import { WEB_APPLICATION_JSON_LD } from "@/lib/appFacts";
 import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
@@ -11,7 +10,6 @@ import {
   BRAND_FEATURE_3,
   BRAND_FEATURE_4,
   BRAND_HERO,
-  BRAND_LOGO,
   OG_IMAGE,
   SITE_NAME,
   SITE_ORIGIN,
@@ -660,22 +658,6 @@ export default function Home() {
         </section>
 
         <FaqSection title="Index fund calculator FAQs" items={faqs} includeSchema={false} />
-
-        <section className="mt-16 border-t border-white/10 pt-12 text-center">
-          <div className="relative mx-auto mb-6 h-16 w-16">
-            <Image src={BRAND_LOGO} alt="" width={64} height={64} className="object-contain" />
-          </div>
-          <h2 className="mb-3 font-display text-2xl font-bold text-white md:text-3xl">
-            Ready to project your next contribution plan?
-          </h2>
-          <p className="mx-auto mb-8 max-w-xl text-white/75">
-            Scroll up to the free calculator, set your inputs, and know the shape of your growth
-            before you invest.
-          </p>
-          <CtaButton href="/#calculator" ariaLabel="Back to index fund calculator" icon="arrow">
-            BACK TO CALCULATOR
-          </CtaButton>
-        </section>
       </div>
     </>
   );

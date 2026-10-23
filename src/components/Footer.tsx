@@ -48,7 +48,12 @@ export default function Footer() {
             <p className="mb-4 text-sm text-white/80">
               Project contributions, compound growth, and fee drag before you invest.
             </p>
-            <CtaButton href="/#calculator" ariaLabel="Open the free index fund calculator" icon="arrow">
+            <CtaButton
+              href="/#calculator"
+              size="sm"
+              ariaLabel="Open the free index fund calculator"
+              icon="arrow"
+            >
               OPEN CALCULATOR
             </CtaButton>
           </div>
