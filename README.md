@@ -1,18 +1,13 @@
-# Parlay Calculator
+# Index Fund Calculator
 
-Free sports betting **parlay calculator** for [parlaycalculator.net](https://parlaycalculator.net).
+Free **index fund calculator** for [indexfundcalculator.com](https://indexfundcalculator.com).
 
 ## Features
 
-- American, decimal, and fractional odds
-- Multi-leg payout, profit, and implied probability
-- NFL & moneyline calculator landers
-- Round robin bet calculator
-- SERP-backed guides (how to calculate parlay odds, what is a parlay, odds explained)
-
-## Stack
-
-- Next.js (App Router) + TypeScript + Tailwind CSS
+- Index fund growth calculator (contributions, return, expense ratio)
+- Compound interest, expense ratio, and investment growth landers
+- Year-by-year projection table
+- SERP-backed guides (what is an index fund, vs mutual fund, expense ratios)
 
 ## Develop
 
@@ -21,15 +16,8 @@ npm install
 npm run dev
 ```
 
-## Build
+## SEO
 
-```bash
-npm run build
-npm start
-```
-
-## SEO notes
-
-- Primary keyword: `parlay calculator`
-- Canonical host: `https://parlaycalculator.net`
-- Sitemap index: `/sitemap-index.xml`
+- Primary keyword: `index fund calculator`
+- Canonical host: `https://indexfundcalculator.com`
+- Sitemap: `/sitemap-index.xml`

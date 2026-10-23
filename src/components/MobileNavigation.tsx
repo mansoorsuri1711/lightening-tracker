@@ -22,10 +22,10 @@ const navSections: NavSection[] = [
   {
     title: 'TOOLS',
     items: [
-      { href: '/', label: 'Parlay Calculator' },
-      { href: '/nfl-parlay-calculator', label: 'NFL Parlay Calculator' },
-      { href: '/moneyline-parlay-calculator', label: 'Moneyline Parlay' },
-      { href: '/round-robin-calculator', label: 'Round Robin Calculator' },
+      { href: '/', label: 'Index Fund Calculator' },
+      { href: '/compound-interest-calculator', label: 'Compound Interest' },
+      { href: '/expense-ratio-calculator', label: 'Expense Ratio' },
+      { href: '/investment-growth-calculator', label: 'Investment Growth' },
       { href: '/features', label: 'Features' },
       { href: '/how-it-works', label: 'How It Works' },
     ],

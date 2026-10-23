@@ -21,10 +21,10 @@ export default function Footer() {
           <div>
             <h2 className="mb-4 text-lg font-semibold text-white">Tools</h2>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-white/85 hover:text-white hover:underline">Parlay Calculator</Link></li>
-              <li><Link href="/nfl-parlay-calculator" className="text-white/85 hover:text-white hover:underline">NFL Parlay Calculator</Link></li>
-              <li><Link href="/moneyline-parlay-calculator" className="text-white/85 hover:text-white hover:underline">Moneyline Parlay Calculator</Link></li>
-              <li><Link href="/round-robin-calculator" className="text-white/85 hover:text-white hover:underline">Round Robin Calculator</Link></li>
+              <li><Link href="/" className="text-white/85 hover:text-white hover:underline">Index Fund Calculator</Link></li>
+              <li><Link href="/compound-interest-calculator" className="text-white/85 hover:text-white hover:underline">Compound Interest Calculator</Link></li>
+              <li><Link href="/expense-ratio-calculator" className="text-white/85 hover:text-white hover:underline">Expense Ratio Calculator</Link></li>
+              <li><Link href="/investment-growth-calculator" className="text-white/85 hover:text-white hover:underline">Investment Growth Calculator</Link></li>
               <li><Link href="/features" className="text-white/85 hover:text-white hover:underline">Features</Link></li>
             </ul>
           </div>
@@ -33,9 +33,9 @@ export default function Footer() {
             <h2 className="mb-4 text-lg font-semibold text-white">Guides</h2>
             <ul className="space-y-2 text-sm">
               <li><Link href="/how-it-works" className="text-white/85 hover:text-white hover:underline">How It Works</Link></li>
-              <li><Link href="/blog/how-to-calculate-parlay-odds" className="text-white/85 hover:text-white hover:underline">How to Calculate Parlay Odds</Link></li>
-              <li><Link href="/blog/what-is-a-parlay-bet" className="text-white/85 hover:text-white hover:underline">What Is a Parlay Bet?</Link></li>
-              <li><Link href="/blog/parlay-odds-explained" className="text-white/85 hover:text-white hover:underline">Parlay Odds Explained</Link></li>
+              <li><Link href="/blog/what-is-an-index-fund" className="text-white/85 hover:text-white hover:underline">What Is an Index Fund?</Link></li>
+              <li><Link href="/blog/index-fund-vs-mutual-fund" className="text-white/85 hover:text-white hover:underline">Index Fund vs Mutual Fund</Link></li>
+              <li><Link href="/blog/expense-ratio-explained" className="text-white/85 hover:text-white hover:underline">Expense Ratio Explained</Link></li>
               <li><Link href="/about-us" className="text-white/85 hover:text-white hover:underline">About Us</Link></li>
               <li><Link href="/contact-us" className="text-white/85 hover:text-white hover:underline">Contact Us</Link></li>
               <li><Link href="/privacy" className="text-white/85 hover:text-white hover:underline">Privacy Policy</Link></li>
@@ -44,11 +44,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-lg font-semibold text-white">Calculate free</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">Plan free</h2>
             <p className="mb-4 text-sm text-white/80">
-              Build multi-leg tickets, convert odds formats, and see payout before you bet.
+              Project contributions, compound growth, and fee drag before you invest.
             </p>
-            <CtaButton href="/#calculator" ariaLabel="Open the free parlay calculator" icon="arrow">
+            <CtaButton href="/#calculator" ariaLabel="Open the free index fund calculator" icon="arrow">
               OPEN CALCULATOR
             </CtaButton>
           </div>
@@ -60,7 +60,7 @@ export default function Footer() {
             <Link href="/" className="underline hover:no-underline text-white/90">{SITE_DOMAIN}</Link>
           </p>
           <p className="mt-2 text-xs text-white/45">
-            Educational odds tool only. Not a sportsbook. Gambling involves risk — bet responsibly.
+            Educational planning tool only. Not investment advice. Past returns do not guarantee future results.
           </p>
         </div>
       </div>

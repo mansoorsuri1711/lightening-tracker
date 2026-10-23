@@ -1,5 +1,5 @@
 export const blogCategories = [
-  { name: 'How to Calculate Parlay Odds', href: '/blog/how-to-calculate-parlay-odds' },
-  { name: 'What Is a Parlay Bet?', href: '/blog/what-is-a-parlay-bet' },
-  { name: 'Parlay Odds Explained', href: '/blog/parlay-odds-explained' },
+  { name: 'What Is an Index Fund?', href: '/blog/what-is-an-index-fund' },
+  { name: 'Index Fund vs Mutual Fund', href: '/blog/index-fund-vs-mutual-fund' },
+  { name: 'Expense Ratio Explained', href: '/blog/expense-ratio-explained' },
 ];

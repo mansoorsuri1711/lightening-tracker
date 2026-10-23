@@ -39,7 +39,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#080F1C",
+  themeColor: "#030A08",
   viewportFit: "cover",
   interactiveWidget: "resizes-visual",
 };
@@ -47,20 +47,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Free Parlay Calculator — Odds & Payout",
+    default: "Free Index Fund Calculator — Growth & Fees",
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_TAGLINE,
   keywords: [
-    "parlay calculator",
-    "parlay odds calculator",
-    "parlay payout calculator",
-    "parlay bet calculator",
-    "moneyline parlay calculator",
-    "nfl parlay calculator",
-    "round robin bet calculator",
-    "how to calculate parlay odds",
-    "odds calculator parlay",
+    "index fund calculator",
+    "investment calculator",
+    "compound interest calculator",
+    "expense ratio calculator",
+    "investment growth calculator",
+    "index fund returns",
+    "what is an index fund",
+    "index fund vs mutual fund",
   ],
   authors: [{ name: `${SITE_NAME} Team` }],
   creator: SITE_NAME,
@@ -92,7 +91,7 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "Free Parlay Calculator — Odds & Payout",
+    title: "Free Index Fund Calculator — Growth & Fees",
     description: SITE_TAGLINE,
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
@@ -103,26 +102,26 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Parlay Calculator — free sports betting odds and payout tool",
+        alt: "Index Fund Calculator — free investment growth and fee impact tool",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Parlay Calculator — Odds & Payout",
+    title: "Free Index Fund Calculator — Growth & Fees",
     description: SITE_TAGLINE,
     images: [
       {
         url: TWITTER_IMAGE,
         width: 1200,
         height: 600,
-        alt: "Parlay Calculator — free sports betting odds and payout tool",
+        alt: "Index Fund Calculator — free investment growth and fee impact tool",
       },
     ],
   },
   applicationName: SITE_NAME,
   category: "Finance",
-  classification: "Sports Betting Calculator",
+  classification: "Investment Calculator",
 };
 
 export default function RootLayout({
@@ -135,16 +134,16 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={`${outfit.variable} ${sora.variable}`}
-      style={{ backgroundColor: "#080F1C", colorScheme: "dark" }}
+      style={{ backgroundColor: "#030A08", colorScheme: "dark" }}
     >
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="theme-color" content="#080F1C" />
+        <meta name="theme-color" content="#030A08" />
         <style
           dangerouslySetInnerHTML={{
             __html:
-              "html,body{background-color:#080F1C!important;color-scheme:dark}#__next,main{background-color:transparent}",
+              "html,body{background-color:#030A08!important;color-scheme:dark}#__next,main{background-color:transparent}",
           }}
         />
         <link rel="icon" href={`/favicon.ico?v=${ASSET_VERSION}`} type="image/x-icon" sizes="48x48" />
@@ -161,7 +160,7 @@ export default function RootLayout({
       </head>
       <body
         className="font-sans antialiased text-ink min-h-screen flex flex-col bg-brand site-atmosphere"
-        style={{ backgroundColor: "#080F1C" }}
+        style={{ backgroundColor: "#030A08" }}
         suppressHydrationWarning
       >
         <MobileMenuProvider>

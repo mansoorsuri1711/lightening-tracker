@@ -103,6 +103,36 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/nfl-parlay-calculator',
+        destination: '/compound-interest-calculator',
+        permanent: true,
+      },
+      {
+        source: '/moneyline-parlay-calculator',
+        destination: '/expense-ratio-calculator',
+        permanent: true,
+      },
+      {
+        source: '/round-robin-calculator',
+        destination: '/investment-growth-calculator',
+        permanent: true,
+      },
+      {
+        source: '/blog/how-to-calculate-parlay-odds',
+        destination: '/blog/what-is-an-index-fund',
+        permanent: true,
+      },
+      {
+        source: '/blog/what-is-a-parlay-bet',
+        destination: '/blog/what-is-an-index-fund',
+        permanent: true,
+      },
+      {
+        source: '/blog/parlay-odds-explained',
+        destination: '/blog/expense-ratio-explained',
+        permanent: true,
+      },
 
       // Legacy asset paths
       {

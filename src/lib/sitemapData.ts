@@ -12,7 +12,7 @@ export type SitemapPage = {
   images?: Array<{ loc: string; title: string; caption: string }>;
 };
 
-const LASTMOD = "2026-10-14";
+const LASTMOD = "2026-10-23";
 
 export const SITEMAP_PAGES: SitemapPage[] = [
   {
@@ -22,14 +22,14 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 1,
     images: [
       {
-        loc: imageLoc("/android-chrome-512x512.png"),
-        title: "Parlay Calculator logo",
-        caption: "Brand mark for Parlay Calculator on parlaycalculator.net",
+        loc: imageLoc("/index-fund-calculator-logo.png"),
+        title: "Index Fund Calculator logo",
+        caption: "Brand mark for Index Fund Calculator on indexfundcalculator.com",
       },
       {
-        loc: imageLoc("/parlay-calculator.webp"),
-        title: "Parlay Calculator tool",
-        caption: "Free parlay odds and payout calculator homepage",
+        loc: imageLoc("/index-fund-calculator.webp"),
+        title: "Index Fund Calculator tool",
+        caption: "Free index fund growth and returns calculator homepage",
       },
     ],
   },
@@ -40,9 +40,9 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/parlay-calculator-1.webp"),
-        title: "Parlay Calculator features",
-        caption: "Odds formats, multi-leg tickets, and payout breakdown features",
+        loc: imageLoc("/index-fund-calculator-2.webp"),
+        title: "Index Fund Calculator features",
+        caption: "Growth projections, contributions, and expense ratio features",
       },
     ],
   },
@@ -53,48 +53,48 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/parlay-calculator-2.webp"),
-        title: "How Parlay Calculator works",
-        caption: "Steps to calculate combined parlay odds and payout",
+        loc: imageLoc("/index-fund-calculator-3.webp"),
+        title: "How Index Fund Calculator works",
+        caption: "Steps to project index fund returns with compounding",
       },
     ],
   },
   {
-    path: "/nfl-parlay-calculator",
+    path: "/compound-interest-calculator",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.95,
     images: [
       {
-        loc: imageLoc("/parlay-calculator-3.webp"),
-        title: "NFL Parlay Calculator",
-        caption: "Calculate NFL multi-leg parlays and payouts",
+        loc: imageLoc("/index-fund-calculator-3.webp"),
+        title: "Compound Interest Calculator",
+        caption: "Calculate compound interest on long-term investments",
       },
     ],
   },
   {
-    path: "/moneyline-parlay-calculator",
+    path: "/expense-ratio-calculator",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.95,
     images: [
       {
-        loc: imageLoc("/parlay-calculator-1.webp"),
-        title: "Moneyline Parlay Calculator",
-        caption: "Calculate moneyline parlay odds and winnings",
+        loc: imageLoc("/index-fund-calculator-2.webp"),
+        title: "Expense Ratio Calculator",
+        caption: "Compare how fund fees reduce long-term investment balances",
       },
     ],
   },
   {
-    path: "/round-robin-calculator",
+    path: "/investment-growth-calculator",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.95,
     images: [
       {
-        loc: imageLoc("/parlay-calculator-2.webp"),
-        title: "Round Robin Bet Calculator",
-        caption: "Calculate round robin parlay combinations and total stake",
+        loc: imageLoc("/index-fund-calculator-4.webp"),
+        title: "Investment Growth Calculator",
+        caption: "Project investment growth with regular contributions",
       },
     ],
   },
@@ -105,8 +105,8 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.7,
     images: [
       {
-        loc: imageLoc("/android-chrome-512x512.png"),
-        title: "About Parlay Calculator",
+        loc: imageLoc("/index-fund-calculator-logo.png"),
+        title: "About Index Fund Calculator",
         caption: "Brand logo used on the About page",
       },
     ],
@@ -118,41 +118,41 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.8,
   },
   {
-    path: "/blog/how-to-calculate-parlay-odds",
+    path: "/blog/what-is-an-index-fund",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/parlay-calculator.webp"),
-        title: "How to calculate parlay odds",
-        caption: "Step-by-step guide to calculating parlay odds and payouts",
+        loc: imageLoc("/index-fund-calculator.webp"),
+        title: "What is an index fund",
+        caption: "Beginner guide explaining how index funds work",
       },
     ],
   },
   {
-    path: "/blog/what-is-a-parlay-bet",
+    path: "/blog/index-fund-vs-mutual-fund",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.85,
     images: [
       {
-        loc: imageLoc("/parlay-calculator-1.webp"),
-        title: "What is a parlay bet",
-        caption: "Explanation of parlay bets, odds, and how they work",
+        loc: imageLoc("/index-fund-calculator-3.webp"),
+        title: "Index fund vs mutual fund",
+        caption: "Comparison of index funds and actively managed mutual funds",
       },
     ],
   },
   {
-    path: "/blog/parlay-odds-explained",
+    path: "/blog/expense-ratio-explained",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.85,
     images: [
       {
-        loc: imageLoc("/parlay-calculator-2.webp"),
-        title: "Parlay odds explained",
-        caption: "How combined parlay odds and implied probability work",
+        loc: imageLoc("/index-fund-calculator-2.webp"),
+        title: "Expense ratio explained",
+        caption: "How expense ratios reduce index fund and ETF returns over time",
       },
     ],
   },

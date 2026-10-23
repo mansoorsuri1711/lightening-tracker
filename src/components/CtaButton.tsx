@@ -39,7 +39,7 @@ const ICONS: Record<IconKind, React.ReactNode> = {
 };
 
 const baseClass =
-  'download-btn inline-flex items-center justify-center px-8 py-4 text-brand-deep font-semibold text-lg rounded-2xl border border-violet/50 bg-gradient-to-r from-violet to-teal hover:brightness-110 transition-all group shadow-[0_12px_28px_-14px_rgba(198,244,50,0.85)]';
+  'download-btn inline-flex items-center justify-center px-8 py-4 text-brand-deep font-semibold text-lg rounded-2xl border border-violet/50 bg-gradient-to-r from-violet to-teal hover:brightness-110 transition-all group shadow-[0_12px_28px_-14px_rgba(18,168,118,0.85)]';
 
 function ButtonInner({
   children,

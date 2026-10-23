@@ -10,8 +10,8 @@ const navLinks = [
   { href: '/', label: 'Calculator' },
   { href: '/features', label: 'Features' },
   { href: '/how-it-works', label: 'How It Works' },
-  { href: '/nfl-parlay-calculator', label: 'NFL' },
-  { href: '/round-robin-calculator', label: 'Round Robin' },
+  { href: '/compound-interest-calculator', label: 'Compound' },
+  { href: '/expense-ratio-calculator', label: 'Fees' },
   { href: '/blog', label: 'Blog' },
   { href: '/about-us', label: 'About' },
   { href: '/contact-us', label: 'Contact' },
@@ -32,7 +32,7 @@ export default function Header() {
           <div className="relative h-8 w-8 sm:h-9 sm:w-9 mr-2 flex-shrink-0">
             <Image
               src={BRAND_LOGO_MARK}
-              alt="Parlay Calculator logo"
+              alt="Index Fund Calculator logo"
               width={40}
               height={40}
               className="object-contain"
@@ -66,7 +66,7 @@ export default function Header() {
         <div className="hidden xl:block">
           <Link
             href="/#calculator"
-            className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet to-teal px-4 py-2 text-sm font-semibold text-brand-deep shadow-[0_10px_28px_-12px_rgba(198,244,50,0.9)] transition hover:brightness-110"
+            className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet to-teal px-4 py-2 text-sm font-semibold text-brand-deep shadow-[0_10px_28px_-12px_rgba(18,168,118,0.9)] transition hover:brightness-110"
           >
             Open calculator
           </Link>

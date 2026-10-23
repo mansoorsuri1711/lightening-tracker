@@ -1,18 +1,11 @@
-# SEO Audit — Parlay Calculator (2026-10-14)
+# SEO Audit — Index Fund Calculator (2026-10-23)
 
-## Pass checklist
+## Done
+- [x] Brand + domain set to Index Fund Calculator / indexfundcalculator.com
+- [x] Modifier landers: compound interest, expense ratio, investment growth
+- [x] Blogs limited to SERP-backed index fund topics
+- [x] Images from `/public` (home-*.webp under 100KB, logos, OG)
+- [x] Sitemap index + robots Content-Signal template
 
-- [x] Brand + domain set to Parlay Calculator / parlaycalculator.net
-- [x] Homepage targets primary KW with interactive calculator
-- [x] Modifier landers: NFL, moneyline, round robin
-- [x] Blogs only for searched intents (3 posts)
-- [x] Old TikTok/BMI blogs removed + redirected
-- [x] Images from `/public` (parlay-calculator*.webp, logos, OG)
-- [x] Schema: Organization, SoftwareApplication, FAQ, HowTo, Article, Breadcrumb
-- [x] Sitemap index + image sitemap + robots sitemap line
-
-## Follow-ups after deploy
-
-- Submit `https://parlaycalculator.net/sitemap-index.xml` in Search Console
-- Validate rich results (SoftwareApplication + FAQ)
-- Monitor cannibalization between `/` and modifier landers
+## Next
+- Submit `https://indexfundcalculator.com/sitemap-index.xml` in Search Console

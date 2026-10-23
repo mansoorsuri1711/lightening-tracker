@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Metadata } from "next";
 import FaqSection from "@/components/FaqSection";
 import CtaButton from "@/components/CtaButton";
-import ParlayCalculator from "@/components/ParlayCalculator";
+import IndexFundCalculator from "@/components/IndexFundCalculator";
 import { WEB_APPLICATION_JSON_LD } from "@/lib/appFacts";
 import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
 import {
   BRAND_FEATURE_2,
   BRAND_FEATURE_3,
+  BRAND_FEATURE_4,
   BRAND_HERO,
   BRAND_LOGO,
   OG_IMAGE,
@@ -19,16 +20,16 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    default: "Free Parlay Calculator — Odds & Payout",
+    default: "Free Index Fund Calculator — Growth & Fees",
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Free parlay calculator for sports betting. Convert American, decimal, or fractional odds, build multi-leg tickets, and see exact profit and payout instantly.",
+    "Free index fund calculator to project investment growth, compound returns, monthly contributions, and expense-ratio impact over time.",
   alternates: { canonical: SITE_ORIGIN },
   openGraph: {
-    title: "Free Parlay Calculator — Odds & Payout",
+    title: "Free Index Fund Calculator — Growth & Fees",
     description:
-      "Calculate parlay odds and payouts in seconds. American, decimal, and fractional formats supported.",
+      "Estimate index fund returns with contributions, compounding, and fund fees in seconds.",
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
     type: "website",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Parlay Calculator homepage — free odds and payout tool",
+        alt: "Index Fund Calculator homepage — free growth and fee tool",
       },
     ],
   },
@@ -45,39 +46,34 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "What is a parlay calculator?",
+    question: "What is an index fund calculator?",
     answer:
-      "A parlay calculator multiplies the decimal odds of every leg in your ticket, then applies your stake to show combined odds, profit, and total payout. Parlay Calculator does that math for American, decimal, and fractional odds.",
+      "An index fund calculator estimates how an investment in a market-tracking fund could grow using your starting balance, contributions, time horizon, expected return, and expense ratio. Index Fund Calculator shows ending balance, total contributed, growth, and fee drag.",
   },
   {
-    question: "How do I calculate a parlay payout?",
+    question: "How do I calculate index fund returns?",
     answer:
-      "Convert each leg to decimal odds, multiply them together, then multiply by your stake. For example, three −110 legs are about 1.909 × 1.909 × 1.909 ≈ 6.97, so a $100 stake returns roughly $697 total. Use the tool above or our how-to guide for worked examples.",
+      "Apply a net annual return (expected market return minus expense ratio) to your balance each period, then add contributions. For monthly investing, divide the annual rate by 12. The calculator above automates that math and builds a year-by-year table.",
   },
   {
-    question: "How do parlay odds work?",
+    question: "What expected return should I use?",
     answer:
-      "Parlay odds are multiplicative. Each leg’s decimal price is multiplied by the next. That raises the payout and lowers the chance every selection wins. Our parlay odds calculator shows both the combined American price and implied win probability.",
+      "Long-term U.S. equity index assumptions often fall around 7%–10% annualized before fees, depending on the market and inflation view. Use a conservative rate for planning — past performance is not a guarantee of future results.",
   },
   {
-    question: "Does this parlay odds calculator support moneyline bets?",
+    question: "Why does expense ratio matter?",
     answer:
-      "Yes. Enter each moneyline in American format (like −150 or +180), switch formats if needed, and the calculator returns the combined moneyline parlay price and payout.",
+      "Expense ratios are deducted from fund assets every year. A 0.75% fee versus a 0.04% fee can cost tens or hundreds of thousands of dollars over decades on the same contribution plan. Compare fees with our expense ratio calculator.",
   },
   {
-    question: "What is the difference between a parlay and a round robin?",
+    question: "Is this the same as a compound interest calculator?",
     answer:
-      "A parlay is one all-or-nothing ticket. A round robin builds every smaller parlay combination from your picks, so one loss does not wipe the entire stake. Use our round robin bet calculator for combo counts and total risk.",
+      "Closely related. Compound interest is the engine; an index fund calculator layers in contributions and fund fees so the projection matches how index investors actually save. Use our dedicated compound interest calculator for a fee-free view.",
   },
   {
-    question: "Can I use this for NFL parlays?",
+    question: "Is Index Fund Calculator free?",
     answer:
-      "Absolutely. Build any NFL (or NBA, MLB, soccer) multi-leg ticket here, or open the dedicated NFL parlay calculator page for football-focused examples and links.",
-  },
-  {
-    question: "Is this parlay bet calculator free?",
-    answer:
-      "Yes. The full parlay payout calculator is free on parlaycalculator.net — no account required. It is an educational odds tool, not a sportsbook.",
+      "Yes. The full tool on indexfundcalculator.com is free — no account required. It is an educational planning tool, not a brokerage and not personalized investment advice.",
   },
 ];
 
@@ -91,7 +87,7 @@ export default function Home() {
         url: `${SITE_ORIGIN}/`,
         name: SITE_NAME,
         description:
-          "Free parlay calculator for sports betting odds, payouts, and multi-leg tickets.",
+          "Free index fund calculator for investment growth, compounding, and expense ratios.",
         inLanguage: "en-US",
         publisher: { "@id": `${SITE_ORIGIN}/#organization` },
       },
@@ -99,7 +95,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${SITE_ORIGIN}/#webpage`,
         url: `${SITE_ORIGIN}/`,
-        name: "Free Parlay Calculator — Odds & Payout",
+        name: "Free Index Fund Calculator — Growth & Fees",
         isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
         primaryImageOfPage: {
           "@type": "ImageObject",
@@ -113,32 +109,32 @@ export default function Home() {
         ...WEB_APPLICATION_JSON_LD,
         "@id": `${SITE_ORIGIN}/#software`,
         description:
-          "Web-based parlay odds and payout calculator with American, decimal, and fractional formats.",
+          "Web-based index fund and investment growth calculator with contributions and expense ratios.",
       },
       {
         "@type": "HowTo",
-        name: "How to use the free parlay calculator",
-        description: "Build a multi-leg ticket and calculate payout in four steps.",
+        name: "How to use the free index fund calculator",
+        description: "Project index fund growth in four steps.",
         step: [
           {
             "@type": "HowToStep",
-            name: "Choose odds format",
-            text: "Select American, decimal, or fractional odds to match your sportsbook slip.",
+            name: "Enter starting balance",
+            text: "Type the amount you already have invested or plan to start with.",
           },
           {
             "@type": "HowToStep",
-            name: "Enter your stake",
-            text: "Type the amount you plan to wager on the full parlay.",
+            name: "Add contributions",
+            text: "Set a monthly or yearly contribution that matches your savings plan.",
           },
           {
             "@type": "HowToStep",
-            name: "Add each leg",
-            text: "Enter the odds for every selection. Add or remove legs as needed.",
+            name: "Choose years and return",
+            text: "Pick your time horizon and an expected annual return assumption.",
           },
           {
             "@type": "HowToStep",
-            name: "Read the payout",
-            text: "See combined odds, profit, total payout, and implied win probability instantly.",
+            name: "Include expense ratio",
+            text: "Enter the fund’s annual expense ratio to see net growth and fee drag.",
           },
         ],
       },
@@ -174,14 +170,14 @@ export default function Home() {
             <span className="brand-gradient-text">{SITE_NAME}</span>
           </h1>
           <p className="mb-6 max-w-2xl font-display text-lg font-semibold leading-snug text-white sm:text-xl md:text-2xl">
-            Calculate parlay odds and payout before you lock the ticket
+            Project index fund growth before you invest another dollar
           </p>
 
-          <ParlayCalculator showLabels={false} defaultLegs={["-110", "-110", "-110"]} />
+          <IndexFundCalculator showYearTable defaultExpense="0.05" />
 
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
-            Free parlay odds calculator for American, decimal, and fractional prices — built for
-            moneyline, spread, and total parlays across NFL and every major sport.
+            Free investment growth calculator for index funds — contributions, compounding, and
+            expense-ratio impact in one clear projection.
           </p>
 
           <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
@@ -201,7 +197,7 @@ export default function Home() {
               <span className="text-white/40">·</span>
               <span>Web</span>
               <span className="text-white/40">·</span>
-              <span>Sports betting tool</span>
+              <span>Investment tool</span>
             </div>
             <Link
               href="/how-it-works"
@@ -214,61 +210,66 @@ export default function Home() {
       </section>
 
       <div className="container mx-auto max-w-6xl px-4 py-12">
-        <section className="mb-16 max-w-3xl">
-          <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
-            Free parlay odds calculator for sports betting
-          </h2>
-          <p className="mb-4 text-lg leading-relaxed text-white/80">
-            A <strong className="text-white">parlay odds calculator</strong> converts every leg on
-            your ticket into one combined price, then scales that price by your stake. Bettors use
-            it before locking a slip so they know profit, total payout, and how unlikely a long
-            multi-leg ticket really is. This free tool supports American, decimal, and fractional
-            formats — the same prices U.S. and international sportsbooks display.
-          </p>
-          <p className="leading-relaxed text-white/75">
-            Whether you searched for a parlay payout calculator, a parlay bet calculator, or an odds
-            calculator for parlays, the workflow is the same: enter stake, add legs, read combined
-            odds. No account. No sportsbook soft-sell. Just clear math you can compare to the number
-            on your bet slip.
-          </p>
+        <section className="mb-16 grid gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
+              Free index fund calculator for long-term investors
+            </h2>
+            <p className="mb-4 text-lg leading-relaxed text-white/80">
+              An <strong className="text-white">index fund calculator</strong> turns a savings plan
+              into a concrete ending balance. Enter what you have today, what you can add each month,
+              how long you will stay invested, and a realistic expected return. Then subtract the
+              fund’s expense ratio so the projection reflects costs you will actually pay.
+            </p>
+            <p className="leading-relaxed text-white/75">
+              Whether you searched for an investment calculator, a returns estimator, or a tool to
+              model S&amp;P 500-style index investing, the workflow is the same: inputs on the left,
+              results and yearly table on the right. No account. No brokerage soft-sell. Just planning
+              math you can sanity-check against your goals.
+            </p>
+          </div>
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={BRAND_HERO}
+              alt="Index Fund Calculator — project investment growth, contributions, and returns"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={70}
+              className="object-cover"
+            />
+          </div>
         </section>
 
         <section className="mb-16">
           <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
-            How to calculate parlay odds
+            How to calculate index fund returns
           </h2>
           <p className="mb-6 max-w-3xl leading-relaxed text-white/80">
-            People also ask{" "}
-            <Link
-              href="/blog/how-to-calculate-parlay-odds"
-              className="text-violet-soft underline hover:no-underline"
-            >
-              how to calculate parlay odds
-            </Link>{" "}
-            by hand. The formula behind every parlay calculator is straightforward once prices are
-            in decimal form.
+            People also ask how index fund returns compound. The formula behind every solid{" "}
+            <strong className="text-white">index fund returns calculator</strong> is straightforward
+            once you use a net rate of return.
           </p>
           <ol className="mb-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 n: "01",
-                t: "Convert each leg",
-                d: "American −110 ≈ 1.909 decimal. +150 = 2.50. Fractional 5/2 = 3.50.",
+                t: "Start with principal",
+                d: "Your initial investment is the base that compounds every period.",
               },
               {
                 n: "02",
-                t: "Multiply the decimals",
-                d: "Combined odds = d₁ × d₂ × d₃ × … for every leg on the ticket.",
+                t: "Add contributions",
+                d: "Monthly or yearly deposits buy more shares over time and accelerate growth.",
               },
               {
                 n: "03",
-                t: "Apply your stake",
-                d: "Total payout = stake × combined decimal. Profit = payout − stake.",
+                t: "Apply net return",
+                d: "Net rate ≈ expected market return − expense ratio, then compound per period.",
               },
               {
                 n: "04",
-                t: "Check win probability",
-                d: "Implied probability ≈ 1 ÷ combined decimal — a reality check before you stack.",
+                t: "Read ending balance",
+                d: "Final value = contributions + compounded growth after fees.",
               },
             ].map((step) => (
               <li key={step.n} className="border-t border-violet/40 pt-4">
@@ -280,14 +281,13 @@ export default function Home() {
           </ol>
           <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 sm:p-6">
             <h3 className="mb-2 font-display text-lg font-semibold text-white">
-              Example: 3-leg parlay at −110
+              Example: $10,000 start + $500/month for 20 years
             </h3>
             <p className="leading-relaxed text-white/75">
-              Three −110 spreads → 1.909 × 1.909 × 1.909 ≈ <strong className="text-white">6.96</strong>{" "}
-              decimal (about <strong className="text-violet">+596</strong> American). A $100 stake
-              returns roughly <strong className="text-white">$696</strong> total and about{" "}
-              <strong className="text-teal">$596</strong> profit if every leg hits. Enter the same
-              numbers in the calculator above to verify in one click.
+              At an 8% expected return and a 0.05% expense ratio, net growth is about 7.95% per year.
+              Regular contributions dominate the ending balance — which is why starting early matters
+              more than picking the “perfect” day to invest. Change the inputs above to match your
+              plan.
             </p>
           </div>
         </section>
@@ -295,33 +295,32 @@ export default function Home() {
         <section className="mb-16 grid gap-10 md:grid-cols-2 md:items-center">
           <div>
             <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
-              Parlay payout calculator: stake, profit, and total return
+              See fee impact on index fund growth
             </h2>
             <p className="mb-4 leading-relaxed text-white/80">
-              A payout-focused view answers the question most bettors care about: “If this hits,
-              what do I collect?” Change the stake field and the results panel updates profit and
-              total payout instantly — useful when you are comparing a $10 flyer to a $50 ticket or
-              testing a boosted promotion price.
+              A payout-focused view answers the question most investors care about: “What do fees
+              actually cost me?” The results panel shows fee drag versus a zero-expense scenario so
+              you can feel the difference of 0.04% versus 0.75% over decades.
             </p>
             <ul className="space-y-3 text-white/80">
               <li>
-                <strong className="text-white">Combined American odds</strong> — the headline price
-                most U.S. books show on the slip.
+                <strong className="text-white">Ending balance</strong> — projected value after
+                contributions and compounding.
               </li>
               <li>
-                <strong className="text-white">Combined decimal odds</strong> — the clean multiplier
-                used under the hood.
+                <strong className="text-white">Total contributed</strong> — cash you put in, separate
+                from market growth.
               </li>
               <li>
-                <strong className="text-white">Implied win probability</strong> — how often the ticket
-                would need to cash at that price.
+                <strong className="text-white">Fee drag</strong> — wealth left on the table versus a
+                0% expense ratio.
               </li>
             </ul>
           </div>
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
             <Image
               src={BRAND_FEATURE_2}
-              alt="Parlay payout calculator results showing combined odds profit and total return"
+              alt="Chart showing how higher expense ratios reduce long-term index fund balances"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={70}
@@ -330,30 +329,60 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mb-16 grid gap-10 md:grid-cols-2 md:items-center">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={BRAND_FEATURE_4}
+              alt="Year-by-year index fund balance table from the Index Fund Calculator"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={70}
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
+              Year-by-year growth you can follow
+            </h2>
+            <p className="mb-4 leading-relaxed text-white/80">
+              Every projection includes an annual table so you can see when contributions dominate
+              early years and when compounded growth takes over later — useful for retirement and
+              goal planning.
+            </p>
+            <p className="leading-relaxed text-white/75">
+              Scroll back to the calculator for the live table, or open the{" "}
+              <Link href="/investment-growth-calculator" className="text-violet-soft underline">
+                investment growth calculator
+              </Link>{" "}
+              for a contribution-focused view.
+            </p>
+          </div>
+        </section>
+
         <section className="mb-16">
           <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
-            Build moneyline, NFL, and multi-sport parlays
+            Related investment calculators
           </h2>
           <p className="mb-8 max-w-3xl leading-relaxed text-white/80">
-            The same parlay builder handles spreads, totals, props, and moneylines. Use dedicated
-            landers when you want sport- or bet-type context — they all run on this core odds engine.
+            The same growth engine powers focused tools for common search intents — compound
+            interest, expense ratios, and contribution-driven investment growth.
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                href: "/moneyline-parlay-calculator",
-                title: "Moneyline parlay calculator",
-                body: "Stack straight-up winners with American ML prices — favorites and underdogs on one ticket.",
+                href: "/compound-interest-calculator",
+                title: "Compound interest calculator",
+                body: "Isolate the power of compounding without fee fields — ideal for teaching or simple savings goals.",
               },
               {
-                href: "/nfl-parlay-calculator",
-                title: "NFL parlay calculator",
-                body: "Price Sunday cards, same-game custom quotes, and multi-game football parlays before kickoff.",
+                href: "/expense-ratio-calculator",
+                title: "Expense ratio calculator",
+                body: "Compare a low-cost index fund against a higher-fee fund on the same contribution plan.",
               },
               {
-                href: "/round-robin-calculator",
-                title: "Round robin bet calculator",
-                body: "Turn selections into every 2-leg or 3-leg combo with ticket count and total stake.",
+                href: "/investment-growth-calculator",
+                title: "Investment growth calculator",
+                body: "Model starting balance, recurring deposits, and yearly growth the way NerdWallet-style tools do.",
               },
             ].map((card) => (
               <Link
@@ -373,44 +402,38 @@ export default function Home() {
 
         <section className="mb-16 max-w-3xl">
           <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
-            American, decimal, and fractional parlay odds
+            Index funds, fees, and what to read next
           </h2>
           <p className="mb-4 leading-relaxed text-white/80">
-            Searchers often type “odds calculator parlay” or “parlay calculator odds” when they need
-            format help. Switch the toggle above the legs to match your book:
+            New to indexing? Start with definitions, then compare fund types, then dig into costs:
           </p>
           <ul className="mb-4 list-disc space-y-2 pl-5 text-white/75">
             <li>
-              <strong className="text-white">American</strong> — −110, +150 (default for U.S.
-              sportsbooks)
+              <Link href="/blog/what-is-an-index-fund" className="text-violet-soft underline">
+                What is an index fund?
+              </Link>{" "}
+              — how market tracking works
             </li>
             <li>
-              <strong className="text-white">Decimal</strong> — 1.91, 2.50 (common in Canada, Europe,
-              Australia)
+              <Link href="/blog/index-fund-vs-mutual-fund" className="text-violet-soft underline">
+                Index fund vs mutual fund
+              </Link>{" "}
+              — active vs passive trade-offs
             </li>
             <li>
-              <strong className="text-white">Fractional</strong> — 10/11, 3/2 (UK-style prices)
+              <Link href="/blog/expense-ratio-explained" className="text-violet-soft underline">
+                Expense ratio explained
+              </Link>{" "}
+              — why tiny percentages matter
             </li>
           </ul>
-          <p className="leading-relaxed text-white/75">
-            Mixed slips still work: convert everything to decimal, multiply, then read payout. For a
-            deeper walkthrough of combined prices and juice, read{" "}
-            <Link href="/blog/parlay-odds-explained" className="text-violet-soft underline">
-              parlay odds explained
-            </Link>
-            . New to parlays? Start with{" "}
-            <Link href="/blog/what-is-a-parlay-bet" className="text-violet-soft underline">
-              what is a parlay bet
-            </Link>
-            .
-          </p>
         </section>
 
         <section className="mb-16 grid gap-10 md:grid-cols-2 md:items-center">
           <div className="relative order-2 aspect-video overflow-hidden rounded-2xl border border-white/10 md:order-1">
             <Image
               src={BRAND_FEATURE_3}
-              alt="Parlay builder with multiple sports betting legs and odds formats"
+              alt="Illustration of starting index fund investing early with regular contributions"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={70}
@@ -419,60 +442,59 @@ export default function Home() {
           </div>
           <div className="order-1 md:order-2">
             <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
-              Why use this free parlay bet calculator
+              Why use this free index fund calculator
             </h2>
             <ul className="space-y-4 text-white/80">
               <li>
                 <h3 className="mb-1 font-display text-lg font-semibold text-white">
-                  No sportsbook clutter
+                  Built for index investing
                 </h3>
                 <p className="text-sm leading-relaxed text-white/70">
-                  Price the ticket first. Decide where to bet second. Educational tool only — we do
-                  not take wagers.
+                  Contributions, expected return, and expense ratio in one place — not a generic
+                  interest toy that ignores fees.
                 </p>
               </li>
               <li>
                 <h3 className="mb-1 font-display text-lg font-semibold text-white">
-                  Honest implied probability
+                  Year-by-year transparency
                 </h3>
                 <p className="text-sm leading-relaxed text-white/70">
-                  Big American numbers look exciting. Win-probability % keeps long parlays in
-                  perspective.
+                  See how balances build annually so long timelines feel concrete, not abstract.
                 </p>
               </li>
               <li>
                 <h3 className="mb-1 font-display text-lg font-semibold text-white">
-                  Related tools that match real searches
+                  Educational, not a sales funnel
                 </h3>
                 <p className="text-sm leading-relaxed text-white/70">
-                  NFL, moneyline, and round robin pages cover modifier keywords without thin
-                  duplicate calculators.
+                  We do not sell funds or open accounts. Use the numbers to compare your own options.
                 </p>
               </li>
             </ul>
             <p className="mt-6 text-sm text-white/70">
               Step-by-step product walkthrough:{" "}
               <Link href="/how-it-works" className="text-violet-soft underline">
-                how Parlay Calculator works
+                how Index Fund Calculator works
               </Link>
               .
             </p>
           </div>
         </section>
 
-        <FaqSection title="Parlay calculator FAQs" items={faqs} includeSchema={false} />
+        <FaqSection title="Index fund calculator FAQs" items={faqs} includeSchema={false} />
 
         <section className="mt-16 border-t border-white/10 pt-12 text-center">
           <div className="relative mx-auto mb-6 h-16 w-16">
             <Image src={BRAND_LOGO} alt="" width={64} height={64} className="object-contain" />
           </div>
           <h2 className="mb-3 font-display text-2xl font-bold text-white md:text-3xl">
-            Ready to price your next parlay?
+            Ready to project your next contribution plan?
           </h2>
           <p className="mx-auto mb-8 max-w-xl text-white/75">
-            Scroll up to the free calculator, stack your legs, and know the payout before you bet.
+            Scroll up to the free calculator, set your inputs, and know the shape of your growth
+            before you invest.
           </p>
-          <CtaButton href="/#calculator" ariaLabel="Back to parlay calculator" icon="arrow">
+          <CtaButton href="/#calculator" ariaLabel="Back to index fund calculator" icon="arrow">
             BACK TO CALCULATOR
           </CtaButton>
         </section>

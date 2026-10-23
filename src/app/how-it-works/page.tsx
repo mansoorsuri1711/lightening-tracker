@@ -7,49 +7,49 @@ import FaqSection from "@/components/FaqSection";
 import { BRAND_FEATURE_3, OG_IMAGE, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "How Parlay Calculator Works — Odds Math Explained",
+  title: "How Index Fund Calculator Works — Growth Math",
   description:
-    "Learn how Parlay Calculator converts odds, multiplies legs, and returns profit, payout, and implied probability for any multi-leg sports bet.",
+    "Learn how Index Fund Calculator compounds contributions, applies expected return, and subtracts expense ratios to project ending balance.",
   alternates: { canonical: `${SITE_ORIGIN}/how-it-works` },
   openGraph: {
-    title: "How Parlay Calculator Works — Odds Math Explained",
-    description: "Step-by-step: from stake and legs to combined parlay odds and payout.",
+    title: "How Index Fund Calculator Works — Growth Math",
+    description: "Step-by-step: from contributions and return to projected index fund balance.",
     url: `${SITE_ORIGIN}/how-it-works`,
     siteName: SITE_NAME,
     type: "website",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "How Parlay Calculator works" }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "How Index Fund Calculator works" }],
   },
 };
 
 const faqs = [
   {
-    question: "How are American odds converted?",
+    question: "How is net return calculated?",
     answer:
-      "Positive American odds: decimal = (odds ÷ 100) + 1. Negative American odds: decimal = (100 ÷ |odds|) + 1. Those decimals are multiplied across legs.",
+      "Net annual return ≈ expected return % − expense ratio %. That net rate is converted to a monthly or yearly period rate depending on contribution frequency.",
   },
   {
-    question: "Why might my sportsbook show a different number?",
+    question: "When are contributions applied?",
     answer:
-      "Books can apply parlay juice, reduced vig on SGP, or boosted prices. Our calculator shows standard multiplicative odds — always confirm the price on the ticket before betting.",
+      "Contributions are added at the start of each period before growth is applied — a common planning default. Real-world timing varies by broker and payday.",
   },
 ];
 
 const steps = [
   {
-    title: "1. Match the odds format",
-    body: "Choose American, decimal, or fractional so each leg parses the way your sportsbook displays it.",
+    title: "1. Enter starting balance",
+    body: "Your initial investment is the principal that begins compounding immediately.",
   },
   {
-    title: "2. Enter stake and legs",
-    body: "Add every selection on the ticket. Optional labels keep NFL games or props organized while you tweak prices.",
+    title: "2. Set contributions & frequency",
+    body: "Choose monthly or yearly deposits that match how you actually invest.",
   },
   {
-    title: "3. Multiply decimal odds",
-    body: "Behind the scenes, each price becomes a decimal multiplier. The product is your combined decimal odds.",
+    title: "3. Choose years and expected return",
+    body: "Pick a horizon and a planning return assumption — stress-test lower rates too.",
   },
   {
-    title: "4. Apply stake for payout",
-    body: "Total payout = stake × combined decimal. Profit = payout − stake. Implied probability = 1 ÷ combined decimal.",
+    title: "4. Subtract expense ratio",
+    body: "Net rate compounds each period. Results show ending balance, growth, and fee drag.",
   },
 ];
 
@@ -57,11 +57,9 @@ export default function HowItWorksPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "How to calculate a parlay with Parlay Calculator",
-    description: "Convert odds, multiply legs, and read payout.",
-    step: steps.map((s, i) => ({
+    name: "How to project index fund growth with Index Fund Calculator",
+    step: steps.map((s) => ({
       "@type": "HowToStep",
-      position: i + 1,
       name: s.title,
       text: s.body,
     })),
@@ -69,57 +67,61 @@ export default function HowItWorksPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "How It Works", href: "/how-it-works" }]} />
-      <div className="container mx-auto max-w-4xl px-4 pb-10 pt-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
-        How the parlay calculator works
-      </h1>
-      <p className="mb-8 text-lg text-white/80">
-        Parlays pay more because every leg must win. The math is multiplicative — convert each price
-        to decimal odds, multiply, then scale by stake. That is exactly what this tool automates.
-      </p>
+      <Breadcrumbs
+        items={[{ label: "Home", href: "/" }, { label: "How It Works", href: "/how-it-works" }]}
+      />
+      <div className="container mx-auto max-w-4xl px-4 pb-12 pt-8">
+        <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
+          How the index fund calculator works
+        </h1>
+        <p className="mb-8 text-lg text-white/80">
+          Index fund balances grow when contributions and market returns compound — after fees. Here
+          is the math behind every projection on this site.
+        </p>
 
-      <div className="relative mb-10 aspect-video overflow-hidden rounded-2xl border border-white/10">
-        <Image
-          src={BRAND_FEATURE_3}
-          alt="Diagram-style view of converting odds and multiplying parlay legs"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-      </div>
+        <div className="relative mb-10 aspect-video overflow-hidden rounded-2xl border border-white/10">
+          <Image
+            src={BRAND_FEATURE_3}
+            alt="Illustration of compounding contributions over time in an index fund"
+            fill
+            sizes="(max-width: 896px) 100vw, 896px"
+            className="object-cover"
+            priority
+          />
+        </div>
 
-      <ol className="mb-12 space-y-8">
-        {steps.map((step) => (
-          <li key={step.title} className="border-l-2 border-violet/50 pl-5">
-            <h2 className="mb-2 font-display text-xl font-semibold text-white">{step.title}</h2>
-            <p className="text-white/75 leading-relaxed">{step.body}</p>
-          </li>
-        ))}
-      </ol>
+        <ol className="mb-12 space-y-6">
+          {steps.map((s) => (
+            <li key={s.title} className="border-t border-violet/30 pt-4">
+              <h2 className="font-display text-xl font-semibold text-white">{s.title}</h2>
+              <p className="mt-2 text-white/75">{s.body}</p>
+            </li>
+          ))}
+        </ol>
 
-      <p className="mb-8 text-white/80">
-        Want the long-form formula with worked NFL examples? Read{" "}
-        <Link href="/blog/how-to-calculate-parlay-odds" className="text-violet-soft underline">
-          how to calculate parlay odds
-        </Link>{" "}
-        or open the{" "}
-        <Link href="/#calculator" className="text-violet-soft underline">
-          free calculator
-        </Link>
-        .
-      </p>
+        <p className="mb-8 text-white/80">
+          New to indexing? Read{" "}
+          <Link href="/blog/what-is-an-index-fund" className="text-violet-soft underline">
+            what is an index fund
+          </Link>
+          , then open the{" "}
+          <Link href="/" className="text-violet-soft underline">
+            free calculator
+          </Link>
+          .
+        </p>
 
-      <FaqSection title="How-it-works FAQs" items={faqs} />
+        <FaqSection title="How it works FAQs" items={faqs} />
 
-      <div className="mt-12 text-center">
-        <CtaButton href="/#calculator">TRY IT FREE</CtaButton>
-      </div>
+        <div className="mt-12 text-center">
+          <CtaButton href="/#calculator" ariaLabel="Open calculator">
+            TRY IT NOW
+          </CtaButton>
+        </div>
       </div>
     </>
   );
