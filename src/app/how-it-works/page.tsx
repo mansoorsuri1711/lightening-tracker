@@ -7,121 +7,117 @@ import FaqSection from "@/components/FaqSection";
 import { BRAND_FEATURE_3, OG_IMAGE, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "How Index Fund Calculator Works — Growth Math",
+  title: "How Lightning Tracker Works",
   description:
-    "Learn how Index Fund Calculator compounds contributions, applies expected return, and subtracts expense ratios to project ending balance.",
+    "Step-by-step: how Lightning Tracker helps you estimate strike distance, read live maps, and use alerts during thunderstorms.",
   alternates: { canonical: `${SITE_ORIGIN}/how-it-works` },
   openGraph: {
-    title: "How Index Fund Calculator Works — Growth Math",
-    description: "Step-by-step: from contributions and return to projected index fund balance.",
+    title: "How Lightning Tracker Works",
+    description: "A clear walkthrough of Lightning Tracker tools and storm awareness workflow.",
     url: `${SITE_ORIGIN}/how-it-works`,
     siteName: SITE_NAME,
     type: "website",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "How Index Fund Calculator works" }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "How Lightning Tracker works" }],
   },
 };
 
 const faqs = [
   {
-    question: "How is net return calculated?",
+    question: "Do I need special hardware?",
     answer:
-      "Net annual return ≈ expected return % − expense ratio %. That net rate is converted to a monthly or yearly period rate depending on contribution frequency.",
+      "No. Use the web tools on any modern phone or computer. Optional lightning apps on your phone can add push notifications.",
   },
   {
-    question: "When are contributions applied?",
+    question: "Where does lightning data come from?",
     answer:
-      "Contributions are added at the start of each period before growth is applied — a common planning default. Real-world timing varies by broker and payday.",
+      "Public and commercial maps usually rely on radio or optical detection networks. Lightning Tracker explains how to interpret that data; see our detection guide for details.",
   },
 ];
 
 const steps = [
   {
-    title: "1. Enter starting balance",
-    body: "Your initial investment is the principal that begins compounding immediately.",
+    title: "Open the distance tool",
+    body: "When you see a flash, count until thunder and enter the seconds on the homepage calculator.",
   },
   {
-    title: "2. Set contributions & frequency",
-    body: "Choose monthly or yearly deposits that match how you actually invest.",
+    title: "Read the risk hint",
+    body: "Immediate and nearby results mean shelter now. Distant results still deserve monitoring.",
   },
   {
-    title: "3. Choose years and expected return",
-    body: "Pick a horizon and a planning return assumption — stress-test lower rates too.",
+    title: "Check a live map",
+    body: "Use our live map guide to understand strike age and storm motion around your location.",
   },
   {
-    title: "4. Subtract expense ratio",
-    body: "Net rate compounds each period. Results show ending balance, growth, and fee drag.",
+    title: "Tune alerts ahead of time",
+    body: "Set notification radius based on how long it takes you to reach solid shelter.",
+  },
+  {
+    title: "Follow safety first",
+    body: "Gadgets support decisions — they do not replace getting indoors when thunder is audible.",
   },
 ];
 
 export default function HowItWorksPage() {
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "How to project index fund growth with Index Fund Calculator",
-    step: steps.map((s) => ({
-      "@type": "HowToStep",
-      name: s.title,
-      text: s.body,
-    })),
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
       <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "How It Works", href: "/how-it-works" }]}
+        items={[
+          { label: "Home", href: "/" },
+          { label: "How It Works", href: "/how-it-works" },
+        ]}
       />
-      <div className="container mx-auto max-w-4xl px-4 pb-12 pt-8">
+      <div className="container mx-auto max-w-5xl px-4 pb-12 pt-8">
         <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
-          How the index fund calculator works
+          How Lightning Tracker works
         </h1>
-        <p className="mb-8 text-lg text-white/80">
-          Index fund balances grow when contributions and market returns compound — after fees. Here
-          is the math behind every projection on this site.
+        <p className="mb-10 max-w-3xl text-lg text-white/80">
+          A simple thunderstorm workflow: measure distance, understand the map, and act on alerts —
+          without burying the important parts in weather jargon.
         </p>
 
-        <div className="relative mb-10 aspect-video overflow-hidden rounded-2xl border border-white/10">
-          <Image
-            src={BRAND_FEATURE_3}
-            alt="Illustration of compounding contributions over time in an index fund"
-            fill
-            sizes="(max-width: 896px) 100vw, 896px"
-            className="object-cover"
-            priority
-          />
+        <div className="mb-12 grid gap-8 md:grid-cols-2 md:items-center">
+          <ol className="space-y-5">
+            {steps.map((step, i) => (
+              <li key={step.title} className="border-l-2 border-violet/50 pl-4">
+                <span className="text-xs font-bold uppercase tracking-wide text-teal">
+                  Step {i + 1}
+                </span>
+                <h2 className="mt-1 font-display text-xl font-semibold text-white">{step.title}</h2>
+                <p className="mt-1 text-sm leading-relaxed text-white/70">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={BRAND_FEATURE_3}
+              alt="How Lightning Tracker tools fit into a thunderstorm monitoring workflow"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
 
-        <ol className="mb-12 space-y-6">
-          {steps.map((s) => (
-            <li key={s.title} className="border-t border-violet/30 pt-4">
-              <h2 className="font-display text-xl font-semibold text-white">{s.title}</h2>
-              <p className="mt-2 text-white/75">{s.body}</p>
-            </li>
-          ))}
-        </ol>
-
-        <p className="mb-8 text-white/80">
-          New to indexing? Read{" "}
-          <Link href="/blog/what-is-an-index-fund" className="text-violet-soft underline">
-            what is an index fund
+        <p className="mb-8 leading-relaxed text-white/75">
+          Deeper science is in{" "}
+          <Link href="/blog/how-lightning-trackers-work" className="text-violet-soft underline">
+            how lightning trackers work
           </Link>
-          , then open the{" "}
-          <Link href="/" className="text-violet-soft underline">
-            free calculator
+          . For outdoor habits, see{" "}
+          <Link href="/blog/lightning-safety-tips" className="text-violet-soft underline">
+            lightning safety tips
           </Link>
           .
         </p>
 
-        <FaqSection title="How it works FAQs" items={faqs} />
-
-        <div className="mt-12 text-center">
-          <CtaButton href="/#calculator" ariaLabel="Open calculator">
-            TRY IT NOW
+        <div className="mb-12">
+          <CtaButton href="/#tracker" icon="arrow">
+            START WITH THE CALCULATOR
           </CtaButton>
         </div>
+
+        <FaqSection title="How it works FAQs" items={faqs} />
       </div>
     </>
   );

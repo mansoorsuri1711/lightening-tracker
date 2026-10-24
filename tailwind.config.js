@@ -12,42 +12,42 @@ module.exports = {
         display: ['var(--font-sora)', 'var(--font-outfit)', 'sans-serif'],
       },
       colors: {
-        // Darker take on the calculator-icon palette (emerald + forest + gold)
+        // Dark blue brand from Lightning Tracker icon (navy + lightning gold)
         brand: {
-          DEFAULT: '#030A08',
-          deep: '#010504',
-          soft: '#071612',
-          glow: '#12A876',
+          DEFAULT: '#070A1A',
+          deep: '#040612',
+          soft: '#0C1230',
+          glow: '#3B82F6',
         },
-        mist: '#0A1A15',
-        blush: '#030A08',
-        ink: '#E6F4EE',
+        mist: '#101838',
+        blush: '#070A1A',
+        ink: '#E8EEFF',
         pink: {
-          DEFAULT: '#12A876',
-          soft: '#3ECF98',
-          deep: '#0A7A56',
+          DEFAULT: '#3B82F6',
+          soft: '#60A5FA',
+          deep: '#1D4ED8',
         },
         coral: {
-          DEFAULT: '#12A876',
-          deep: '#0A7A56',
+          DEFAULT: '#3B82F6',
+          deep: '#1D4ED8',
         },
-        // Kept as "violet" token name for existing class usage — now emerald
+        // Kept as "violet" token name for existing class usage — now electric blue
         violet: {
-          DEFAULT: '#12A876',
-          soft: '#3ECF98',
-          deep: '#0A7A56',
+          DEFAULT: '#3B82F6',
+          soft: '#60A5FA',
+          deep: '#1D4ED8',
         },
-        lilac: '#78E0B8',
+        lilac: '#93C5FD',
         teal: {
-          DEFAULT: '#1FA87A',
-          deep: '#0E8F68',
+          DEFAULT: '#38BDF8',
+          deep: '#0284C7',
         },
-        sky: '#78E0B8',
-        gold: '#E0A030',
-        primary: '#030A08',
-        secondary: '#071612',
-        accent: '#12A876',
-        sunrise: '#E0A030',
+        sky: '#93C5FD',
+        gold: '#F8D850',
+        primary: '#070A1A',
+        secondary: '#0C1230',
+        accent: '#3B82F6',
+        sunrise: '#F8D850',
       },
       keyframes: {
         'fade-up': {

@@ -31,7 +31,7 @@ export const WEB_APPLICATION_JSON_LD = {
   "@type": "SoftwareApplication",
   name: SITE_NAME,
   url: SITE_ORIGIN,
-  applicationCategory: "FinanceApplication",
+  applicationCategory: "WeatherApplication",
   operatingSystem: "Web",
   offers: {
     "@type": "Offer",

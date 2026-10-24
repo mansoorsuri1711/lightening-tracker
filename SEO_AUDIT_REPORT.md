@@ -1,11 +1,12 @@
-# SEO Audit — Index Fund Calculator (2026-10-23)
+# SEO Audit — Lightning Tracker (2026-10-25)
 
 ## Done
-- [x] Brand + domain set to Index Fund Calculator / indexfundcalculator.com
-- [x] Modifier landers: compound interest, expense ratio, investment growth
-- [x] Blogs limited to SERP-backed index fund topics
-- [x] Images from `/public` (home-*.webp under 100KB, logos, OG)
+- [x] Brand + domain set to Lightning Tracker / lightningtracker.net
+- [x] Dark-blue theme from logo palette
+- [x] Tool landers: live map, distance calculator, alerts
+- [x] Old index-fund blogs removed; 4 SERP-backed lightning blogs added
+- [x] Blog images under 100KB in `/public/blog`
 - [x] Sitemap index + robots Content-Signal template
 
 ## Next
-- Submit `https://indexfundcalculator.com/sitemap-index.xml` in Search Console
+- Submit `https://lightningtracker.net/sitemap-index.xml` in Search Console

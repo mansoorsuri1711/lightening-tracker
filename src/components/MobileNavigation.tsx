@@ -22,10 +22,10 @@ const navSections: NavSection[] = [
   {
     title: 'TOOLS',
     items: [
-      { href: '/', label: 'Index Fund Calculator' },
-      { href: '/compound-interest-calculator', label: 'Compound Interest' },
-      { href: '/expense-ratio-calculator', label: 'Expense Ratio' },
-      { href: '/investment-growth-calculator', label: 'Investment Growth' },
+      { href: '/', label: 'Lightning Tracker' },
+      { href: '/live-lightning-map', label: 'Live Lightning Map' },
+      { href: '/lightning-distance-calculator', label: 'Distance Calculator' },
+      { href: '/lightning-alerts', label: 'Lightning Alerts' },
       { href: '/features', label: 'Features' },
       { href: '/how-it-works', label: 'How It Works' },
     ],
@@ -169,11 +169,11 @@ export default function MobileNavigation() {
 
             <div className="border-t border-white/10 bg-brand-soft/70 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               <Link
-                href="/#calculator"
+                href="/#tracker"
                 onClick={closeMenu}
-                className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-violet to-teal px-4 py-3 text-sm font-bold text-brand-deep"
+                className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-violet to-teal px-4 py-3 text-sm font-bold text-white"
               >
-                Open calculator
+                Open tracker
               </Link>
             </div>
           </div>,

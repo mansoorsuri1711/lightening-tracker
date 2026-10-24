@@ -12,62 +12,62 @@ import {
 } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Index Fund Calculator Features — Growth & Fees",
+  title: "Lightning Tracker Features — Maps, Distance & Alerts",
   description:
-    "See what Index Fund Calculator includes: contribution projections, compounding, expense-ratio impact, year-by-year tables, and related investment tools.",
+    "See what Lightning Tracker includes: distance calculator, live map guidance, alert tips, safety guides, and free web tools.",
   alternates: { canonical: `${SITE_ORIGIN}/features` },
   openGraph: {
-    title: "Index Fund Calculator Features — Growth & Fees",
-    description: "Everything you need to project index fund growth and fee impact.",
+    title: "Lightning Tracker Features — Maps, Distance & Alerts",
+    description: "Tools and guides for tracking thunderstorm lightning activity.",
     url: `${SITE_ORIGIN}/features`,
     siteName: SITE_NAME,
     type: "website",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Index Fund Calculator features" }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Lightning Tracker features" }],
   },
 };
 
 const faqs = [
   {
-    question: "What inputs does Index Fund Calculator support?",
+    question: "Is Lightning Tracker a mobile app download?",
     answer:
-      "Initial investment, monthly or yearly contributions, time horizon, expected annual return, and expense ratio — plus a year-by-year balance table.",
+      "Lightning Tracker is a fast web experience on lightningtracker.net. You can bookmark it on phones and desktops. Our guides also explain how popular lightning apps and maps fit into a full awareness workflow.",
   },
   {
-    question: "Can I compare fund fees?",
+    question: "What tools are included?",
     answer:
-      "Yes. The expense ratio calculator compares two fee levels on the same contribution plan and shows the dollar difference in ending wealth.",
+      "A lightning distance calculator, live lightning map reading guide, lightning alerts guide, how-it-works walkthrough, and SERP-backed safety/education articles.",
   },
   {
-    question: "Is there a compound interest mode?",
+    question: "Do I need an account?",
     answer:
-      "Yes. The compound interest calculator focuses on compounding and contributions without a fee field, while the main tool includes expense ratios.",
+      "No. Core tools run in the browser without signing up.",
   },
 ];
 
 const features = [
   {
-    title: "Contribution-aware growth",
-    body: "Model lump sums and recurring deposits the way real index investors save — not a one-time interest toy.",
+    title: "Flash-to-thunder distance",
+    body: "Convert seconds into miles or kilometers with clear risk hints — the classic outdoor check, done properly.",
   },
   {
-    title: "Expense ratio drag",
-    body: "See how fund fees reduce net return and compare against a zero-fee baseline on every projection.",
+    title: "Live map literacy",
+    body: "Learn strike age colors, zoom strategy, and detection delay so map dots become decisions.",
   },
   {
-    title: "Year-by-year table",
-    body: "Watch balances build annually so long timelines feel concrete before you commit contributions.",
+    title: "Alert configuration tips",
+    body: "Choose radii and habits that reduce false alarm fatigue while still giving early notice.",
   },
   {
-    title: "Related SERP tools",
-    body: "Compound interest, expense ratio, and investment growth landers cover modifier searches without thin duplicates.",
+    title: "Safety-first content",
+    body: "Guides aligned with common NWS/CDC outdoor lightning advice — shelter first, gadgets second.",
   },
   {
-    title: "Educational guides",
-    body: "SERP-backed articles on what index funds are, index vs mutual funds, and expense ratios.",
+    title: "SERP-backed blog",
+    body: "Only topics people search: best trackers, how detection works, distance, and safety.",
   },
   {
-    title: "Free & private-by-default",
-    body: "No account required. Inputs run in your browser for the calculation — we are not a brokerage.",
+    title: "Fast dark-blue UI",
+    body: "Lightweight Next.js pages tuned for mobile thunderstorm checks without clutter.",
   },
 ];
 
@@ -77,50 +77,50 @@ export default function FeaturesPage() {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Features", href: "/features" }]} />
       <div className="container mx-auto max-w-5xl px-4 pb-12 pt-8">
         <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
-          Index Fund Calculator features
+          Lightning Tracker features
         </h1>
-        <p className="mb-10 max-w-2xl text-lg text-white/80">
-          Built to rank for — and actually solve — index fund calculator searches: clear growth math,
-          fee awareness, and related tools for compounding and investment planning.
+        <p className="mb-10 max-w-3xl text-lg text-white/80">
+          Everything on lightningtracker.net is built around one job: help you understand nearby
+          lightning faster and act sooner.
         </p>
 
-        <div className="relative mb-12 aspect-video overflow-hidden rounded-2xl border border-white/10">
-          <Image
-            src={BRAND_FEATURE_2}
-            alt="Index Fund Calculator showing fee impact and growth projection features"
-            fill
-            sizes="(max-width: 1024px) 100vw, 1024px"
-            className="object-cover"
-            priority
-          />
+        <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((f) => (
+            <div key={f.title} className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+              <h2 className="font-display text-lg font-semibold text-white">{f.title}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">{f.body}</p>
+            </div>
+          ))}
         </div>
 
-        <ul className="mb-14 grid gap-6 sm:grid-cols-2">
-          {features.map((f) => (
-            <li key={f.title} className="border border-white/10 bg-white/[0.03] p-5">
-              <h2 className="mb-2 font-display text-xl font-semibold text-white">{f.title}</h2>
-              <p className="text-sm leading-relaxed text-white/70">{f.body}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="mb-12 grid gap-6 md:grid-cols-2">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={BRAND_FEATURE_4}
+              alt="Lightning Tracker feature overview with storm map style visual"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={BRAND_FEATURE_2}
+              alt="Lightning Tracker alerts and monitoring feature visual"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
 
-        <div className="relative mb-14 aspect-video overflow-hidden rounded-2xl border border-white/10">
-          <Image
-            src={BRAND_FEATURE_4}
-            alt="Yearly growth table feature in Index Fund Calculator"
-            fill
-            sizes="(max-width: 1024px) 100vw, 1024px"
-            className="object-cover"
-          />
+        <div className="mb-12">
+          <CtaButton href="/#tracker" icon="arrow" ariaLabel="Open Lightning Tracker">
+            TRY THE TRACKER
+          </CtaButton>
         </div>
 
         <FaqSection title="Features FAQs" items={faqs} />
-
-        <div className="mt-12 text-center">
-          <CtaButton href="/#calculator" ariaLabel="Open Index Fund Calculator">
-            OPEN CALCULATOR
-          </CtaButton>
-        </div>
       </div>
     </>
   );

@@ -1,0 +1,24 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --save 60 1 --loglevel warning
+
+  postgis:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: lightning
+      POSTGRES_PASSWORD: lightning
+      POSTGRES_DB: lightning
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+      - ./workers/ingest/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+volumes:
+  redis_data:
+  postgis_data:

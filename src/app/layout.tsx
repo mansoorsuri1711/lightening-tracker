@@ -39,7 +39,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#030A08",
+  themeColor: "#070A1A",
   viewportFit: "cover",
   interactiveWidget: "resizes-visual",
 };
@@ -47,19 +47,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Free Index Fund Calculator — Growth & Fees",
+    default: "Lightning Tracker — Live Strikes & Alerts",
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_TAGLINE,
   keywords: [
-    "index fund calculator",
-    "investment calculator",
-    "compound interest calculator",
-    "expense ratio calculator",
-    "investment growth calculator",
-    "index fund returns",
-    "what is an index fund",
-    "index fund vs mutual fund",
+    "lightning tracker",
+    "live lightning map",
+    "lightning distance calculator",
+    "lightning alerts",
+    "thunderstorm tracker",
+    "how far away is lightning",
+    "lightning safety",
+    "real time lightning",
   ],
   authors: [{ name: `${SITE_NAME} Team` }],
   creator: SITE_NAME,
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "Free Index Fund Calculator — Growth & Fees",
+    title: "Lightning Tracker — Live Strikes & Alerts",
     description: SITE_TAGLINE,
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
@@ -102,26 +102,26 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Index Fund Calculator — free investment growth and fee impact tool",
+        alt: "Lightning Tracker — live lightning strikes and storm alerts",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Index Fund Calculator — Growth & Fees",
+    title: "Lightning Tracker — Live Strikes & Alerts",
     description: SITE_TAGLINE,
     images: [
       {
         url: TWITTER_IMAGE,
         width: 1200,
         height: 600,
-        alt: "Index Fund Calculator — free investment growth and fee impact tool",
+        alt: "Lightning Tracker — live lightning strikes and storm alerts",
       },
     ],
   },
   applicationName: SITE_NAME,
-  category: "Finance",
-  classification: "Investment Calculator",
+  category: "Weather",
+  classification: "Lightning Tracker",
 };
 
 export default function RootLayout({
@@ -134,16 +134,16 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={`${outfit.variable} ${sora.variable}`}
-      style={{ backgroundColor: "#030A08", colorScheme: "dark" }}
+      style={{ backgroundColor: "#070A1A", colorScheme: "dark" }}
     >
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="theme-color" content="#030A08" />
+        <meta name="theme-color" content="#070A1A" />
         <style
           dangerouslySetInnerHTML={{
             __html:
-              "html,body{background-color:#030A08!important;color-scheme:dark}#__next,main{background-color:transparent}",
+              "html,body{background-color:#070A1A!important;color-scheme:dark}#__next,main{background-color:transparent}",
           }}
         />
         <link rel="icon" href={`/favicon.ico?v=${ASSET_VERSION}`} type="image/x-icon" sizes="48x48" />
@@ -160,7 +160,7 @@ export default function RootLayout({
       </head>
       <body
         className="font-sans antialiased text-ink min-h-screen flex flex-col bg-brand site-atmosphere"
-        style={{ backgroundColor: "#030A08" }}
+        style={{ backgroundColor: "#070A1A" }}
         suppressHydrationWarning
       >
         <MobileMenuProvider>

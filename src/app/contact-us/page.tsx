@@ -4,12 +4,12 @@ import ContactForm from "@/components/ContactForm";
 import { CONTACT_EMAIL, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Contact Index Fund Calculator",
+  title: "Contact Lightning Tracker",
   description:
-    "Contact the Index Fund Calculator team for product questions, feedback, or support on indexfundcalculator.com.",
+    "Contact the Lightning Tracker team for product questions, feedback, or support on lightningtracker.net.",
   alternates: { canonical: `${SITE_ORIGIN}/contact-us` },
   openGraph: {
-    title: "Contact Index Fund Calculator",
+    title: "Contact Lightning Tracker",
     description: `Reach the ${SITE_NAME} team.`,
     url: `${SITE_ORIGIN}/contact-us`,
     siteName: SITE_NAME,
@@ -24,7 +24,7 @@ export default function ContactPage() {
       <div className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
         <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">Contact us</h1>
         <p className="mb-8 text-lg text-white/80">
-          Feedback on the calculator, fee math, or guides? Send a message or email{" "}
+          Feedback on the tracker, distance tool, or guides? Send a message or email{" "}
           <a href={`mailto:${CONTACT_EMAIL}`} className="text-violet-soft underline">
             {CONTACT_EMAIL}
           </a>

@@ -21,10 +21,10 @@ export default function Footer() {
           <div>
             <h2 className="mb-4 text-lg font-semibold text-white">Tools</h2>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-white/85 hover:text-white hover:underline">Index Fund Calculator</Link></li>
-              <li><Link href="/compound-interest-calculator" className="text-white/85 hover:text-white hover:underline">Compound Interest Calculator</Link></li>
-              <li><Link href="/expense-ratio-calculator" className="text-white/85 hover:text-white hover:underline">Expense Ratio Calculator</Link></li>
-              <li><Link href="/investment-growth-calculator" className="text-white/85 hover:text-white hover:underline">Investment Growth Calculator</Link></li>
+              <li><Link href="/" className="text-white/85 hover:text-white hover:underline">Lightning Tracker</Link></li>
+              <li><Link href="/live-lightning-map" className="text-white/85 hover:text-white hover:underline">Live Lightning Map</Link></li>
+              <li><Link href="/lightning-distance-calculator" className="text-white/85 hover:text-white hover:underline">Distance Calculator</Link></li>
+              <li><Link href="/lightning-alerts" className="text-white/85 hover:text-white hover:underline">Lightning Alerts</Link></li>
               <li><Link href="/features" className="text-white/85 hover:text-white hover:underline">Features</Link></li>
             </ul>
           </div>
@@ -33,9 +33,10 @@ export default function Footer() {
             <h2 className="mb-4 text-lg font-semibold text-white">Guides</h2>
             <ul className="space-y-2 text-sm">
               <li><Link href="/how-it-works" className="text-white/85 hover:text-white hover:underline">How It Works</Link></li>
-              <li><Link href="/blog/what-is-an-index-fund" className="text-white/85 hover:text-white hover:underline">What Is an Index Fund?</Link></li>
-              <li><Link href="/blog/index-fund-vs-mutual-fund" className="text-white/85 hover:text-white hover:underline">Index Fund vs Mutual Fund</Link></li>
-              <li><Link href="/blog/expense-ratio-explained" className="text-white/85 hover:text-white hover:underline">Expense Ratio Explained</Link></li>
+              <li><Link href="/blog/best-lightning-tracker-apps" className="text-white/85 hover:text-white hover:underline">Best Lightning Tracker Apps</Link></li>
+              <li><Link href="/blog/how-lightning-trackers-work" className="text-white/85 hover:text-white hover:underline">How Trackers Work</Link></li>
+              <li><Link href="/blog/how-far-away-is-lightning" className="text-white/85 hover:text-white hover:underline">How Far Is Lightning?</Link></li>
+              <li><Link href="/blog/lightning-safety-tips" className="text-white/85 hover:text-white hover:underline">Lightning Safety Tips</Link></li>
               <li><Link href="/about-us" className="text-white/85 hover:text-white hover:underline">About Us</Link></li>
               <li><Link href="/contact-us" className="text-white/85 hover:text-white hover:underline">Contact Us</Link></li>
               <li><Link href="/privacy" className="text-white/85 hover:text-white hover:underline">Privacy Policy</Link></li>
@@ -44,17 +45,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-lg font-semibold text-white">Plan free</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">Stay ahead of storms</h2>
             <p className="mb-4 text-sm text-white/80">
-              Project contributions, compound growth, and fee drag before you invest.
+              Estimate strike distance and learn how live lightning maps and alerts fit together.
             </p>
             <CtaButton
-              href="/#calculator"
+              href="/#tracker"
               size="sm"
-              ariaLabel="Open the free index fund calculator"
+              ariaLabel="Open the free lightning tracker"
               icon="arrow"
             >
-              OPEN CALCULATOR
+              OPEN TRACKER
             </CtaButton>
           </div>
         </div>
@@ -65,7 +66,7 @@ export default function Footer() {
             <Link href="/" className="underline hover:no-underline text-white/90">{SITE_DOMAIN}</Link>
           </p>
           <p className="mt-2 text-xs text-white/45">
-            Educational planning tool only. Not investment advice. Past returns do not guarantee future results.
+            Educational weather awareness tool only. Not an official emergency alert service. Always follow local weather warnings.
           </p>
         </div>
       </div>

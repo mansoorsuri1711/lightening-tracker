@@ -7,11 +7,12 @@ import MobileNavigation from './MobileNavigation';
 import { BRAND_LOGO_MARK, SITE_NAME } from '@/lib/siteConfig';
 
 const navLinks = [
-  { href: '/', label: 'Calculator' },
+  { href: '/', label: 'Tracker' },
+  { href: '/live-lightning-map', label: 'Live Map' },
+  { href: '/lightning-distance-calculator', label: 'Distance' },
+  { href: '/lightning-alerts', label: 'Alerts' },
   { href: '/features', label: 'Features' },
   { href: '/how-it-works', label: 'How It Works' },
-  { href: '/compound-interest-calculator', label: 'Compound' },
-  { href: '/expense-ratio-calculator', label: 'Fees' },
   { href: '/blog', label: 'Blog' },
   { href: '/about-us', label: 'About' },
   { href: '/contact-us', label: 'Contact' },
@@ -32,7 +33,7 @@ export default function Header() {
           <div className="relative h-8 w-8 sm:h-9 sm:w-9 mr-2 flex-shrink-0">
             <Image
               src={BRAND_LOGO_MARK}
-              alt="Index Fund Calculator logo"
+              alt="Lightning Tracker logo"
               width={40}
               height={40}
               className="object-contain"
@@ -55,7 +56,7 @@ export default function Header() {
             >
               {label}
               <span
-                className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-violet to-teal rounded-full transition-all duration-300 ${
+                className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-violet to-gold rounded-full transition-all duration-300 ${
                   isActive(href) ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}
               />
@@ -65,10 +66,10 @@ export default function Header() {
 
         <div className="hidden xl:block">
           <Link
-            href="/#calculator"
-            className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet to-teal px-4 py-2 text-sm font-semibold text-brand-deep shadow-[0_10px_28px_-12px_rgba(18,168,118,0.9)] transition hover:brightness-110"
+            href="/#tracker"
+            className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet to-teal px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(59,130,246,0.9)] transition hover:brightness-110"
           >
-            Open calculator
+            Open tracker
           </Link>
         </div>
 

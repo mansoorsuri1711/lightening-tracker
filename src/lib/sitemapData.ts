@@ -12,7 +12,7 @@ export type SitemapPage = {
   images?: Array<{ loc: string; title: string; caption: string }>;
 };
 
-const LASTMOD = "2026-10-23";
+const LASTMOD = "2026-10-25";
 
 export const SITEMAP_PAGES: SitemapPage[] = [
   {
@@ -22,14 +22,14 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 1,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-logo.png"),
-        title: "Index Fund Calculator logo",
-        caption: "Brand mark for Index Fund Calculator on indexfundcalculator.com",
+        loc: imageLoc("/logo-icon.png"),
+        title: "Lightning Tracker logo",
+        caption: "Brand mark for Lightning Tracker on lightningtracker.net",
       },
       {
-        loc: imageLoc("/index-fund-calculator.webp"),
-        title: "Index Fund Calculator tool",
-        caption: "Free index fund growth and returns calculator homepage",
+        loc: imageLoc("/lightning-tracker.webp"),
+        title: "Lightning Tracker tool",
+        caption: "Free lightning tracker homepage for strike awareness",
       },
     ],
   },
@@ -40,9 +40,9 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-2.webp"),
-        title: "Index Fund Calculator features",
-        caption: "Growth projections, contributions, and expense ratio features",
+        loc: imageLoc("/best-lightning-tracker.webp"),
+        title: "Lightning Tracker features",
+        caption: "Distance, live map guidance, and alert features",
       },
     ],
   },
@@ -53,48 +53,48 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-3.webp"),
-        title: "How Index Fund Calculator works",
-        caption: "Steps to project index fund returns with compounding",
+        loc: imageLoc("/lightning-tracker-tool.webp"),
+        title: "How Lightning Tracker works",
+        caption: "Steps to estimate lightning distance and monitor storms",
       },
     ],
   },
   {
-    path: "/compound-interest-calculator",
+    path: "/lightning-distance-calculator",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.95,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-3.webp"),
-        title: "Compound Interest Calculator",
-        caption: "Calculate compound interest on long-term investments",
+        loc: imageLoc("/lightning-tracker-tool.webp"),
+        title: "Lightning Distance Calculator",
+        caption: "Estimate how far lightning is from flash to thunder",
       },
     ],
   },
   {
-    path: "/expense-ratio-calculator",
+    path: "/live-lightning-map",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.95,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-2.webp"),
-        title: "Expense Ratio Calculator",
-        caption: "Compare how fund fees reduce long-term investment balances",
+        loc: imageLoc("/best-lightning-tracker.webp"),
+        title: "Live Lightning Map Guide",
+        caption: "How to read live lightning strike maps",
       },
     ],
   },
   {
-    path: "/investment-growth-calculator",
+    path: "/lightning-alerts",
     lastMod: LASTMOD,
     changeFreq: "weekly",
     priority: 0.95,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-4.webp"),
-        title: "Investment Growth Calculator",
-        caption: "Project investment growth with regular contributions",
+        loc: imageLoc("/lightning-tracker-app.webp"),
+        title: "Lightning Alerts",
+        caption: "Tips for lightning alert radius and notifications",
       },
     ],
   },
@@ -105,8 +105,8 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.7,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-logo.png"),
-        title: "About Index Fund Calculator",
+        loc: imageLoc("/logo-icon.png"),
+        title: "About Lightning Tracker",
         caption: "Brand logo used on the About page",
       },
     ],
@@ -118,41 +118,54 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 0.8,
   },
   {
-    path: "/blog/what-is-an-index-fund",
+    path: "/blog/best-lightning-tracker-apps",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.9,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator.webp"),
-        title: "What is an index fund",
-        caption: "Beginner guide explaining how index funds work",
+        loc: imageLoc("/blog/best-lightning-tracker-apps.webp"),
+        title: "Best lightning tracker apps",
+        caption: "Guide to choosing lightning tracker apps and maps",
       },
     ],
   },
   {
-    path: "/blog/index-fund-vs-mutual-fund",
+    path: "/blog/how-lightning-trackers-work",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.85,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-3.webp"),
-        title: "Index fund vs mutual fund",
-        caption: "Comparison of index funds and actively managed mutual funds",
+        loc: imageLoc("/blog/how-lightning-trackers-work.webp"),
+        title: "How lightning trackers work",
+        caption: "Detection networks, delay, and accuracy explained",
       },
     ],
   },
   {
-    path: "/blog/expense-ratio-explained",
+    path: "/blog/how-far-away-is-lightning",
     lastMod: LASTMOD,
     changeFreq: "monthly",
     priority: 0.85,
     images: [
       {
-        loc: imageLoc("/index-fund-calculator-2.webp"),
-        title: "Expense ratio explained",
-        caption: "How expense ratios reduce index fund and ETF returns over time",
+        loc: imageLoc("/blog/how-far-away-is-lightning.webp"),
+        title: "How far away is lightning",
+        caption: "Flash-to-thunder distance guide for thunderstorms",
+      },
+    ],
+  },
+  {
+    path: "/blog/lightning-safety-tips",
+    lastMod: LASTMOD,
+    changeFreq: "monthly",
+    priority: 0.85,
+    images: [
+      {
+        loc: imageLoc("/blog/lightning-safety-tips.webp"),
+        title: "Lightning safety tips",
+        caption: "Thunderstorm lightning safety habits and shelter tips",
       },
     ],
   },

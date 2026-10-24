@@ -15,17 +15,17 @@ export default function PrivacyPage() {
       <div className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
         <h1 className="mb-6 font-display text-3xl font-bold text-white">Privacy Policy</h1>
         <div className="space-y-5 text-white/80 leading-relaxed">
-          <p>Last updated: October 23, 2026</p>
+          <p>Last updated: October 25, 2026</p>
           <p>
             {SITE_NAME} (“we”, “us”) operates {SITE_DOMAIN}. This policy explains what information we
-            collect when you use our free index fund calculator and related pages.
+            collect when you use our free lightning tracker tools and related pages.
           </p>
           <h2 className="font-display text-xl font-semibold text-white">Information we collect</h2>
           <p>
-            Investment amounts and assumptions you type into the calculator are processed in your
-            browser for the calculation and are not stored on our servers as an investment account.
-            If you contact us, we receive the email address and message you submit. Standard server
-            and analytics logs may include IP address, browser type, and pages visited.
+            Values you type into the distance calculator are processed in your browser for the
+            calculation and are not stored on our servers as a personal weather account. If you
+            contact us, we receive the email address and message you submit. Standard server and
+            analytics logs may include IP address, browser type, and pages visited.
           </p>
           <h2 className="font-display text-xl font-semibold text-white">How we use information</h2>
           <p>
@@ -40,8 +40,7 @@ export default function PrivacyPage() {
           <h2 className="font-display text-xl font-semibold text-white">Third parties</h2>
           <p>
             Hosting and analytics providers may process technical data on our behalf under their own
-            terms. We do not operate a brokerage and do not share calculator inputs with fund
-            companies for sales purposes.
+            terms. We do not sell location history or calculator inputs to advertisers.
           </p>
           <h2 className="font-display text-xl font-semibold text-white">Contact</h2>
           <p>
@@ -49,6 +48,7 @@ export default function PrivacyPage() {
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-violet-soft underline">
               {CONTACT_EMAIL}
             </a>
+            .
           </p>
         </div>
       </div>

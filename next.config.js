@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  serverExternalPackages: ['h5wasm'],
   reactStrictMode: true,
   compress: true,
   // Dev-only: allow HMR when the page is opened as 127.0.0.1 instead of localhost
@@ -16,7 +17,7 @@ const nextConfig = {
     formats: ['image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    qualities: [75, 80, 90, 100],
+    qualities: [70, 75, 80, 90, 100],
     minimumCacheTTL: 0,
   },
 
@@ -105,34 +106,67 @@ const nextConfig = {
       },
       {
         source: '/nfl-parlay-calculator',
-        destination: '/compound-interest-calculator',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/moneyline-parlay-calculator',
-        destination: '/expense-ratio-calculator',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/round-robin-calculator',
-        destination: '/investment-growth-calculator',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/blog/how-to-calculate-parlay-odds',
-        destination: '/blog/what-is-an-index-fund',
+        destination: '/blog',
         permanent: true,
       },
       {
         source: '/blog/what-is-a-parlay-bet',
-        destination: '/blog/what-is-an-index-fund',
+        destination: '/blog',
         permanent: true,
       },
       {
         source: '/blog/parlay-odds-explained',
-        destination: '/blog/expense-ratio-explained',
+        destination: '/blog',
         permanent: true,
       },
+
+      // Retired Index Fund Calculator routes
+      {
+        source: '/compound-interest-calculator',
+        destination: '/lightning-distance-calculator',
+        permanent: true,
+      },
+      {
+        source: '/expense-ratio-calculator',
+        destination: '/lightning-alerts',
+        permanent: true,
+      },
+      {
+        source: '/investment-growth-calculator',
+        destination: '/live-lightning-map',
+        permanent: true,
+      },
+      {
+        source: '/blog/what-is-an-index-fund',
+        destination: '/blog/how-lightning-trackers-work',
+        permanent: true,
+      },
+      {
+        source: '/blog/index-fund-vs-mutual-fund',
+        destination: '/blog/best-lightning-tracker-apps',
+        permanent: true,
+      },
+      {
+        source: '/blog/expense-ratio-explained',
+        destination: '/blog/how-far-away-is-lightning',
+        permanent: true,
+      },
+
 
       // Legacy asset paths
       {
@@ -260,11 +294,14 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://www.googletagmanager.com https://www.google-analytics.com",
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: https:",
-              "font-src 'self' data:",
-              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+              "img-src 'self' data: blob: https:",
+              "font-src 'self' data: https://tiles.openfreemap.org",
+              "worker-src 'self' blob:",
+              "child-src 'self' blob:",
+              // Leaflet / Esri dark basemap tiles
+              "connect-src 'self' blob: https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com https://api.rainviewer.com https://tilecache.rainviewer.com https://server.arcgisonline.com https://services.arcgisonline.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",

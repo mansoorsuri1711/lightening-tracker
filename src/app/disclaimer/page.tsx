@@ -4,7 +4,7 @@ import { CONTACT_EMAIL, SITE_DOMAIN, SITE_NAME, SITE_ORIGIN } from "@/lib/siteCo
 
 export const metadata: Metadata = {
   title: "Disclaimer",
-  description: `Legal disclaimer for ${SITE_NAME} — educational investment calculator, not financial advice.`,
+  description: `Legal disclaimer for ${SITE_NAME} — educational weather awareness tools, not official emergency alerts.`,
   alternates: { canonical: `${SITE_ORIGIN}/disclaimer` },
 };
 
@@ -15,27 +15,27 @@ export default function DisclaimerPage() {
       <div className="container mx-auto max-w-3xl px-4 pb-10 pt-8">
         <h1 className="mb-6 font-display text-3xl font-bold text-white">Disclaimer</h1>
         <div className="space-y-5 text-white/80 leading-relaxed">
-          <p>Last updated: October 23, 2026</p>
+          <p>Last updated: October 25, 2026</p>
           <p>
-            {SITE_NAME} on {SITE_DOMAIN} provides educational investment calculators and articles.
-            We are not a broker-dealer, investment adviser, or fund company. We do not open accounts,
-            custody assets, or recommend specific securities.
+            {SITE_NAME} on {SITE_DOMAIN} provides educational lightning awareness tools and articles.
+            We are not a meteorological agency, emergency service, or official warning provider. We
+            do not issue watches, warnings, or evacuation orders.
           </p>
           <h2 className="font-display text-xl font-semibold text-white">No guarantees</h2>
           <p>
-            Calculator results use simplified compounding assumptions. Actual fund returns, fees,
-            taxes, timing of contributions, and market volatility will differ. Past performance does
-            not guarantee future results. Figures are illustrative only.
+            Distance estimates use simplified sound-speed assumptions. Live map guidance describes
+            how public trackers typically work; actual third-party maps may differ in delay,
+            coverage, and accuracy. Always verify with local conditions and official sources.
           </p>
-          <h2 className="font-display text-xl font-semibold text-white">Not investment advice</h2>
+          <h2 className="font-display text-xl font-semibold text-white">Not emergency advice</h2>
           <p>
-            Nothing on this site is personalized financial, tax, or legal advice. Investing involves
-            risk, including possible loss of principal. Consider your goals and consult a qualified
-            professional when needed. You are responsible for complying with applicable laws.
+            Nothing on this site replaces National Weather Service (or equivalent) alerts, local
+            emergency instructions, or common-sense shelter decisions. Lightning can injure or kill.
+            Seek substantial shelter when thunder is audible.
           </p>
           <h2 className="font-display text-xl font-semibold text-white">Accuracy</h2>
           <p>
-            We strive for accurate formulas and clear guides, but content may contain errors or become
+            We strive for clear, accurate educational content, but pages may contain errors or become
             outdated. Use the site at your own risk. For questions, contact{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-violet-soft underline">
               {CONTACT_EMAIL}

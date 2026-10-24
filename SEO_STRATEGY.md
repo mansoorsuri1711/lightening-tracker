@@ -1,14 +1,25 @@
-# Index Fund Calculator SEO Strategy
+# SEO Strategy — Lightning Tracker
 
-**Domain:** https://indexfundcalculator.com  
-**Primary keyword:** index fund calculator
+Primary domain: `https://lightningtracker.net`  
+Primary keyword: **lightning tracker**
 
-| Intent | Keyword focus | Route |
-|--------|---------------|-------|
-| Tool (primary) | index fund calculator | `/` |
-| Tool | compound interest calculator | `/compound-interest-calculator` |
-| Tool | expense ratio calculator | `/expense-ratio-calculator` |
-| Tool | investment growth calculator | `/investment-growth-calculator` |
-| Informational | what is an index fund | `/blog/what-is-an-index-fund` |
-| Informational | index fund vs mutual fund | `/blog/index-fund-vs-mutual-fund` |
-| Informational | expense ratio | `/blog/expense-ratio-explained` |
+## Pillar pages
+
+- `/` — Lightning Tracker hub + distance tool
+- `/live-lightning-map` — live map reading intent
+- `/lightning-distance-calculator` — “how far is lightning” tool intent
+- `/lightning-alerts` — notification / radius intent
+
+## Supporting blogs (SERP-backed only)
+
+1. Best lightning tracker apps & maps
+2. How lightning trackers work
+3. How far away is lightning?
+4. Lightning safety tips
+
+## Technical
+
+- Canonical host: lightningtracker.net
+- Sitemap: `/sitemap-index.xml` → `/index.xml` + `/image-sitemap.xml`
+- Robots: Content-Signal + AI bot blocks + sitemap index only
+- Schema: WebSite, Organization, SoftwareApplication + AggregateRating, FAQ, HowTo, Article, BreadcrumbList

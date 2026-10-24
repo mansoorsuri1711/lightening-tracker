@@ -2,16 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { BRAND_FEATURE_2, BRAND_FEATURE_3, BRAND_HERO, SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
+import { SITE_NAME, SITE_ORIGIN } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Index Fund Blog — Guides People Actually Search",
+  title: "Lightning Tracker Blog — Maps, Distance & Safety",
   description:
-    "SERP-backed index fund guides: what an index fund is, index vs mutual funds, and how expense ratios affect returns.",
+    "SERP-backed lightning tracker guides: best apps, how detection works, how far lightning is, and thunderstorm safety tips.",
   alternates: { canonical: `${SITE_ORIGIN}/blog` },
   openGraph: {
-    title: "Index Fund Blog — Guides People Actually Search",
-    description: "Practical index fund articles from Index Fund Calculator.",
+    title: "Lightning Tracker Blog — Maps, Distance & Safety",
+    description: "Practical lightning tracker articles from Lightning Tracker.",
     url: `${SITE_ORIGIN}/blog`,
     siteName: SITE_NAME,
     type: "website",
@@ -20,34 +20,44 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    href: "/blog/what-is-an-index-fund",
-    title: "What Is an Index Fund? A Clear Beginner Guide",
+    href: "/blog/best-lightning-tracker-apps",
+    title: "Best Lightning Tracker Apps & Maps (What Actually Matters)",
     excerpt:
-      "How index funds track markets, why costs stay low, and who they fit — without brokerage jargon.",
-    date: "October 2026",
-    read: "10 min read",
-    image: BRAND_HERO,
-    alt: "Index fund investing overview illustration",
-  },
-  {
-    href: "/blog/index-fund-vs-mutual-fund",
-    title: "Index Fund vs Mutual Fund: Key Differences",
-    excerpt:
-      "Passive tracking versus active management — fees, goals, and when each structure makes sense.",
+      "A practical checklist for live maps, alerts, delay, and battery — beyond star ratings alone.",
     date: "October 2026",
     read: "9 min read",
-    image: BRAND_FEATURE_3,
-    alt: "Comparison of index funds and mutual funds",
+    image: "/blog/best-lightning-tracker-apps.webp",
+    alt: "Comparison view for choosing the best lightning tracker apps and maps",
   },
   {
-    href: "/blog/expense-ratio-explained",
-    title: "Expense Ratio Explained: Why Tiny Fees Matter",
+    href: "/blog/how-lightning-trackers-work",
+    title: "How Lightning Trackers Work: Detection, Delay & Accuracy",
     excerpt:
-      "What an expense ratio is, typical index-fund ranges, and how fees compound against your balance.",
+      "How sensor networks locate strikes and why “live” usually means near real time.",
+    date: "October 2026",
+    read: "10 min read",
+    image: "/blog/how-lightning-trackers-work.webp",
+    alt: "Illustration of how lightning detection networks feed tracker maps",
+  },
+  {
+    href: "/blog/how-far-away-is-lightning",
+    title: "How Far Away Is Lightning? Flash-to-Thunder Explained",
+    excerpt:
+      "Use the rule of five, sound-speed math, and our free distance calculator outdoors.",
     date: "October 2026",
     read: "8 min read",
-    image: BRAND_FEATURE_2,
-    alt: "Expense ratio fee impact on investment growth",
+    image: "/blog/how-far-away-is-lightning.webp",
+    alt: "Visual guide to estimating how far away lightning is",
+  },
+  {
+    href: "/blog/lightning-safety-tips",
+    title: "Lightning Safety Tips for Thunderstorms",
+    excerpt:
+      "Shelter rules, 30-30 thinking, and how trackers fit into a safety plan — not replace it.",
+    date: "October 2026",
+    read: "9 min read",
+    image: "/blog/lightning-safety-tips.webp",
+    alt: "Lightning safety tips for outdoor thunderstorm awareness",
   },
 ];
 
@@ -57,11 +67,11 @@ export default function BlogPage() {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }]} />
       <div className="container mx-auto max-w-5xl px-4 pb-10 pt-8">
         <h1 className="mb-3 font-display text-3xl font-bold text-white md:text-4xl">
-          Index fund calculator blog
+          Lightning Tracker blog
         </h1>
         <p className="mb-10 text-lg text-white/80">
-          Only topics people search alongside an index fund calculator — definitions, comparisons,
-          and fee explainers. No filler posts.
+          Only topics people search alongside a lightning tracker — apps, detection science,
+          distance, and safety. No filler posts.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {posts.map((post) => (
