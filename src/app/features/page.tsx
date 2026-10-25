@@ -12,13 +12,13 @@ import {
 } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Lightning Tracker Features — Maps, Distance & Alerts",
+  title: "Lightning Tracker Features — Live Map, Distance & Alerts",
   description:
-    "See what Lightning Tracker includes: distance calculator, live map guidance, alert tips, safety guides, and free web tools.",
+    "Lightning Tracker features: live lightning map, lightning strike map view, distance calculator, thunder tracking tips, and free storm safety guides.",
   alternates: { canonical: `${SITE_ORIGIN}/features` },
   openGraph: {
-    title: "Lightning Tracker Features — Maps, Distance & Alerts",
-    description: "Tools and guides for tracking thunderstorm lightning activity.",
+    title: "Lightning Tracker Features — Live Map, Distance & Alerts",
+    description: "Live lightning map, real-time strikes, distance calculator, and thunderstorm guides.",
     url: `${SITE_ORIGIN}/features`,
     siteName: SITE_NAME,
     type: "website",
@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "What tools are included?",
     answer:
-      "A lightning distance calculator, live lightning map reading guide, lightning alerts guide, how-it-works walkthrough, and SERP-backed safety/education articles.",
+      "A live lightning strike map (NOAA GOES GLM for the Americas), flash-to-thunder distance calculator, lightning alerts guide, how-it-works walkthrough, and SERP-backed safety articles.",
   },
   {
     question: "Do I need an account?",
@@ -46,11 +46,15 @@ const faqs = [
 
 const features = [
   {
+    title: "Live lightning map",
+    body: "Watch near-real-time strikes on an interactive map — storm motion, nearby activity, and age-colored dots in one view.",
+  },
+  {
     title: "Flash-to-thunder distance",
     body: "Convert seconds into miles or kilometers with clear risk hints — the classic outdoor check, done properly.",
   },
   {
-    title: "Live map literacy",
+    title: "Map reading tips",
     body: "Learn strike age colors, zoom strategy, and detection delay so map dots become decisions.",
   },
   {
@@ -65,10 +69,6 @@ const features = [
     title: "SERP-backed blog",
     body: "Only topics people search: best trackers, how detection works, distance, and safety.",
   },
-  {
-    title: "Fast dark-blue UI",
-    body: "Lightweight Next.js pages tuned for mobile thunderstorm checks without clutter.",
-  },
 ];
 
 export default function FeaturesPage() {
@@ -80,8 +80,9 @@ export default function FeaturesPage() {
           Lightning Tracker features
         </h1>
         <p className="mb-10 max-w-3xl text-lg text-white/80">
-          Everything on lightningtracker.net is built around one job: help you understand nearby
-          lightning faster and act sooner.
+          Everything on lightningtracker.net is built around one job: open a live lightning map,
+          see lightning strikes near you, estimate how far a bolt is, and act sooner in a
+          thunderstorm.
         </p>
 
         <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

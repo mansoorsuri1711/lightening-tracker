@@ -23,7 +23,7 @@ export default function DisclaimerPage() {
           </p>
           <h2 className="font-display text-xl font-semibold text-white">No guarantees</h2>
           <p>
-            Distance estimates use simplified sound-speed assumptions. Live map guidance describes
+            Distance estimates use simplified sound-speed assumptions. The live lightning map and related guidance describe
             how public trackers typically work; actual third-party maps may differ in delay,
             coverage, and accuracy. Always verify with local conditions and official sources.
           </p>

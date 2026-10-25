@@ -9,9 +9,19 @@ import {
 
 type Props = {
   className?: string;
+  title?: string;
+  description?: string;
 };
 
-export default function LightningDistanceCalculator({ className = "" }: Props) {
+const DEFAULT_TITLE = "Lightning distance calculator";
+const DEFAULT_DESCRIPTION =
+  "Count the seconds from flash to thunder, then estimate how far the strike was.";
+
+export default function LightningDistanceCalculator({
+  className = "",
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+}: Props) {
   const baseId = useId();
   const [seconds, setSeconds] = useState("5");
   const [unit, setUnit] = useState<DistanceUnit>("miles");
@@ -34,12 +44,8 @@ export default function LightningDistanceCalculator({ className = "" }: Props) {
     >
       <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="font-display text-xl font-bold text-white sm:text-2xl">
-            Lightning distance calculator
-          </h2>
-          <p className="mt-1 text-sm text-white/65">
-            Count the seconds from flash to thunder, then estimate how far the strike was.
-          </p>
+          <h2 className="font-display text-xl font-bold text-white sm:text-2xl">{title}</h2>
+          <p className="mt-1 max-w-xl text-sm text-white/65">{description}</p>
         </div>
         <div className="inline-flex rounded-lg border border-white/15 bg-brand-soft p-1 text-sm">
           {(["miles", "kilometers"] as DistanceUnit[]).map((u) => (

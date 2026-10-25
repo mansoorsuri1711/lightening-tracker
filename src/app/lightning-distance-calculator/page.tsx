@@ -54,8 +54,12 @@ export default function LightningDistancePage() {
           Lightning distance calculator
         </h1>
         <p className="mb-8 max-w-3xl text-lg text-white/80">
-          See a flash, count until thunder, and estimate how far the strike was — the classic outdoor
-          check, upgraded with miles, kilometers, and risk context from Lightning Tracker.
+          See a flash, count until thunder, and estimate how far the strike was — then pair it with
+          Lightning Tracker’s{" "}
+          <Link href="/#tracker" className="text-violet-soft underline">
+            live lightning map
+          </Link>{" "}
+          when you need storm direction as well as distance.
         </p>
 
         <LightningDistanceCalculator className="mb-12" />

@@ -47,7 +47,8 @@ export default function Footer() {
           <div>
             <h2 className="mb-4 text-lg font-semibold text-white">Stay ahead of storms</h2>
             <p className="mb-4 text-sm text-white/80">
-              Estimate strike distance and learn how live lightning maps and alerts fit together.
+              Watch live strikes on the map, estimate distance from flash to thunder, and use alert
+              tips when storms approach.
             </p>
             <CtaButton
               href="/#tracker"

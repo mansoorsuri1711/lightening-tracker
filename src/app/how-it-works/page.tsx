@@ -9,11 +9,11 @@ import { BRAND_FEATURE_3, OG_IMAGE, SITE_NAME, SITE_ORIGIN } from "@/lib/siteCon
 export const metadata: Metadata = {
   title: "How Lightning Tracker Works",
   description:
-    "Step-by-step: how Lightning Tracker helps you estimate strike distance, read live maps, and use alerts during thunderstorms.",
+    "Step-by-step: how Lightning Tracker’s live lightning map, lightning strike map view, distance calculator, and alert tips work together in a thunderstorm.",
   alternates: { canonical: `${SITE_ORIGIN}/how-it-works` },
   openGraph: {
     title: "How Lightning Tracker Works",
-    description: "A clear walkthrough of Lightning Tracker tools and storm awareness workflow.",
+    description: "Walkthrough of the live lightning map, thunder tracking, and distance workflow.",
     url: `${SITE_ORIGIN}/how-it-works`,
     siteName: SITE_NAME,
     type: "website",
@@ -30,22 +30,22 @@ const faqs = [
   {
     question: "Where does lightning data come from?",
     answer:
-      "Public and commercial maps usually rely on radio or optical detection networks. Lightning Tracker explains how to interpret that data; see our detection guide for details.",
+      "Lightning Tracker’s live map uses NOAA GOES GLM optical detections for the Americas. Other public maps may rely on radio networks. See our detection guide for how timing and delay work.",
   },
 ];
 
 const steps = [
   {
-    title: "Open the distance tool",
-    body: "When you see a flash, count until thunder and enter the seconds on the homepage calculator.",
+    title: "Open the live lightning map",
+    body: "Start on the homepage tracker to see recent strikes and how the storm is moving near you.",
+  },
+  {
+    title: "Time flash to thunder",
+    body: "When you see a flash, count until thunder and enter the seconds in the distance calculator.",
   },
   {
     title: "Read the risk hint",
-    body: "Immediate and nearby results mean shelter now. Distant results still deserve monitoring.",
-  },
-  {
-    title: "Check a live map",
-    body: "Use our live map guide to understand strike age and storm motion around your location.",
+    body: "Immediate and nearby results mean shelter now. Distant results still deserve monitoring on the map.",
   },
   {
     title: "Tune alerts ahead of time",
@@ -71,8 +71,8 @@ export default function HowItWorksPage() {
           How Lightning Tracker works
         </h1>
         <p className="mb-10 max-w-3xl text-lg text-white/80">
-          A simple thunderstorm workflow: measure distance, understand the map, and act on alerts —
-          without burying the important parts in weather jargon.
+          A simple thunderstorm workflow: watch the live map, measure distance from flash to thunder,
+          and act on alerts — without burying the important parts in weather jargon.
         </p>
 
         <div className="mb-12 grid gap-8 md:grid-cols-2 md:items-center">

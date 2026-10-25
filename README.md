@@ -1,6 +1,6 @@
 # Lightning Tracker
 
-Brand site for **Lightning Tracker** at [lightningtracker.net](https://lightningtracker.net) — free lightning distance tools, live map guidance, alert tips, and SERP-backed storm safety guides.
+Brand site for **Lightning Tracker** at [lightningtracker.net](https://lightningtracker.net) — free live lightning map, flash-to-thunder distance calculator, alert tips, and SERP-backed storm safety guides.
 
 ## Stack
 

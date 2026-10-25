@@ -42,7 +42,7 @@ export const SITEMAP_PAGES: SitemapPage[] = [
       {
         loc: imageLoc("/best-lightning-tracker.webp"),
         title: "Lightning Tracker features",
-        caption: "Distance, live map guidance, and alert features",
+        caption: "Live strike map, distance calculator, and alert features",
       },
     ],
   },

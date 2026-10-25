@@ -88,9 +88,9 @@ export default function LightningAlertsPage() {
               your chosen radius.
             </p>
             <p>
-              Combine alerts with a{" "}
+              Combine alerts with Lightning Tracker’s{" "}
               <Link href="/live-lightning-map" className="text-violet-soft underline">
-                live lightning map reading habit
+                live lightning map
               </Link>{" "}
               and the{" "}
               <Link href="/lightning-distance-calculator" className="text-violet-soft underline">

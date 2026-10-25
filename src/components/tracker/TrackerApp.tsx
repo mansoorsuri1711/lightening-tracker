@@ -379,7 +379,6 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
       return;
     }
     map.touchZoomRotate.disableRotation();
-    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
     map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-left");
     mapRef.current = map;
 
@@ -975,6 +974,22 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
   const flyTo = (lat: number, lon: number, z = 7) =>
     mapRef.current?.flyTo({ center: [lon, lat], zoom: Math.max(mapRef.current.getZoom(), z), duration: 900 });
 
+  const zoomBy = (delta: number) => {
+    const map = mapRef.current;
+    if (!map) return;
+    map.easeTo({ zoom: map.getZoom() + delta, duration: 200 });
+  };
+
+  const recenter = () => {
+    const map = mapRef.current;
+    if (!map) return;
+    if (user) {
+      map.flyTo({ center: [user.lon, user.lat], zoom: Math.max(map.getZoom(), 7.5), duration: 900 });
+      return;
+    }
+    locate();
+  };
+
   const isOpen = (k: string) => settings.collapsed?.[k] === false;
   const toggle = (k: string) => patch({ collapsed: { ...settings.collapsed, [k]: isOpen(k) } });
 
@@ -1088,8 +1103,56 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
         </div>
       )}
 
+      {/* Map zoom / recenter — above overlays so clicks aren't swallowed */}
+      <div
+        className="pointer-events-auto absolute bottom-[11.5rem] right-3 z-30 flex flex-col overflow-hidden rounded-xl border border-white/15 bg-[#0A1020]/95 shadow-[0_8px_28px_rgba(0,0,0,0.7)] lg:bottom-24"
+        role="group"
+        aria-label="Map zoom"
+      >
+        <button
+          type="button"
+          onClick={() => zoomBy(1)}
+          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/10"
+          aria-label="Zoom in"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
+            <path d="M3 8h10M8 3v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+        <div className="h-px bg-white/12" aria-hidden />
+        <button
+          type="button"
+          onClick={() => zoomBy(-1)}
+          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/10"
+          aria-label="Zoom out"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
+            <path d="M3 8h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+        <div className="h-px bg-white/12" aria-hidden />
+        <button
+          type="button"
+          onClick={recenter}
+          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/10"
+          aria-label={user ? "Recenter on my location" : "Find my location"}
+          title={user ? "Recenter" : "Find my location"}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
+            <circle cx="8" cy="8" r="2.25" fill="currentColor" />
+            <circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+            <path
+              d="M8 1.5v1.75M8 12.75V14.5M1.5 8h1.75M12.75 8H14.5"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+
       {/* TIMELAPSE BAR */}
-      <div className="absolute inset-x-3 z-10 flex justify-center max-lg:bottom-[9.5rem] lg:bottom-4">
+      <div className="pointer-events-none absolute inset-x-3 z-10 flex justify-center max-lg:bottom-[9.5rem] lg:bottom-4">
         <div className={`pointer-events-auto flex w-full max-w-2xl items-center gap-2.5 rounded-2xl border border-white/10 bg-[#0A1020]/90 px-3 py-2 backdrop-blur-md ${sheetOpen ? "max-lg:hidden" : ""}`}>
           <button
             type="button"

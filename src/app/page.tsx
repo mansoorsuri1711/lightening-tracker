@@ -20,16 +20,16 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    default: "Lightning Tracker — Live Strikes & Alerts",
+    default: "Lightning Tracker — Live Lightning Map & Strike Distance",
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Free lightning tracker to estimate strike distance, understand live lightning maps, and stay safer in thunderstorms.",
+    "Free lightning tracker and live lightning map: watch real-time lightning strikes near you, use a lightning strike map view, and estimate distance from flash to thunder.",
   alternates: { canonical: SITE_ORIGIN },
   openGraph: {
-    title: "Lightning Tracker — Live Strikes & Alerts",
+    title: "Lightning Tracker — Live Lightning Map & Strike Distance",
     description:
-      "Track thunderstorm activity with a lightning distance tool, map guidance, and practical alert tips.",
+      "Track thunderstorms with a live lightning map, real-time strike dots, and a flash-to-thunder distance calculator.",
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
     type: "website",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Lightning Tracker homepage — live strikes and storm alerts",
+        alt: "Lightning Tracker — live lightning map and strike tracker",
       },
     ],
   },
@@ -48,12 +48,17 @@ const faqs = [
   {
     question: "What is a lightning tracker?",
     answer:
-      "A lightning tracker shows recent lightning strikes on a map or timeline so you can see where thunderstorms are active. Lightning Tracker also includes a flash-to-thunder distance calculator for quick field estimates.",
+      "A lightning tracker (also called a thunder tracker) shows recent lightning strikes on a map or timeline so you can see where thunderstorms are active. Lightning Tracker includes a live lightning map for the Americas (NOAA GOES GLM) plus a flash-to-thunder distance calculator.",
   },
   {
     question: "How does a live lightning map work?",
     answer:
-      "Detection networks listen for radio or optical signals from lightning. Stations compare timing to locate each strike, then apps and websites plot those points within seconds to a few minutes. Accuracy and delay vary by network and region.",
+      "A live lightning map — sometimes searched as a lightning strike map or real time lightning map — plots detections from optical or radio networks. Points update within seconds to a few minutes so you can see storm motion, not just rain on radar.",
+  },
+  {
+    question: "Can I see lightning strikes near me?",
+    answer:
+      "Yes. Open the homepage lightning map, allow location if prompted, and zoom to your area to check lightning strikes near you. Pair nearby dots with the distance calculator when you hear thunder.",
   },
   {
     question: "How do I tell how far away lightning is?",
@@ -61,19 +66,19 @@ const faqs = [
       "Count the seconds between the flash and the thunder, then divide by five for a rough distance in miles (or use our lightning distance calculator for kilometers and risk context). Sound travels slower than light, so the gap grows with distance.",
   },
   {
+    question: "Is a lightning map the same as lightning radar?",
+    answer:
+      "Not exactly. Weather radar shows precipitation; a lightning map (or thunder map) shows electrical discharges. People often say “lightning radar” when they mean a live strike map. Use both when a thunderstorm is nearby.",
+  },
+  {
     question: "Is Lightning Tracker free?",
     answer:
-      "Yes. The tools and guides on lightningtracker.net are free to use in your browser — no account required. It is an educational weather safety aid, not an official emergency alert system.",
+      "Yes. The lightning maps, tracker tools, and guides on lightningtracker.net are free in your browser — no account required. It is an educational weather safety aid, not an official emergency alert system.",
   },
   {
     question: "Should I rely only on a lightning app outdoors?",
     answer:
       "No. Use trackers as an extra layer of awareness, but follow National Weather Service warnings, seek substantial shelter when thunder is audible, and remember lightning can strike ahead of or outside the heaviest rain.",
-  },
-  {
-    question: "What is the difference between a lightning tracker and radar?",
-    answer:
-      "Radar shows precipitation. A lightning tracker shows electrical discharges. Storms can produce lightning with little rain on your location, so many people watch both when planning outdoor time.",
   },
 ];
 
@@ -87,7 +92,7 @@ export default function Home() {
         url: `${SITE_ORIGIN}/`,
         name: SITE_NAME,
         description:
-          "Free lightning tracker for strike distance, live map guidance, and thunderstorm safety.",
+          "Free lightning tracker and live lightning map with real-time lightning strikes, distance calculator, and thunderstorm safety guides.",
         inLanguage: "en-US",
         publisher: { "@id": `${SITE_ORIGIN}/#organization` },
       },
@@ -95,7 +100,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${SITE_ORIGIN}/#webpage`,
         url: `${SITE_ORIGIN}/`,
-        name: "Lightning Tracker — Live Strikes & Alerts",
+        name: "Lightning Tracker — Live Lightning Map & Strike Distance",
         isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
         primaryImageOfPage: {
           "@type": "ImageObject",
@@ -109,32 +114,33 @@ export default function Home() {
         ...WEB_APPLICATION_JSON_LD,
         "@id": `${SITE_ORIGIN}/#software`,
         description:
-          "Web-based lightning tracker with distance calculator, map guidance, and storm alert tips.",
+          "Web lightning tracker with live lightning map, real-time lightning strike map, flash-to-thunder distance calculator, and storm alert tips.",
       },
       {
         "@type": "HowTo",
-        name: "How to estimate lightning distance",
-        description: "Estimate how far a lightning strike is using flash-to-thunder timing.",
+        name: "How to use Lightning Tracker during a storm",
+        description:
+          "Watch the live lightning map, estimate strike distance with flash-to-thunder timing, and shelter when needed.",
         step: [
           {
             "@type": "HowToStep",
-            name: "Watch for the flash",
-            text: "Start counting the moment you see lightning.",
+            name: "Watch the live map",
+            text: "Open Lightning Tracker and check recent strikes and storm motion near you.",
           },
           {
             "@type": "HowToStep",
-            name: "Listen for thunder",
-            text: "Stop counting when you hear the thunder from that flash.",
+            name: "Count flash to thunder",
+            text: "When you see lightning, start counting and stop when you hear the thunder.",
           },
           {
             "@type": "HowToStep",
             name: "Enter the seconds",
-            text: "Type the count into the Lightning Tracker distance calculator.",
+            text: "Type the count into the Lightning Tracker distance calculator for miles or kilometers.",
           },
           {
             "@type": "HowToStep",
-            name: "Act on the result",
-            text: "If the strike is close, move indoors or into a hard-top vehicle and keep monitoring the storm.",
+            name: "Shelter and keep monitoring",
+            text: "If the strike is close, move indoors or into a hard-top vehicle and keep watching the live map.",
           },
         ],
       },
@@ -160,6 +166,16 @@ export default function Home() {
         <LiveLightningMapLoader fullBleed />
 
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 lg:px-8">
+          <header className="mb-6 max-w-2xl">
+            <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Lightning Tracker
+            </h1>
+            <p className="mt-2 text-sm leading-relaxed text-white/65 sm:text-base">
+              Watch the live lightning map above, then estimate how far a strike is with the
+              flash-to-thunder calculator.
+            </p>
+          </header>
+
           <LightningDistanceCalculator />
 
           <div className="mt-6 flex flex-wrap items-center gap-2 text-sm text-white/70 sm:gap-3">
@@ -178,7 +194,7 @@ export default function Home() {
             <span className="text-white/40">·</span>
             <span>Web</span>
             <span className="text-white/40">·</span>
-            <span>Weather tool</span>
+            <span>Live lightning map</span>
           </div>
         </div>
       </section>
@@ -187,24 +203,29 @@ export default function Home() {
         <section className="mb-16 grid gap-10 md:grid-cols-2 md:items-center">
           <div>
             <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
-              A lightning tracker built for fast decisions
+              Lightning map + tracker built for fast decisions
             </h2>
             <p className="mb-4 text-lg leading-relaxed text-white/80">
-              When thunder starts, you need distance and direction — not a wall of weather jargon.{" "}
-              <strong className="text-white">Lightning Tracker</strong> pairs a flash-to-bang
-              calculator with clear guides on live lightning maps and alerts so campers, drivers,
-              photographers, and families can react sooner.
+              When a thunderstorm starts, you need distance and direction — not a wall of weather
+              jargon. <strong className="text-white">Lightning Tracker</strong> puts a live
+              lightning map (real-time lightning strike map) and a flash-to-bang distance calculator
+              in one place so campers, drivers, photographers, and families can see lightning
+              strikes near them and react sooner.
             </p>
             <p className="mb-4 leading-relaxed text-white/75">
-              Top results for “lightning tracker” are often store listings or dense global maps.
-              Those are useful, but they rarely explain how far a strike is from <em>you</em>, how
-              detection delay works, or what to do next. This site fills that gap with practical
-              tools and SERP-backed articles.
+              People search “lightning map,” “lightning maps,” and “thunder map” for the same
+              reason: they want live strike dots, not just rain on radar. Store apps and dense
+              global maps help, but they rarely explain how far a bolt is from <em>you</em> or what
+              to do next. This free lightning tracker fills that gap.
             </p>
             <p className="leading-relaxed text-white/75">
-              Start with the calculator above, then open the{" "}
+              Use the{" "}
+              <Link href="/#tracker" className="text-violet-soft underline">
+                live lightning map and calculator above
+              </Link>
+              , then open the{" "}
               <Link href="/live-lightning-map" className="text-violet-soft underline">
-                live lightning map guide
+                live lightning map page
               </Link>{" "}
               and{" "}
               <Link href="/lightning-alerts" className="text-violet-soft underline">
@@ -216,7 +237,7 @@ export default function Home() {
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
             <Image
               src={BRAND_HERO}
-              alt="Lightning Tracker storm map visualization showing recent strike activity"
+              alt="Live lightning map showing real-time lightning strikes and thunderstorm activity"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={70}
@@ -232,19 +253,20 @@ export default function Home() {
           </h2>
           <p className="mb-6 max-w-3xl leading-relaxed text-white/80">
             People search for live lightning maps and “how far away is lightning” for the same
-            reason: they want a simple workflow they can trust during a storm.
+            reason: they want a simple workflow they can trust during a storm — watch the map, time
+            the flash, then shelter.
           </p>
           <ol className="mb-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 n: "01",
-                t: "See the flash",
-                d: "Note the lightning visually — that is your timing start.",
+                t: "Watch the live map",
+                d: "See recent strikes and storm motion near you on the homepage tracker.",
               },
               {
                 n: "02",
-                t: "Count to thunder",
-                d: "Stop when the boom arrives. Closer storms mean shorter gaps.",
+                t: "Count flash to thunder",
+                d: "When you see a bolt, time until the boom. Closer storms mean shorter gaps.",
               },
               {
                 n: "03",
@@ -254,7 +276,7 @@ export default function Home() {
               {
                 n: "04",
                 t: "Shelter & monitor",
-                d: "Move to solid shelter, then check maps and alerts as the cell moves.",
+                d: "Move to solid shelter, then keep watching the map as the cell moves.",
               },
             ].map((step) => (
               <li key={step.n} className="border-t border-violet/40 pt-4">
@@ -277,10 +299,10 @@ export default function Home() {
             },
             {
               href: "/live-lightning-map",
-              title: "Live lightning map guide",
-              body: "Learn how strike colors, delay, and zoom levels help you read activity.",
+              title: "Live lightning map",
+              body: "Open a real-time lightning strike map, check storms near you, then learn age colors, delay, and zoom.",
               image: BRAND_FEATURE_4,
-              alt: "Best lightning tracker map overview",
+              alt: "Live lightning map and lightning strike map for thunderstorm tracking",
             },
             {
               href: "/lightning-alerts",
@@ -346,7 +368,7 @@ export default function Home() {
               </Link>{" "}
               guides for NWS-aligned habits you can practice every storm season.
             </p>
-            <CtaButton href="/#tracker" icon="arrow" ariaLabel="Open the lightning distance tool">
+            <CtaButton href="/#tracker" icon="arrow" ariaLabel="Open the live lightning tracker">
               OPEN TRACKER
             </CtaButton>
           </div>

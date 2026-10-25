@@ -40,9 +40,9 @@ export default function AboutPage() {
               About {SITE_NAME}
             </h1>
             <p className="text-lg leading-relaxed text-white/80">
-              {SITE_NAME} is a free web resource on {SITE_DOMAIN} that helps people estimate lightning
-              distance, understand live strike maps, and practice safer thunderstorm habits. We are
-              not a government weather service and we do not issue official warnings.
+              {SITE_NAME} is a free web resource on {SITE_DOMAIN} with a live lightning strike map,
+              a flash-to-thunder distance calculator, and guides for safer thunderstorm habits. We
+              are not a government weather service and we do not issue official warnings.
             </p>
           </div>
         </div>
@@ -52,17 +52,17 @@ export default function AboutPage() {
           <p>
             The core experience is a{" "}
             <Link href="/" className="text-violet-soft underline">
-              lightning tracker
+              live lightning tracker
             </Link>{" "}
-            workflow with a{" "}
+            with a real-time strike map, a{" "}
             <Link href="/lightning-distance-calculator" className="text-violet-soft underline">
               distance calculator
             </Link>
-            ,{" "}
+            , a{" "}
             <Link href="/live-lightning-map" className="text-violet-soft underline">
-              live map guidance
-            </Link>
-            , and{" "}
+              live lightning map
+            </Link>{" "}
+            page, and{" "}
             <Link href="/lightning-alerts" className="text-violet-soft underline">
               alert tips
             </Link>
