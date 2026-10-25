@@ -66,10 +66,15 @@ export default function Header() {
 
         <div className="hidden xl:block">
           <Link
-            href="/#tracker"
+            href="/#calculator"
+            onClick={(e) => {
+              if (pathname !== '/') return;
+              e.preventDefault();
+              document.getElementById("calculator")?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
             className="inline-flex items-center rounded-xl bg-gradient-to-r from-violet to-teal px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(59,130,246,0.9)] transition hover:brightness-110"
           >
-            Open tracker
+            Open calculator
           </Link>
         </div>
 

@@ -126,8 +126,8 @@ export default function LiveLightningMapPage() {
               </Link>{" "}
               so the dots turn into decisions — not just decoration.
             </p>
-            <CtaButton href="/#tracker" size="sm" icon="arrow">
-              Open tracker tools
+            <CtaButton href="/#calculator" size="sm" icon="arrow">
+              Open calculator
             </CtaButton>
           </div>
         </div>

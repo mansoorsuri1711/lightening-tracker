@@ -164,38 +164,41 @@ export default function Home() {
 
       <section id="tracker" className="relative scroll-mt-14">
         <LiveLightningMapLoader fullBleed />
+      </section>
 
-        <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 lg:px-8">
-          <header className="mb-6 max-w-2xl">
-            <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Lightning Tracker
-            </h1>
-            <p className="mt-2 text-sm leading-relaxed text-white/65 sm:text-base">
-              Watch the live lightning map above, then estimate how far a strike is with the
-              flash-to-thunder calculator.
-            </p>
-          </header>
+      <section
+        id="calculator"
+        className="scroll-mt-14 mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 lg:px-8"
+      >
+        <header className="mb-6 max-w-2xl">
+          <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Lightning Tracker
+          </h1>
+          <p className="mt-2 text-sm leading-relaxed text-white/65 sm:text-base">
+            Watch the live lightning map above, then estimate how far a strike is with the
+            flash-to-thunder calculator.
+          </p>
+        </header>
 
-          <LightningDistanceCalculator />
+        <LightningDistanceCalculator />
 
-          <div className="mt-6 flex flex-wrap items-center gap-2 text-sm text-white/70 sm:gap-3">
-            <span
-              className="inline-flex items-center gap-1.5"
-              aria-label={`Rated ${SITE_RATING.ratingValue} out of 5`}
-            >
-              <span className="font-semibold text-gold">{SITE_RATING.ratingValue}</span>
-              <span className="tracking-tight text-gold" aria-hidden="true">
-                ★★★★★
-              </span>
-              <span>({Number(SITE_RATING.ratingCount).toLocaleString()})</span>
+        <div className="mt-6 flex flex-wrap items-center gap-2 text-sm text-white/70 sm:gap-3">
+          <span
+            className="inline-flex items-center gap-1.5"
+            aria-label={`Rated ${SITE_RATING.ratingValue} out of 5`}
+          >
+            <span className="font-semibold text-gold">{SITE_RATING.ratingValue}</span>
+            <span className="tracking-tight text-gold" aria-hidden="true">
+              ★★★★★
             </span>
-            <span className="text-white/40">·</span>
-            <span>Free</span>
-            <span className="text-white/40">·</span>
-            <span>Web</span>
-            <span className="text-white/40">·</span>
-            <span>Live lightning map</span>
-          </div>
+            <span>({Number(SITE_RATING.ratingCount).toLocaleString()})</span>
+          </span>
+          <span className="text-white/40">·</span>
+          <span>Free</span>
+          <span className="text-white/40">·</span>
+          <span>Web</span>
+          <span className="text-white/40">·</span>
+          <span>Live lightning map</span>
         </div>
       </section>
 
@@ -368,8 +371,8 @@ export default function Home() {
               </Link>{" "}
               guides for NWS-aligned habits you can practice every storm season.
             </p>
-            <CtaButton href="/#tracker" icon="arrow" ariaLabel="Open the live lightning tracker">
-              OPEN TRACKER
+            <CtaButton href="/#calculator" icon="arrow" ariaLabel="Open the lightning distance calculator">
+              OPEN CALCULATOR
             </CtaButton>
           </div>
         </section>

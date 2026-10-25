@@ -171,7 +171,7 @@ export default function BestLightningTrackerAppsPage() {
           </p>
 
           <div className="pt-2">
-            <CtaButton href="/#tracker" icon="arrow">
+            <CtaButton href="/#calculator" icon="arrow">
               OPEN LIGHTNING TRACKER
             </CtaButton>
           </div>

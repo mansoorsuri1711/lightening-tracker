@@ -112,7 +112,7 @@ export default function HowItWorksPage() {
         </p>
 
         <div className="mb-12">
-          <CtaButton href="/#tracker" icon="arrow">
+          <CtaButton href="/#calculator" icon="arrow">
             START WITH THE CALCULATOR
           </CtaButton>
         </div>

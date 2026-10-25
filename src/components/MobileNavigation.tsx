@@ -169,11 +169,20 @@ export default function MobileNavigation() {
 
             <div className="border-t border-white/10 bg-brand-soft/70 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               <Link
-                href="/#tracker"
-                onClick={closeMenu}
+                href="/#calculator"
+                onClick={(e) => {
+                  closeMenu();
+                  if (pathname !== "/") return;
+                  e.preventDefault();
+                  requestAnimationFrame(() => {
+                    document
+                      .getElementById("calculator")
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  });
+                }}
                 className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-violet to-teal px-4 py-3 text-sm font-bold text-white"
               >
-                Open tracker
+                Open calculator
               </Link>
             </div>
           </div>,

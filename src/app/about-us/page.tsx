@@ -90,7 +90,7 @@ export default function AboutPage() {
           </p>
         </section>
 
-        <CtaButton href="/#tracker" icon="arrow">
+        <CtaButton href="/#calculator" icon="arrow">
           OPEN LIGHTNING TRACKER
         </CtaButton>
       </div>

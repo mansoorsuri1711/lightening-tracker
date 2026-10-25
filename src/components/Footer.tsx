@@ -51,12 +51,12 @@ export default function Footer() {
               tips when storms approach.
             </p>
             <CtaButton
-              href="/#tracker"
+              href="/#calculator"
               size="sm"
-              ariaLabel="Open the free lightning tracker"
+              ariaLabel="Open the lightning distance calculator"
               icon="arrow"
             >
-              OPEN TRACKER
+              OPEN CALCULATOR
             </CtaButton>
           </div>
         </div>

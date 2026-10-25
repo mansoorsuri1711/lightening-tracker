@@ -116,8 +116,8 @@ export default function FeaturesPage() {
         </div>
 
         <div className="mb-12">
-          <CtaButton href="/#tracker" icon="arrow" ariaLabel="Open Lightning Tracker">
-            TRY THE TRACKER
+          <CtaButton href="/#calculator" icon="arrow" ariaLabel="Open lightning distance calculator">
+            OPEN CALCULATOR
           </CtaButton>
         </div>
 

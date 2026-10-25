@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const PRIMARY_CTA_HREF = '/#tracker';
+export const PRIMARY_CTA_HREF = '/#calculator';
 
 type IconKind = 'download' | 'arrow' | 'mail' | 'play';
 

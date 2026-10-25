@@ -140,7 +140,7 @@ export default function LightningSafetyTipsPage() {
           </p>
 
           <div className="pt-2">
-            <CtaButton href="/#tracker" icon="arrow">
+            <CtaButton href="/#calculator" icon="arrow">
               PRACTICE WITH THE TRACKER
             </CtaButton>
           </div>
