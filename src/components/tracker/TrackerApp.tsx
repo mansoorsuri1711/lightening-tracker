@@ -93,8 +93,7 @@ function fmtAgo(sec: number) {
   return `${Math.round(sec / 60)} min ago`;
 }
 
-// `fullBleed` is accepted for the loader's API; the tracker is always full-bleed now.
-export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
+export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean } = {}) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const mapElRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -1001,7 +1000,11 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
   return (
     <div
       ref={wrapRef}
-      className="relative h-[calc(100svh-3.5rem)] min-h-[560px] w-full overflow-hidden bg-[#070A1A] text-white"
+      className={
+        fullBleed
+          ? "relative h-[calc(100svh-3.5rem)] min-h-[560px] w-full overflow-hidden bg-[#070A1A] text-white"
+          : "relative h-[min(72vh,640px)] min-h-[420px] w-full overflow-hidden rounded-3xl border border-white/10 bg-[#070A1A] text-white shadow-[0_28px_80px_-36px_rgba(59,130,246,0.55)]"
+      }
     >
       {/* MAP — full bleed, like lightningmaps.org */}
       <div className="absolute inset-0 z-0">

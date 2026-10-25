@@ -519,24 +519,30 @@ export default function Home() {
 
         <section className="mb-16">
           <h2 className="mb-4 font-display text-2xl font-bold text-white md:text-3xl">
-            Why satellite lightning maps beat legacy-only detectors
+            Why modern satellite lightning maps outperform legacy detectors
           </h2>
+          <p className="mb-6 max-w-3xl leading-relaxed text-white/80">
+            For years, many people relied on sparse amateur radio maps that suffered from regional
+            sensor dropouts, heavy ads, and cluttered UIs. Modern live lightning maps — including
+            Lightning Tracker — lean on geostationary optical sensors and optional radar so you get
+            storm intelligence you can actually use during a cell.
+          </p>
           <ol className="grid gap-6 sm:grid-cols-3">
             {[
               {
                 n: "01",
-                t: "Free & uncluttered",
-                d: "Lightning Tracker keeps the focus on the map and calculator — no signup wall for core tools, built for quick storm checks on mobile.",
+                t: "Zero ads & completely free",
+                d: "Core tools load without a signup wall or flashing banner video. The focus stays on the live map and distance calculator so your phone stays usable when storms are close.",
               },
               {
                 n: "02",
-                t: "Space-based optical view",
-                d: "Geostationary sensors see flashes over oceans and remote terrain where sparse ground radio networks struggle.",
+                t: "Geostationary satellite precision",
+                d: "NOAA GOES GLM (and optional EUMETSAT MTG-LI) watches optical discharge pulses from ~36,000 km — including oceans and remote terrain where ground radio stations have little or no coverage.",
               },
               {
                 n: "03",
-                t: "Radar when you need rain",
-                d: "Toggle a radar overlay with strike dots to separate isolated updrafts from broad convective lines.",
+                t: "Integrated Doppler radar overlay",
+                d: "Toggle precipitation reflectivity with strike dots to see whether flashes sit inside a rain core or ahead of it — isolated updrafts vs broad convective squall lines.",
               },
             ].map((s) => (
               <li key={s.n} className="border-t border-violet/40 pt-4">
