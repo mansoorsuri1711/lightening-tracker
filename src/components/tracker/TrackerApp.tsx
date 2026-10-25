@@ -135,7 +135,7 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
   const [playing, setPlaying] = useState(false);
   const [speed, setSpeed] = useState(60);
   const [sheetOpen, setSheetOpen] = useState(false);
-  const [panelOpen, setPanelOpen] = useState(true);
+  const [panelOpen, setPanelOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [locating, setLocating] = useState(false);
   const [picking, setPicking] = useState(false);
@@ -363,9 +363,10 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
       map = new maplibregl.Map({
         container: mapElRef.current,
         style: styleFor(s.basemap),
-        center: s.view ? [s.view.lng, s.view.lat] : s.user ? [s.user.lon, s.user.lat] : [-96, 34],
-        zoom: s.view?.zoom ?? (s.user ? 6 : 3.4),
-        minZoom: 1.5,
+        // always open on the whole world; the saved view is only used for the next flyTo
+        center: [10, 22],
+        zoom: Math.max(0.6, Math.log2(window.innerWidth / 512) + 0.15),
+        minZoom: 0.4,
         maxZoom: 15,
         attributionControl: false,
         renderWorldCopies: true,
@@ -376,7 +377,6 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
       setMapError(e instanceof Error ? e.message : "The map failed to start.");
       return;
     }
-    if (window.innerWidth >= 1024) map.setPadding({ left: PANEL_W, top: 0, right: 0, bottom: 0 });
     map.touchZoomRotate.disableRotation();
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
     map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-left");
@@ -974,7 +974,7 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
   const flyTo = (lat: number, lon: number, z = 7) =>
     mapRef.current?.flyTo({ center: [lon, lat], zoom: Math.max(mapRef.current.getZoom(), z), duration: 900 });
 
-  const isOpen = (k: string) => !settings.collapsed?.[k];
+  const isOpen = (k: string) => settings.collapsed?.[k] === false;
   const toggle = (k: string) => patch({ collapsed: { ...settings.collapsed, [k]: isOpen(k) } });
 
   /* ---------- render ---------- */
