@@ -7,8 +7,8 @@ import MobileNavigation from './MobileNavigation';
 import { BRAND_LOGO_MARK, SITE_NAME } from '@/lib/siteConfig';
 
 const navLinks = [
-  { href: '/live-lightning-map', label: 'Live Map' },
   { href: '/', label: 'Lightning Tracker' },
+  { href: '/live-lightning-map', label: 'Live Map' },
   { href: '/#tracker', label: 'Lightning Near Me' },
   { href: '/lightning-distance-calculator', label: 'Distance' },
   { href: '/lightning-alerts', label: 'Alerts' },

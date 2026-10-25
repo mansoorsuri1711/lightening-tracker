@@ -23,8 +23,8 @@ const navSections: NavSection[] = [
     title: 'TOOLS',
     items: [
       { href: '/', label: 'Lightning Tracker' },
-      { href: '/live-lightning-map', label: 'Live Lightning Map' },
       { href: '/#tracker', label: 'Lightning Near Me' },
+      { href: '/live-lightning-map', label: 'Live Lightning Map' },
       { href: '/lightning-distance-calculator', label: 'Distance Calculator' },
       { href: '/lightning-alerts', label: 'Lightning Alerts' },
       { href: '/features', label: 'Features' },
