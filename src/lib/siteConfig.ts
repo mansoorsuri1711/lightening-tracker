@@ -3,7 +3,7 @@ export const SITE_SHORT_NAME = "Lightning";
 export const SITE_ORIGIN = "https://lightningtracker.net";
 export const SITE_DOMAIN = "lightningtracker.net";
 export const SITE_TAGLINE =
-  "Free lightning tracker and live lightning map — real-time lightning strikes, thunder map style tracking, distance estimates, and thunderstorm awareness.";
+  "Free live lightning map and lightning tracker — real-time strikes near you, radar & heatmap layers, flash-to-thunder distance, and thunderstorm safety guidance.";
 
 export const CONTACT_EMAIL = "support@lightningtracker.net";
 

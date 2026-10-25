@@ -24,6 +24,7 @@ const navSections: NavSection[] = [
     items: [
       { href: '/', label: 'Lightning Tracker' },
       { href: '/live-lightning-map', label: 'Live Lightning Map' },
+      { href: '/#tracker', label: 'Lightning Near Me' },
       { href: '/lightning-distance-calculator', label: 'Distance Calculator' },
       { href: '/lightning-alerts', label: 'Lightning Alerts' },
       { href: '/features', label: 'Features' },
@@ -71,6 +72,7 @@ export default function MobileNavigation() {
   const [mounted, setMounted] = useState(false);
 
   const isActive = (href: string) => {
+    if (href.startsWith('/#')) return false;
     if (href === '/') return pathname === '/';
     return pathname === href || pathname.startsWith(`${href}/`);
   };
@@ -144,10 +146,19 @@ export default function MobileNavigation() {
                     {section.items.map((item) => {
                       const active = isActive(item.href);
                       return (
-                        <li key={item.href}>
+                        <li key={item.label}>
                           <Link
                             href={item.href}
-                            onClick={closeMenu}
+                            onClick={(e) => {
+                              closeMenu();
+                              if (item.href !== '/#tracker' || pathname !== '/') return;
+                              e.preventDefault();
+                              requestAnimationFrame(() => {
+                                document
+                                  .getElementById('tracker')
+                                  ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              });
+                            }}
                             className={`flex items-center justify-between rounded-lg px-3 py-3 text-[15px] font-medium transition-colors ${
                               active
                                 ? 'bg-violet/20 font-semibold text-white'

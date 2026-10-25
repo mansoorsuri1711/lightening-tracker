@@ -47,7 +47,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Lightning Tracker — Live Lightning Map & Strike Distance",
+    default: "Live Lightning Map & Tracker — Real-Time Strikes Near Me",
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_TAGLINE,
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "Lightning Tracker — Live Lightning Map & Strike Distance",
+    title: "Live Lightning Map & Tracker — Real-Time Strikes Near Me",
     description: SITE_TAGLINE,
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lightning Tracker — Live Lightning Map & Strike Distance",
+    title: "Live Lightning Map & Tracker — Real-Time Strikes Near Me",
     description: SITE_TAGLINE,
     images: [
       {

@@ -46,8 +46,12 @@ const faqs = [
 
 const features = [
   {
-    title: "Live lightning map",
-    body: "Watch near-real-time strikes on an interactive map — storm motion, nearby activity, and age-colored dots in one view.",
+    title: "Live lightning strike map",
+    body: "Watch near-real-time NOAA GOES GLM flashes — storm motion, lightning near me, radar/heatmap toggles, and age-colored dots.",
+  },
+  {
+    title: "Honest map limits",
+    body: "Markers are detections (often optical centroids), not guaranteed CG impact points. An empty map is never an all-clear if thunder is audible.",
   },
   {
     title: "Flash-to-thunder distance",
