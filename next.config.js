@@ -367,7 +367,7 @@ const nextConfig = {
     optimizeCss: true, // Critters inlines critical CSS
     inlineCss: true, // Inline CSS in HTML to eliminate render-blocking (improves FCP/LCP)
     scrollRestoration: true,
-    optimizePackageImports: ['react-icons'],
+    optimizePackageImports: ['react-icons', 'maplibre-gl'],
   },
   
   // Modern module/nomodule pattern

@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-outfit)', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['var(--font-sora)', 'var(--font-outfit)', 'sans-serif'],
+        display: ['var(--font-outfit)', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       colors: {
         // Dark blue brand from Lightning Tracker icon (navy + lightning gold)

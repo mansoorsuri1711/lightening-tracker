@@ -44,9 +44,9 @@ export default function DeferredAnalytics() {
 
     const idle = window.requestIdleCallback;
     if (typeof idle === 'function') {
-      idleId = idle(load, { timeout: 4000 });
+      idleId = idle(load, { timeout: 6000 });
     } else {
-      timeoutId = window.setTimeout(load, 4000);
+      timeoutId = window.setTimeout(load, 6000);
     }
 
     return () => {

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Sora } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
@@ -18,19 +18,14 @@ import {
   TWITTER_IMAGE,
 } from "@/lib/siteConfig";
 
+/** Single family for body + display — avoids a second font on the critical path. */
 const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-outfit",
+  weight: ["400", "600", "700"],
   adjustFontFallback: true,
-});
-
-const sora = Sora({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-sora",
-  weight: "600",
-  adjustFontFallback: true,
+  // Let first paint use fallback; swap in when ready (shorter critical chain).
   preload: false,
 });
 
@@ -141,7 +136,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${outfit.variable} ${sora.variable}`}
+      className={outfit.variable}
       style={{ backgroundColor: "#070A1A", colorScheme: "dark" }}
     >
       <head>
@@ -159,9 +154,6 @@ export default function RootLayout({
         <link rel="icon" href={`/favicon-32x32.png?v=${ASSET_VERSION}`} type="image/png" sizes="32x32" />
         <link rel="icon" href={`/favicon-16x16.png?v=${ASSET_VERSION}`} type="image/png" sizes="16x16" />
         <link rel="apple-touch-icon" href={`/apple-touch-icon.png?v=${ASSET_VERSION}`} sizes="180x180" />
-        <Script id="strip-extension-attrs" strategy="beforeInteractive">
-          {`(function(){var ATTR="bis_skin_checked";function strip(n){if(!n||n.nodeType!==1)return;if(n.hasAttribute&&n.hasAttribute(ATTR))n.removeAttribute(ATTR);var list=n.querySelectorAll?n.querySelectorAll("["+ATTR+"]"):[];for(var i=0;i<list.length;i++)list[i].removeAttribute(ATTR);}strip(document.documentElement);try{new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){if(ms[i].type==="attributes")strip(ms[i].target);var nodes=ms[i].addedNodes;if(nodes){for(var j=0;j<nodes.length;j++)strip(nodes[j]);}}}).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:[ATTR]});}catch(e){}})();`}
-        </Script>
         <Script id="deferred-manifest" strategy="lazyOnload">
           {`(function(){var l=document.createElement('link');l.rel='manifest';l.href='/manifest.json?v=${ASSET_VERSION}';document.head.appendChild(l);})();`}
         </Script>
