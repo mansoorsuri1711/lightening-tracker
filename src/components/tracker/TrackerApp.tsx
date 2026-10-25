@@ -35,6 +35,7 @@ type Settings = {
   notify: boolean;
   user: LatLon | null;
   view: { lng: number; lat: number; zoom: number } | null;
+  collapsed: Record<string, boolean>;
 };
 
 const DEFAULTS: Settings = {
@@ -47,6 +48,7 @@ const DEFAULTS: Settings = {
   notify: false,
   user: null,
   view: null,
+  collapsed: {},
 };
 const LS_KEY = "lt.settings.v2";
 const PANEL_W = 372; // px of map hidden behind the floating panel on desktop
@@ -80,6 +82,7 @@ const MAX_FEATURES = 120_000;
 const HISTORY_MIN = 60;
 
 const fmtN = (n: number) => n.toLocaleString("en-US");
+const fmtCompact = (n: number) => (n >= 100_000 ? `${Math.round(n / 1000)}k` : n.toLocaleString("en-US"));
 function fmtDist(km: number, u: Units) {
   const v = u === "mi" ? km * 0.621371 : km;
   return `${v < 10 ? v.toFixed(1) : Math.round(v)} ${u}`;
@@ -971,6 +974,9 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
   const flyTo = (lat: number, lon: number, z = 7) =>
     mapRef.current?.flyTo({ center: [lon, lat], zoom: Math.max(mapRef.current.getZoom(), z), duration: 900 });
 
+  const isOpen = (k: string) => !settings.collapsed?.[k];
+  const toggle = (k: string) => patch({ collapsed: { ...settings.collapsed, [k]: isOpen(k) } });
+
   /* ---------- render ---------- */
   const statusDot = conn === "live" ? "bg-emerald-400" : conn === "connecting" ? "bg-amber-400" : "bg-red-400";
   const statusText =
@@ -1087,7 +1093,7 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
               className="lt-range w-full"
               aria-label="Time travel through the last hour"
             />
-            <div className="mt-0.5 flex justify-between text-[10px] font-medium uppercase tracking-wide text-white/40">
+            <div className="mt-0.5 flex justify-between gap-2 whitespace-nowrap text-[10px] font-medium uppercase tracking-wide text-white/40">
               <span>−60 min</span>
               <span>−30</span>
               <span>now</span>
@@ -1096,7 +1102,7 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
           <select
             value={speed}
             onChange={(e) => setSpeed(Number(e.target.value))}
-            className="rounded-lg border border-white/10 bg-white/5 px-1.5 py-1 text-xs text-white/80"
+            className="hidden rounded-lg border border-white/10 bg-white/5 px-1.5 py-1 text-xs text-white/80 sm:block"
             aria-label="Replay speed"
           >
             <option value={30}>30×</option>
@@ -1194,34 +1200,30 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
           {/* headline numbers */}
           <div className="mt-4 grid grid-cols-3 gap-2">
             <Big label="Flashes / min" value={rate >= 10 ? Math.round(rate).toString() : rate.toFixed(1)} accent="#ffd84a" />
-            <Big label={`In last ${windowMin}m`} value={fmtN(totalWindow)} accent="#fff" />
-            <Big label="In view" value={fmtN(inView)} accent="#7dd3fc" />
+            <Big label={`In last ${windowMin}m`} value={fmtCompact(totalWindow)} accent="#fff" />
+            <Big label="In view" value={fmtCompact(inView)} accent="#7dd3fc" />
           </div>
 
           {/* activity chart */}
           <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
-            <div className="mb-1 flex items-baseline justify-between">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-white/50">Activity · per minute</span>
-              <span className="text-[11px] text-white/35">last hour</span>
-            </div>
-            <Sparkline bins={bins} marker={scrubMin == null ? null : Math.max(0, Math.min(59, 59 - Math.round(scrubMin)))} />
+            <SectionHead title="Activity · per minute" open={isOpen("activity")} onToggle={() => toggle("activity")} hint="last hour" />
+            {isOpen("activity") && (
+              <div className="mt-1">
+                <Sparkline bins={bins} marker={scrubMin == null ? null : Math.max(0, Math.min(59, 59 - Math.round(scrubMin)))} />
+              </div>
+            )}
           </div>
 
           {/* near me */}
           <section className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-3.5">
-            <div className="flex items-center justify-between">
-              <h3 className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#7dd3fc]">Near you</h3>
-              {user && (
-                <button
-                  type="button"
-                  onClick={() => patch({ user: null })}
-                  className="text-[11px] text-white/40 hover:text-white"
-                >
-                  Clear
-                </button>
-              )}
-            </div>
-            {!user ? (
+            <SectionHead
+              title="Near you"
+              accent
+              open={isOpen("near")}
+              onToggle={() => toggle("near")}
+              action={user ? { label: "Clear", onClick: () => patch({ user: null }) } : undefined}
+            />
+            {isOpen("near") && (!user ? (
               <>
                 <p className="mt-2 text-sm leading-relaxed text-white/65">
                   Measure the nearest flash, see storm arrival estimates and get an alert when lightning comes close.
@@ -1309,15 +1311,18 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
                   <p className="mt-1.5 text-[11px] leading-snug text-white/35">Alerts fire while this tab is open. Not a substitute for official warnings.</p>
                 </div>
               </>
-            )}
+            ))}
           </section>
 
           {/* storms */}
           <section className="mt-4">
-            <h3 className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white/50">
-              Active storms · {user ? "closest first" : "most active first"}
-            </h3>
-            {sortedStorms.length === 0 ? (
+            <SectionHead
+              title={`Active storms · ${user ? "closest first" : "most active first"}`}
+              open={isOpen("storms")}
+              onToggle={() => toggle("storms")}
+              hint={sortedStorms.length ? String(sortedStorms.length) : undefined}
+            />
+            {isOpen("storms") && (sortedStorms.length === 0 ? (
               <p className="rounded-xl border border-white/10 bg-white/[0.03] p-3 text-sm text-white/50">
                 {loadingHistory ? "Scanning…" : "No organised storm cells in the last 15 minutes."}
               </p>
@@ -1357,19 +1362,23 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
                   </li>
                 ))}
               </ul>
-            )}
+            ))}
           </section>
 
           {/* legend */}
           <section className="mt-5">
-            <h3 className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white/50">Flash age</h3>
+            <SectionHead title="Flash age" open={isOpen("legend")} onToggle={() => toggle("legend")} />
+            {isOpen("legend") && (
+              <>
             <div
-              className="h-2.5 rounded-full"
+              className="mt-2 h-2.5 rounded-full"
               style={{ background: `linear-gradient(90deg, ${AGE_STOPS.map(([m, c]) => `${c} ${(Math.sqrt(m / 60) * 100).toFixed(1)}%`).join(",")})` }}
             />
             <div className="mt-1 flex justify-between text-[10px] text-white/40">
               <span>now</span><span>5 min</span><span>15 min</span><span>30 min</span><span>60 min</span>
             </div>
+              </>
+            )}
           </section>
 
           <p className="mt-5 text-[11px] leading-relaxed text-white/35">
@@ -1385,6 +1394,54 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
 }
 
 /* ---------- small presentational helpers ---------- */
+
+function SectionHead({
+  title,
+  open,
+  onToggle,
+  hint,
+  accent,
+  action,
+}: {
+  title: string;
+  open: boolean;
+  onToggle: () => void;
+  hint?: string;
+  accent?: boolean;
+  action?: { label: string; onClick: () => void };
+}) {
+  return (
+    <div className="flex items-center justify-between gap-2">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        className="group flex min-w-0 flex-1 items-center gap-1.5 py-0.5 text-left"
+      >
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          className={`shrink-0 text-white/50 transition-transform group-hover:text-white ${open ? "rotate-90" : ""}`}
+          aria-hidden
+        >
+          <path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <span
+          className={`truncate text-[11px] font-bold uppercase tracking-[0.14em] ${accent ? "text-[#7dd3fc]" : "text-white/55"} group-hover:text-white`}
+        >
+          {title}
+        </span>
+        {hint && <span className="shrink-0 text-[11px] font-medium normal-case tracking-normal text-white/35">{hint}</span>}
+      </button>
+      {action && (
+        <button type="button" onClick={action.onClick} className="text-[11px] text-white/40 hover:text-white">
+          {action.label}
+        </button>
+      )}
+    </div>
+  );
+}
 
 function lagLabel(ms: number) {
   const s = Math.max(0, ms / 1000);
@@ -1454,8 +1511,8 @@ function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; chi
 
 function Big({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-3 py-2.5">
-      <p className="font-display text-2xl font-bold leading-none tabular-nums" style={{ color: accent }}>{value}</p>
+    <div className="min-w-0 rounded-2xl border border-white/10 bg-white/[0.03] px-3 py-2.5">
+      <p className="truncate font-display text-xl font-bold leading-none tabular-nums sm:text-2xl" style={{ color: accent }}>{value}</p>
       <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-white/45">{label}</p>
     </div>
   );
