@@ -9,7 +9,6 @@ import { BRAND_LOGO_MARK, SITE_NAME } from '@/lib/siteConfig';
 const navLinks = [
   { href: '/', label: 'Lightning Tracker' },
   { href: '/live-lightning-map', label: 'Live Map' },
-  { href: '/#tracker', label: 'Lightning Near Me' },
   { href: '/lightning-distance-calculator', label: 'Distance' },
   { href: '/lightning-alerts', label: 'Alerts' },
   { href: '/features', label: 'Features' },
@@ -23,7 +22,6 @@ export default function Header() {
   const pathname = usePathname();
 
   const isActive = (href: string) => {
-    if (href.startsWith('/#')) return false;
     if (href === '/') return pathname === '/';
     return pathname === href || pathname.startsWith(href + '/');
   };
@@ -52,11 +50,6 @@ export default function Header() {
             <Link
               key={label}
               href={href}
-              onClick={(e) => {
-                if (href !== "/#tracker" || pathname !== "/") return;
-                e.preventDefault();
-                document.getElementById("tracker")?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
               className={`relative font-medium transition-colors pb-1 group text-sm text-white/80 ${
                 isActive(href) ? 'font-semibold text-white' : 'hover:text-violet-soft'
               }`}

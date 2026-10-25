@@ -80,6 +80,14 @@ type Near = {
 
 const MAX_FEATURES = 120_000;
 const HISTORY_MIN = 60;
+/** Shared size for map chrome control buttons (basemap, window, layers, near me). */
+const MAP_CTRL_BTN =
+  "inline-flex h-9 min-w-[6.75rem] items-center justify-center rounded-lg px-3 text-[13px] font-bold transition";
+/** Frosted glass chrome around map control groups. */
+const MAP_CTRL_SHELL =
+  "pointer-events-auto flex items-center gap-1 rounded-xl border border-white/25 bg-white/10 p-1 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl backdrop-saturate-150";
+const MAP_CTRL_SHELL_SOLO =
+  "pointer-events-auto flex items-center rounded-xl border border-white/25 bg-white/10 p-1 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl backdrop-saturate-150";
 
 const fmtN = (n: number) => n.toLocaleString("en-US");
 const fmtCompact = (n: number) => (n >= 100_000 ? `${Math.round(n / 1000)}k` : n.toLocaleString("en-US"));
@@ -1031,9 +1039,9 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
         <button
           type="button"
           onClick={() => setPanelOpen(true)}
-          className="absolute left-3 top-3 z-20 hidden items-center gap-2 rounded-xl border border-white/10 bg-[#0A1020]/90 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md hover:bg-[#10193a] lg:flex"
+          className="absolute left-3 top-3 z-20 hidden h-11 items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-3.5 text-xs font-semibold text-white shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl backdrop-saturate-150 transition hover:bg-white/15 lg:flex"
         >
-          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+          <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
           {fmtN(Math.round(rate))} flashes/min · Stats ›
         </button>
       )}
@@ -1044,7 +1052,7 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
           type="button"
           onClick={() => setControlsOpen((v) => !v)}
           aria-expanded={controlsOpen}
-          className="pointer-events-auto flex items-center gap-2 rounded-xl border border-white/25 bg-[#070A1A]/95 px-3 py-2 text-[13px] font-bold text-white shadow-[0_6px_24px_rgba(0,0,0,0.65)] lg:hidden"
+          className="pointer-events-auto flex h-11 items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-3 text-[13px] font-bold text-white shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl backdrop-saturate-150 lg:hidden"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
             <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -1071,9 +1079,30 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
           onChange={(v) => patch({ windowMin: Number(v) as Settings["windowMin"] })}
           options={[["5", "5m"], ["15", "15m"], ["30", "30m"], ["60", "60m"]]}
         />
-        <div className="pointer-events-auto flex items-center gap-1 rounded-xl border border-white/25 bg-[#070A1A]/95 p-1 shadow-[0_6px_24px_rgba(0,0,0,0.65)]">
+        <div className={MAP_CTRL_SHELL}>
           <Chip on={heat} onClick={() => patch({ heat: !heat })}>Density</Chip>
           <Chip on={radar} onClick={() => patch({ radar: !radar })}>Radar</Chip>
+        </div>
+        <div className={MAP_CTRL_SHELL_SOLO}>
+          <button
+            type="button"
+            onClick={recenter}
+            disabled={locating}
+            className={`${MAP_CTRL_BTN} gap-1.5 text-white hover:bg-white/20 disabled:opacity-60`}
+            aria-label={user ? "Recenter map on my location" : "Find lightning near me"}
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden className="shrink-0">
+              <circle cx="8" cy="8" r="2.25" fill="currentColor" />
+              <circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+              <path
+                d="M8 1.5v1.75M8 12.75V14.5M1.5 8h1.75M12.75 8H14.5"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            </svg>
+            {locating ? "Locating…" : user ? "Near me" : "Find near me"}
+          </button>
         </div>
         </div>
       </div>
@@ -1108,38 +1137,39 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
 
       {/* Map zoom / recenter — above overlays so clicks aren't swallowed */}
       <div
-        className="pointer-events-auto absolute bottom-[11.5rem] right-3 z-30 flex flex-col overflow-hidden rounded-xl border border-white/15 bg-[#0A1020]/95 shadow-[0_8px_28px_rgba(0,0,0,0.7)] lg:bottom-24"
+        className="pointer-events-auto absolute bottom-[11.5rem] right-3 z-30 flex flex-col overflow-hidden rounded-xl border border-white/25 bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl backdrop-saturate-150 lg:bottom-24"
         role="group"
         aria-label="Map zoom"
       >
         <button
           type="button"
           onClick={() => zoomBy(1)}
-          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/10"
+          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/20"
           aria-label="Zoom in"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
             <path d="M3 8h10M8 3v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </button>
-        <div className="h-px bg-white/12" aria-hidden />
+        <div className="h-px bg-white/20" aria-hidden />
         <button
           type="button"
           onClick={() => zoomBy(-1)}
-          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/10"
+          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/20"
           aria-label="Zoom out"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
             <path d="M3 8h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </button>
-        <div className="h-px bg-white/12" aria-hidden />
+        <div className="h-px bg-white/20" aria-hidden />
         <button
           type="button"
           onClick={recenter}
-          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/10"
-          aria-label={user ? "Recenter on my location" : "Find my location"}
-          title={user ? "Recenter" : "Find my location"}
+          disabled={locating}
+          className="grid h-10 w-10 place-items-center text-white transition hover:bg-white/20 disabled:opacity-60"
+          aria-label={user ? "Recenter on my location" : "Find near me"}
+          title={user ? "Recenter" : "Find near me"}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
             <circle cx="8" cy="8" r="2.25" fill="currentColor" />
@@ -1156,11 +1186,11 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
 
       {/* TIMELAPSE BAR */}
       <div className="pointer-events-none absolute inset-x-3 z-10 flex justify-center max-lg:bottom-[9.5rem] lg:bottom-4">
-        <div className={`pointer-events-auto flex w-full max-w-2xl items-center gap-2.5 rounded-2xl border border-white/10 bg-[#0A1020]/90 px-3 py-2 backdrop-blur-md ${sheetOpen ? "max-lg:hidden" : ""}`}>
+        <div className={`pointer-events-auto flex w-full max-w-2xl items-center gap-2.5 rounded-2xl border border-white/25 bg-white/10 px-3 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl backdrop-saturate-150 ${sheetOpen ? "max-lg:hidden" : ""}`}>
           <button
             type="button"
             onClick={togglePlay}
-            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-white transition hover:bg-white/20"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/20 bg-white/15 text-white transition hover:bg-white/25"
             aria-label={playing ? "Pause replay" : "Replay the last hour"}
           >
             {playing ? (
@@ -1180,7 +1210,7 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
               className="lt-range w-full"
               aria-label="Time travel through the last hour"
             />
-            <div className="mt-0.5 flex justify-between gap-2 whitespace-nowrap text-[10px] font-medium uppercase tracking-wide text-white/40">
+            <div className="mt-0.5 flex justify-between gap-2 whitespace-nowrap text-[10px] font-medium uppercase tracking-wide text-white/50">
               <span>−60 min</span>
               <span>−30</span>
               <span>now</span>
@@ -1189,7 +1219,7 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
           <select
             value={speed}
             onChange={(e) => setSpeed(Number(e.target.value))}
-            className="hidden rounded-lg border border-white/10 bg-white/5 px-1.5 py-1 text-xs text-white/80 sm:block"
+            className="hidden h-9 rounded-lg border border-white/20 bg-white/15 px-2 text-xs font-semibold text-white backdrop-blur-md sm:block"
             aria-label="Replay speed"
           >
             <option value={30}>30×</option>
@@ -1200,8 +1230,10 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
           <button
             type="button"
             onClick={setLive}
-            className={`shrink-0 rounded-xl px-3 py-2 text-xs font-bold uppercase tracking-wider transition ${
-              live ? "bg-emerald-400/15 text-emerald-300" : "bg-amber-400 text-black hover:bg-amber-300"
+            className={`h-9 shrink-0 rounded-xl border px-3 text-xs font-bold uppercase tracking-wider transition ${
+              live
+                ? "border-emerald-300/35 bg-emerald-400/20 text-emerald-200 backdrop-blur-md"
+                : "border-amber-300/40 bg-amber-400/90 text-black hover:bg-amber-300"
             }`}
           >
             {live ? "● Live" : `−${Math.round(scrubMin ?? 0)}m · Go live`}
@@ -1322,7 +1354,7 @@ export default function TrackerApp({ fullBleed = true }: { fullBleed?: boolean }
                     disabled={locating}
                     className="rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#38BDF8] px-3 py-2.5 text-sm font-semibold shadow-lg transition hover:brightness-110 disabled:opacity-60"
                   >
-                    {locating ? "Locating…" : "Use my location"}
+                    {locating ? "Locating…" : "Find near me"}
                   </button>
                   <button
                     type="button"
@@ -1560,18 +1592,16 @@ function Seg({
   options: [string, string][];
 }) {
   return (
-    <div
-      className="pointer-events-auto flex items-center gap-1 rounded-xl border border-white/25 bg-[#070A1A]/95 p-1 shadow-[0_6px_24px_rgba(0,0,0,0.65)]"
-      role="group"
-      aria-label={label}
-    >
+    <div className={MAP_CTRL_SHELL} role="group" aria-label={label}>
       {options.map(([v, text]) => (
         <button
           key={v}
           type="button"
           onClick={() => onChange(v)}
-          className={`rounded-lg px-3 py-2 text-[13px] font-bold transition ${
-            value === v ? "bg-white text-[#0A1020] shadow" : "text-white hover:bg-white/15"
+          className={`${MAP_CTRL_BTN} ${
+            value === v
+              ? "bg-white/90 text-[#0A1020] shadow-sm backdrop-blur-sm"
+              : "text-white hover:bg-white/20"
           }`}
         >
           {text}
@@ -1587,8 +1617,10 @@ function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; chi
       type="button"
       onClick={onClick}
       aria-pressed={on}
-      className={`rounded-lg px-3 py-2 text-[13px] font-bold transition ${
-        on ? "bg-[#38bdf8] text-[#06101f] shadow" : "text-white hover:bg-white/15"
+      className={`${MAP_CTRL_BTN} ${
+        on
+          ? "bg-[#38bdf8]/90 text-[#06101f] shadow-sm backdrop-blur-sm"
+          : "text-white hover:bg-white/20"
       }`}
     >
       {children}
