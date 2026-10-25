@@ -216,7 +216,7 @@ export default function LiveLightningMap({ fullBleed = false }: Props) {
         className: fresh ? "lt-strike-fresh" : undefined,
       });
       marker.bindTooltip(
-        `<div style="font:600 12px/1.35 var(--font-outfit),system-ui,sans-serif">
+        `<div style="font:600 12px/1.35 system-ui,sans-serif">
           <div style="color:${color}">${age < 1 ? "Just now" : `${age.toFixed(0)} min ago`}</div>
           <div style="opacity:.7;font-weight:500;margin-top:2px">${s.lat.toFixed(2)}°, ${s.lon.toFixed(2)}°</div>
         </div>`,

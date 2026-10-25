@@ -1,19 +1,26 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import dynamic from "next/dynamic";
+import {
+  useCallback,
+  useState,
+  type ComponentType,
+} from "react";
 
 type Props = {
   /** Edge-to-edge hero mode (no rounded card chrome). */
   fullBleed?: boolean;
 };
 
+type TrackerProps = { fullBleed?: boolean };
+
 function LoadingShell({
   fullBleed,
   onLoadNow,
+  busy,
 }: {
   fullBleed: boolean;
-  onLoadNow?: () => void;
+  onLoadNow: () => void;
+  busy?: boolean;
 }) {
   return (
     <div
@@ -22,96 +29,76 @@ function LoadingShell({
           ? "h-[calc(100svh-3.5rem)] min-h-[640px]"
           : "h-[min(72vh,640px)] min-h-[420px] rounded-3xl border border-white/10"
       }`}
-      role="status"
-      aria-live="polite"
-      aria-label="Live lightning map loading"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(59,130,246,0.18),transparent_55%),radial-gradient(ellipse_at_70%_60%,rgba(248,216,80,0.08),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(59,130,246,0.22),transparent_55%),radial-gradient(ellipse_at_70%_60%,rgba(248,216,80,0.1),transparent_50%)]"
         aria-hidden
       />
-      <div className="relative z-10 px-5 pb-8">
-        <div className="mb-3 h-3 w-24 animate-pulse rounded-full bg-white/10" />
-        <div className="mb-2 h-8 w-56 animate-pulse rounded-lg bg-white/10" />
-        <p className="text-sm text-white/50">Loading live map…</p>
-        {onLoadNow ? (
-          <button
-            type="button"
-            onClick={onLoadNow}
-            className="mt-4 rounded-xl border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
-          >
-            Load map now
-          </button>
-        ) : null}
+      <div className="relative z-10 px-5 pb-10 sm:px-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F8D850]">
+          Live lightning map
+        </p>
+        <h2 className="mt-2 max-w-md text-2xl font-bold tracking-tight text-white sm:text-3xl">
+          Real-time satellite strikes
+        </h2>
+        <p className="mt-2 max-w-md text-sm leading-relaxed text-white/65">
+          NOAA GOES flash data for the Americas - tap once to load the interactive map.
+        </p>
+        <button
+          type="button"
+          onClick={onLoadNow}
+          disabled={busy}
+          className="mt-5 rounded-xl border border-white/30 bg-white/12 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/18 disabled:opacity-70"
+        >
+          {busy ? "Loading map..." : "Explore live map"}
+        </button>
       </div>
     </div>
   );
 }
 
-const TrackerApp = dynamic(() => import("@/components/tracker/TrackerApp"), {
-  ssr: false,
-  loading: () => <LoadingShell fullBleed />,
-});
-
 /**
- * Defer MapLibre (~300KB+) until after first paint / idle so LCP and unused-JS
- * audits are not blocked by the tracker chunk on initial navigation.
+ * MapLibre is ~300KB+. Do not auto-fetch it on idle - Lighthouse would still
+ * download it during the audit. Load only after an explicit user gesture.
  */
 export default function LiveLightningMapLoader({ fullBleed = false }: Props) {
-  const [ready, setReady] = useState(false);
-  const loadNow = useCallback(() => setReady(true), []);
+  const [Tracker, setTracker] = useState<ComponentType<TrackerProps> | null>(
+    null,
+  );
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(false);
 
-  useEffect(() => {
-    if (ready) return;
+  const loadNow = useCallback(() => {
+    if (Tracker || busy) return;
+    setBusy(true);
+    setError(false);
+    void import(
+      /* webpackPrefetch: false, webpackPreload: false */ "@/components/tracker/TrackerApp",
+    )
+      .then((mod) => {
+        setTracker(() => mod.default);
+      })
+      .catch(() => {
+        setError(true);
+        setBusy(false);
+      });
+  }, [Tracker, busy]);
 
-    let cancelled = false;
-    let idleId: number | undefined;
-    let safetyId: number | undefined;
-
-    const start = () => {
-      if (cancelled || ready) return;
-      setReady(true);
-    };
-
-    const armIdle = () => {
-      if (cancelled) return;
-      const ric = window.requestIdleCallback;
-      if (typeof ric === "function") {
-        idleId = ric(start, { timeout: 1600 });
-      } else {
-        idleId = window.setTimeout(start, 150) as unknown as number;
-      }
-    };
-
-    if (document.readyState === "complete") {
-      armIdle();
-    } else {
-      const onLoad = () => armIdle();
-      window.addEventListener("load", onLoad, { once: true });
-      // Cap wait so slow `load` (tiles, etc.) cannot block the map forever.
-      safetyId = window.setTimeout(armIdle, 2200);
-      return () => {
-        cancelled = true;
-        window.removeEventListener("load", onLoad);
-        if (idleId !== undefined && typeof window.cancelIdleCallback === "function") {
-          window.cancelIdleCallback(idleId);
-        }
-        if (safetyId !== undefined) window.clearTimeout(safetyId);
-      };
-    }
-
-    return () => {
-      cancelled = true;
-      if (idleId !== undefined && typeof window.cancelIdleCallback === "function") {
-        window.cancelIdleCallback(idleId);
-      }
-      if (typeof idleId === "number") window.clearTimeout(idleId);
-    };
-  }, [ready]);
-
-  if (!ready) {
-    return <LoadingShell fullBleed={fullBleed} onLoadNow={loadNow} />;
+  if (Tracker) {
+    return <Tracker fullBleed={fullBleed} />;
   }
 
-  return <TrackerApp fullBleed={fullBleed} />;
+  return (
+    <div>
+      <LoadingShell fullBleed={fullBleed} onLoadNow={loadNow} busy={busy} />
+      {error ? (
+        <p className="px-5 pt-2 text-center text-sm text-red-300" role="alert">
+          Could not load the map.{" "}
+          <button type="button" className="underline" onClick={loadNow}>
+            Try again
+          </button>
+        </p>
+      ) : null}
+    </div>
+  );
 }

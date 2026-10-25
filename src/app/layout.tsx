@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
@@ -17,17 +16,6 @@ import {
   SITE_TAGLINE,
   TWITTER_IMAGE,
 } from "@/lib/siteConfig";
-
-/** Single family for body + display — avoids a second font on the critical path. */
-const outfit = Outfit({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-outfit",
-  weight: ["400", "600", "700"],
-  adjustFontFallback: true,
-  // Let first paint use fallback; swap in when ready (shorter critical chain).
-  preload: false,
-});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -136,7 +124,6 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={outfit.variable}
       style={{ backgroundColor: "#070A1A", colorScheme: "dark" }}
     >
       <head>

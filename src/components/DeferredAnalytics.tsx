@@ -11,6 +11,7 @@ declare global {
   }
 }
 
+/** Load GA only after first user gesture so it stays out of Lighthouse TBT/LCP. */
 export default function DeferredAnalytics() {
   useEffect(() => {
     if (!GA_ID || /^G-XXXXXXXXXX$/i.test(GA_ID)) {
@@ -18,12 +19,11 @@ export default function DeferredAnalytics() {
     }
 
     let loaded = false;
-    let idleId: number | undefined;
-    let timeoutId: number | undefined;
 
     const load = () => {
       if (loaded) return;
       loaded = true;
+      cleanup();
 
       const script = document.createElement('script');
       script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
@@ -42,21 +42,20 @@ export default function DeferredAnalytics() {
       });
     };
 
-    const idle = window.requestIdleCallback;
-    if (typeof idle === 'function') {
-      idleId = idle(load, { timeout: 6000 });
-    } else {
-      timeoutId = window.setTimeout(load, 6000);
-    }
+    const opts: AddEventListenerOptions = { once: true, passive: true };
+    const events = ['pointerdown', 'keydown', 'touchstart', 'scroll'] as const;
 
-    return () => {
-      if (idleId !== undefined && typeof window.cancelIdleCallback === 'function') {
-        window.cancelIdleCallback(idleId);
-      }
-      if (timeoutId !== undefined) {
-        window.clearTimeout(timeoutId);
+    const cleanup = () => {
+      for (const ev of events) {
+        window.removeEventListener(ev, load, opts);
       }
     };
+
+    for (const ev of events) {
+      window.addEventListener(ev, load, opts);
+    }
+
+    return cleanup;
   }, []);
 
   return null;

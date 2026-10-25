@@ -8,8 +8,29 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-outfit)', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['var(--font-outfit)', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        // System stack only — no webfont on the critical request chain (LCP).
+        sans: [
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+        ],
+        display: [
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+        ],
       },
       colors: {
         // Dark blue brand from Lightning Tracker icon (navy + lightning gold)
