@@ -136,6 +136,7 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
   const [speed, setSpeed] = useState(60);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
+  const [controlsOpen, setControlsOpen] = useState(false); // phones only; desktop always shows them
   const [toast, setToast] = useState<string | null>(null);
   const [locating, setLocating] = useState(false);
   const [picking, setPicking] = useState(false);
@@ -1020,7 +1021,26 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
       )}
 
       {/* TOP CONTROLS */}
-      <div className="pointer-events-none absolute right-0 top-0 z-10 flex flex-wrap items-start justify-end gap-2 p-3 max-lg:left-0 max-lg:justify-start">
+      <div className="pointer-events-none absolute right-0 top-0 z-10 flex flex-col items-start gap-2 p-3 max-lg:left-0 lg:flex-row lg:flex-wrap lg:justify-end">
+        <button
+          type="button"
+          onClick={() => setControlsOpen((v) => !v)}
+          aria-expanded={controlsOpen}
+          className="pointer-events-auto flex items-center gap-2 rounded-xl border border-white/25 bg-[#070A1A]/95 px-3 py-2 text-[13px] font-bold text-white shadow-[0_6px_24px_rgba(0,0,0,0.65)] lg:hidden"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
+            <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            <circle cx="5" cy="4" r="1.8" fill="#070A1A" stroke="currentColor" strokeWidth="1.4" />
+            <circle cx="11" cy="8" r="1.8" fill="#070A1A" stroke="currentColor" strokeWidth="1.4" />
+            <circle cx="6" cy="12" r="1.8" fill="#070A1A" stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+          Map options
+          <span className="font-medium text-white/55">
+            {basemap[0].toUpperCase() + basemap.slice(1)} · {windowMin}m
+          </span>
+          <span className={`text-white/60 transition-transform ${controlsOpen ? "rotate-180" : ""}`}>⌄</span>
+        </button>
+        <div className={`${controlsOpen ? "flex" : "hidden"} flex-wrap items-start gap-2 lg:flex lg:flex-wrap lg:justify-end`}>
         <Seg
           label="Map"
           value={basemap}
@@ -1036,6 +1056,7 @@ export default function TrackerApp(_props: { fullBleed?: boolean } = {}) {
         <div className="pointer-events-auto flex items-center gap-1 rounded-xl border border-white/25 bg-[#070A1A]/95 p-1 shadow-[0_6px_24px_rgba(0,0,0,0.65)]">
           <Chip on={heat} onClick={() => patch({ heat: !heat })}>Density</Chip>
           <Chip on={radar} onClick={() => patch({ radar: !radar })}>Radar</Chip>
+        </div>
         </div>
       </div>
 
